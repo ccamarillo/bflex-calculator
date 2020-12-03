@@ -50,7 +50,25 @@ class CalculatorTest extends TestCase {
                     'annual_costs' =>  51267
                 ],
                 'total_costs' =>  341802 
-            ]
+            ],
+            'reducing_costs' => [
+                'total_su_bflex_cost' => 198750,
+                'repair_maintenance' => [
+                    'annual_oop_repair_all' => 13250,
+                    'total_annual_maint_repair' => 35250
+                ],
+                'reprocessing' => [
+                    'total_annual_reprocessing_costs' => 12535
+                ],
+                'treating_infections' => [
+                    'patient_infections' => 2,
+                ],
+                'treating_infections' => [
+                    'patient_infections' => 2,
+                    'annual_costs' =>  51267
+                ],
+                'total_costs' => 297802
+            ],
         ]);
     }
 }
