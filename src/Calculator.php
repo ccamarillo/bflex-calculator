@@ -10,6 +10,7 @@ class Calculator {
 
     private $totalProcedures; // maps to C4
     private $singleUseProcedures; // maps to C5
+    private $proceduresRequiringReusable; // maps to C6
 
     private $reprocessingCostsLow = [
         'ppe_personal' => 5.06, // maps to C20
@@ -56,6 +57,7 @@ class Calculator {
 
         $this->totalProcedures = $totalProcedures; 
         $this->singleUseProcedures = $singleUseProcedures; 
+        $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
     }
 
     /**
@@ -64,7 +66,71 @@ class Calculator {
      */
     public function calculate() {
         return [
-            'current_costs' => $this->getCurrentCosts()
+            'current_costs' => $this->getCurrentCosts(),
+            'maintaining_costs' => $this->getMaintainingCosts()
+        ];
+    }
+
+    /**
+     * Returns an array of calculated "maintaining costs
+     * @return array associative array
+     */
+    private function getMaintainingCosts() {
+        $totalBFlexcost = self::PRICE_PER_PROCUEDURE * $this->singleUseProcedures;
+        $repairMaintenance = $this->getMaintainingRepairMaintenance();
+        $reprocessing = $this->getMaintainingReprocessing();
+        $treatingInfections = $this->getMaintainingTreatingInfections();
+        $totalCosts = 
+            $totalBFlexcost +
+            $repairMaintenance['total_annual_maint_repair'] + 
+            $reprocessing['total_annual_reprocessing_costs'] +
+            $treatingInfections['annual_costs'];
+        
+        return [
+            'total_su_bflex_cost' => $totalBFlexcost, // maps to E12
+            'repair_maintenance' => $repairMaintenance,
+            'reprocessing' => $reprocessing,
+            'treating_infections' => $treatingInfections,
+            'total_costs' => $totalCosts, // maps to E33
+        ];
+    }
+
+    /**
+     * Gets costs for treating infections under "maintaining" column
+     * @return array
+     */
+    private function getMaintainingTreatingInfections() {
+        // $patientInfections = $this->getCurrentTreatingInfections() * ($this->proceduresRequiringReusable / $this->totalProcedures);
+        $factor = $this->proceduresRequiringReusable / $this->totalProcedures;
+        $patientInfections = $this->getCurrentPatientInfections() * $factor;
+        $annualCosts = round($patientInfections * self::COST_PER_INFECTION);
+
+        return [
+            'patient_infections' => round($patientInfections), // maps to E29
+            'annual_costs' => $annualCosts
+        ];
+    }
+
+    /** 
+     * Get reprocessing costs for "Maintaining" column.
+     */
+    private function getMaintainingReprocessing() {
+        $baseCost = $this->getSumReprocessingCosts();
+
+        return [
+            'total_annual_reprocessing_costs' => $baseCost * ($this->totalProcedures - $this->singleUseProcedures) // maps to E27
+        ];
+    }
+    
+    /**
+     * Calculates repair and maintenance for "Maintaining" column
+     * @return array associative array
+     */
+    private function getMaintainingRepairMaintenance() {
+        $annualOopRepairAll = $this->getAnnualOopRepairAll() * ($this->proceduresRequiringReusable / $this->totalProcedures);
+        return [
+            'annual_oop_repair_all' => (int) $annualOopRepairAll, // maps to E16
+            'total_annual_maint_repair' => (int) (self::CURRENT_ANNUAL_SERVICE_PER * self::CURRENT_REUSABLE_QUANTITY) + $annualOopRepairAll, // maps to E17
         ];
     }
 
@@ -88,7 +154,7 @@ class Calculator {
             'repair_maintenance' => $currentRepairMaintenance,
             'reprocessing' => $currentReprocessing,
             'treating_infections' => $treatingInfections,
-            'total_costs' => (int) $totalCosts,
+            'total_costs' => (int) $totalCosts, // maps to C33
         ];
     }
 
@@ -96,25 +162,29 @@ class Calculator {
         return self::CURRENT_SU_BLEX_USAGE * self::PRICE_PER_PROCUEDURE; // maps to C12
     }
 
+    private function getCurrentPatientInfections() {
+        return ($this->totalProcedures * self::CROSS_CONTAMINATION_FACTOR_A) * self::CROSS_CONTAMINATION_FACTOR_B;
+    }
+    
     /**
      * Retrieve an array of current infection costs
      * @return array associative array
      */
     private function getCurrentTreatingInfections() {
-        $patientInfections = ($this->totalProcedures * self::CROSS_CONTAMINATION_FACTOR_A) * self::CROSS_CONTAMINATION_FACTOR_B;
+        $patientInfections = $this->getCurrentPatientInfections();
         $annualCosts = self::COST_PER_INFECTION * $patientInfections;
 
         return [
-            'patient_infections' => (int) round($patientInfections), // maps to C28
+            'patient_infections' => (int) round($patientInfections), // maps to C29
             'annual_costs' => (int) round($annualCosts) // maps to C31
         ];
     }
 
     /**
-     * Retrieve an array of current reprocessing costs
-     * @return array associative array
+     * Sums up all the reprocessing costs based on the calculation method
+     * @return int
      */
-    private function getCurrentReprocessing() {
+    private function getSumReprocessingCosts() {
         if (self::REPROCESSING_CALC_METHOD == 'average') {
             $costs = $this->reprocessingCostsAverage;
         } else if (self::REPROCESSING_CALC_METHOD == 'low') {
@@ -129,6 +199,16 @@ class Calculator {
         foreach ($costs as $key => $cost) {
             $baseCost += $cost;
         }
+        return $baseCost;
+    }
+
+    /**
+     * Retrieve an array of current reprocessing costs
+     * @return array associative array
+     */
+    private function getCurrentReprocessing() {
+        $baseCost = $this->getSumReprocessingCosts();
+
         return [
             'total_annual_reprocessing_costs' => $baseCost * $this->totalProcedures
         ];
@@ -136,11 +216,19 @@ class Calculator {
     }
 
     /**
+     * Calculate annual out of pocket repair costs for all columns
+     * @return int
+     */
+    private function getAnnualOopRepairAll() {
+        return self::CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR * $this->totalProcedures;
+    }
+    
+    /**
      * Retrieve an array of current repair and maintenance costs
      * @return array associative array
      */
     private function getCurrentRepairMaintenance() {
-        $annualOopRepairAll = self::CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR * $this->totalProcedures;
+        $annualOopRepairAll = $this->getAnnualOopRepairAll();
         $totalAnnualMaintRepair = (self::CURRENT_ANNUAL_SERVICE_PER * self::CURRENT_REUSABLE_QUANTITY) + $annualOopRepairAll;
 
         return [
