@@ -2,7 +2,6 @@
 
 class Calculator {
 
-    private const PRICE_PER_PROCUEDURE = 265; // maps to C7
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
     private const CURRENT_REUSABLE_QUANTITY = 30; // maps to C14
     private const CURRENT_ANNUAL_SERVICE_PER = 2200; // maps to C15
@@ -46,18 +45,28 @@ class Calculator {
     private $totalProcedures; // maps to C4
     private $singleUseProcedures; // maps to C5
     private $proceduresRequiringReusable; // maps to C6
+    private $bflexBroncoscopePrice; // maps to C7
 
     /**
      * Bootstraps the calculator with client input
      * @param int $totalProcedures
      * @param int $singleUseProcedures
      */
-    public function __construct($totalProcedures, $singleUseProcedures) {
-        $this->validateInputs($totalProcedures, $singleUseProcedures);
+    public function __construct(
+        $totalProcedures, 
+        $singleUseProcedures,
+        $bflexBroncoscopePrice
+    ) {
+        $this->validateInputs(
+            $totalProcedures, 
+            $singleUseProcedures,
+            $bflexBroncoscopePrice
+        );
 
         $this->totalProcedures = $totalProcedures; 
         $this->singleUseProcedures = $singleUseProcedures; 
         $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
+        $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
     }
 
     /**
@@ -76,7 +85,7 @@ class Calculator {
      * @return array associative array
      */
     private function getReducingCosts() {
-        $totalBFlexCost = $this->singleUseProcedures * self::PRICE_PER_PROCUEDURE;
+        $totalBFlexCost = $this->singleUseProcedures * $this->bflexBroncoscopePrice;
         $repairMaintenance = $this->getReducingRepairMaintenance();
         $reprocessing = $this->getMaintainingReprocessing();
         $treatingInfections = $this->getMaintainingTreatingInfections();
@@ -170,7 +179,7 @@ class Calculator {
      * @return int
      */
     private function getCurrentTotalBFlexCost() {
-        return self::CURRENT_SU_BLEX_USAGE * self::PRICE_PER_PROCUEDURE; // maps to C12
+        return self::CURRENT_SU_BLEX_USAGE * $this->bflexBroncoscopePrice; // maps to C12
     }
 
     /**
@@ -258,7 +267,11 @@ class Calculator {
      * @param int $singleUseProcedures
      * @throws Exception if input is invalid.
      */
-    private function validateInputs($totalProcedures, $singleUseProcedures) {
+    private function validateInputs(
+        $totalProcedures, 
+        $singleUseProcedures,
+        $bflexBroncoscopePrice
+    ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
             $errors[] = 'Total Procedures must be an integer.';
@@ -272,6 +285,13 @@ class Calculator {
         if ($totalProcedures < 1) {
             $errors[] = 'Single-Use Procedures must be greater than 0.';
         }
+        if (!is_int($bflexBroncoscopePrice)) {
+            $errors[] = 'Bflex Bronchoscope Price must be an integer.';
+        }
+        if ($bflexBroncoscopePrice < 1) {
+            $errors[] = 'Bflex Bronchoscope Price must be greater than 0.';
+        }
+
         if (count($errors)) {
             throw new \Exception('An error occured while processing the form. ' . implode(' ', $errors));
         }
