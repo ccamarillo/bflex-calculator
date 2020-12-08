@@ -8,16 +8,16 @@ class CalculatorTest extends TestCase {
     public function testInvalidValidateInputsThrowException() {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('An error occured while processing the form. Total Procedures must be an integer. Total Procedures must be greater than 0. Single-Use Procedures must be an integer. Single-Use Procedures must be greater than 0.');
-        $calculator = new Calculator('test', 'something', 'else', 'entirely');
+        $calculator = new Calculator('test', 'something', 'else', 'entirely', 'bad');
     }
 
     public function testValidInputs() {
-        $calculator = new Calculator(100, 50, 265, 30);
+        $calculator = new Calculator(100, 50, 265, 30, 2200);
         $this->assertEquals(get_class($calculator), 'Calculator');
     }
 
     public function testCalculateLow() {
-        $calculator = new Calculator(1000, 750, 265, 30);
+        $calculator = new Calculator(1000, 750, 265, 30, 2200);
         $results = $calculator->calculate();
         $this->assertEquals($results, [
             'current_costs' => [

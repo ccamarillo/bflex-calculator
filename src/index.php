@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$calculator = new Calculator(1000, 750, 265, 30);
+$calculator = new Calculator(1000, 750, 265, 30, 2200);
 
 echo '<pre>';
 var_dump($calculator->calculate());

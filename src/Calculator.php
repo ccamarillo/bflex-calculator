@@ -3,7 +3,7 @@
 class Calculator {
 
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
-    private const CURRENT_ANNUAL_SERVICE_PER = 2200; // maps to C15
+    // private const CURRENT_ANNUAL_SERVICE_PER = 2200; // maps to C15
     private const CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR = 53; // maps to factor in C16
     private const REPROCESSING_CALC_METHOD = 'low'; // maps to C19
     private const CROSS_CONTAMINATION_FACTOR_A = .034; // maps to first factor in C28
@@ -46,6 +46,7 @@ class Calculator {
     private $proceduresRequiringReusable; // maps to C6
     private $bflexBroncoscopePrice; // maps to C7
     private $currentReusableQuantity; // maps to C14
+    private $currentAnnualServicePer; // maps to C15
 
     /**
      * Bootstraps the calculator with client input
@@ -58,13 +59,15 @@ class Calculator {
         $totalProcedures, 
         $singleUseProcedures,
         $bflexBroncoscopePrice,
-        $currentReusableQuantity
+        $currentReusableQuantity,
+        $currentAnnualServicePer
     ) {
         $this->validateInputs(
             $totalProcedures, 
             $singleUseProcedures,
             $bflexBroncoscopePrice,
-            $currentReusableQuantity
+            $currentReusableQuantity,
+            $currentAnnualServicePer
         );
 
         $this->totalProcedures = $totalProcedures; 
@@ -72,6 +75,7 @@ class Calculator {
         $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
         $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
         $this->currentReusableQuantity = $currentReusableQuantity;
+        $this->currentAnnualServicePer = $currentAnnualServicePer;
     }
 
     /**
@@ -115,7 +119,7 @@ class Calculator {
         $oopRepairAll = $this->getMaintainingAnnualOopRepairAll();
         return [
             'annual_oop_repair_all' => $oopRepairAll, // maps to F16
-            'total_annual_maint_repair' => (self::CURRENT_ANNUAL_SERVICE_PER * self::REDUCING_REUSABLE_SCOPES) + $oopRepairAll, // maps to F17
+            'total_annual_maint_repair' => ($this->currentAnnualServicePer * self::REDUCING_REUSABLE_SCOPES) + $oopRepairAll, // maps to F17
         ];
     }
 
@@ -258,7 +262,7 @@ class Calculator {
      */
     private function getCurrentRepairMaintenance() {
         $annualOopRepairAll = $this->getAnnualOopRepairAll();
-        $totalAnnualMaintRepair = (self::CURRENT_ANNUAL_SERVICE_PER * $this->currentReusableQuantity) + $annualOopRepairAll;
+        $totalAnnualMaintRepair = ($this->currentAnnualServicePer * $this->currentReusableQuantity) + $annualOopRepairAll;
 
         return [
             'annual_oop_repair_all' => $annualOopRepairAll, // maps to C16
@@ -272,13 +276,15 @@ class Calculator {
      * @param int $singleUseProcedures
      * @param int $bflexBroncoscopePrice
      * @param int $currentReusableQuantity
+     * @param int $currentAnnualServicePer
      * @throws Exception if input is invalid.
      */
     private function validateInputs(
         $totalProcedures, 
         $singleUseProcedures,
         $bflexBroncoscopePrice,
-        $currentReusableQuantity
+        $currentReusableQuantity,
+        $currentAnnualServicePer
     ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
@@ -304,6 +310,12 @@ class Calculator {
         }
         if ($currentReusableQuantity < 1) {
             $errors[] = 'Current Resusable Quantity must be greater than 0.';
+        }
+        if (!is_int($currentAnnualServicePer)) {
+            $errors[] = 'Current Annual Service Per must be an integer.';
+        }
+        if ($currentAnnualServicePer < 1) {
+            $errors[] = 'Current Annual Service Per must be greater than 0.';
         }
 
         if (count($errors)) {
