@@ -22,7 +22,7 @@ class CalculatorTest extends TestCase {
         $results = $calculator->calculate();
         $this->assertEquals($results, [
             'current_costs' => [
-                'total_su_bflex_cost' => 1325,
+                'total_su_bflex_cost' => 0,
                 'repair_maintenance' => [
                     'annual_oop_repair_all' =>  53000,
                     'total_annual_maint_repair' => 119000,
@@ -34,22 +34,7 @@ class CalculatorTest extends TestCase {
                     'patient_infections' => 7,
                     'annual_costs' => 205067,
                 ],
-                'total_costs' => 375532,
-            ],
-            'maintaining_costs' => [
-                'total_su_bflex_cost' =>  198750,
-                'repair_maintenance' => [
-                    'annual_oop_repair_all' =>  13250,
-                    'total_annual_maint_repair' => 79250
-                ],
-                'reprocessing' => [
-                    'total_annual_reprocessing_costs' => 12535
-                ],
-                'treating_infections' => [
-                    'patient_infections' => 2,
-                    'annual_costs' =>  51267
-                ],
-                'total_costs' =>  341802 
+                'total_costs' => 374207,
             ],
             'reducing_costs' => [
                 'total_su_bflex_cost' => 198750,
