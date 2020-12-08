@@ -4,7 +4,6 @@ class Calculator {
 
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
     private const CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR = 53; // maps to factor in C16
-    private const REPROCESSING_CALC_METHOD = 'low'; // maps to C19
     private const CROSS_CONTAMINATION_FACTOR_A = .034; // maps to first factor in C28
     private const CROSS_CONTAMINATION_FACTOR_B = .2125; // maps to second factor in C28
     private const COST_PER_INFECTION = 28383; // maps to C30
@@ -46,6 +45,7 @@ class Calculator {
     private $bflexBroncoscopePrice; // maps to C7
     private $currentReusableQuantity; // maps to C14
     private $currentAnnualServicePer; // maps to C15
+    private $reprocessingCalcMethod; // maps to C19
 
     /**
      * Bootstraps the calculator with client input
@@ -53,20 +53,24 @@ class Calculator {
      * @param int $singleUseProcedures
      * @param int $bflexBroncoscopePrice
      * @param int $currentReusableQuantity
+     * @param int $currentAnnualServicePer,
+     * @param string $reprocessingCalcMethod
      */
     public function __construct(
         $totalProcedures, 
         $singleUseProcedures,
         $bflexBroncoscopePrice,
         $currentReusableQuantity,
-        $currentAnnualServicePer
+        $currentAnnualServicePer,
+        $reprocessingCalcMethod
     ) {
         $this->validateInputs(
             $totalProcedures, 
             $singleUseProcedures,
             $bflexBroncoscopePrice,
             $currentReusableQuantity,
-            $currentAnnualServicePer
+            $currentAnnualServicePer,
+            $reprocessingCalcMethod
         );
 
         $this->totalProcedures = $totalProcedures; 
@@ -75,6 +79,7 @@ class Calculator {
         $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
         $this->currentReusableQuantity = $currentReusableQuantity;
         $this->currentAnnualServicePer = $currentAnnualServicePer;
+        $this->reprocessingCalcMethod = $reprocessingCalcMethod;
     }
 
     /**
@@ -217,11 +222,11 @@ class Calculator {
      * @return int
      */
     private function getSumReprocessingCosts() {
-        if (self::REPROCESSING_CALC_METHOD == 'average') {
+        if ($this->reprocessingCalcMethod == 'average') {
             $costs = $this->reprocessingCostsAverage;
-        } else if (self::REPROCESSING_CALC_METHOD == 'low') {
+        } else if ($this->reprocessingCalcMethod == 'low') {
             $costs = $this->reprocessingCostsLow;
-        } else if (self::REPROCESSING_CALC_METHOD == 'high') {
+        } else if ($this->reprocessingCalcMethod == 'high') {
             $costs = $this->reprocessingCostsHigh;
         } else {
             throw new \Exception('Unsupported reprocessing calculation method.');
@@ -276,6 +281,7 @@ class Calculator {
      * @param int $bflexBroncoscopePrice
      * @param int $currentReusableQuantity
      * @param int $currentAnnualServicePer
+     * @param string $reprocessingCalcMethod
      * @throws Exception if input is invalid.
      */
     private function validateInputs(
@@ -283,7 +289,8 @@ class Calculator {
         $singleUseProcedures,
         $bflexBroncoscopePrice,
         $currentReusableQuantity,
-        $currentAnnualServicePer
+        $currentAnnualServicePer,
+        $reprocessingCalcMethod
     ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
@@ -315,6 +322,9 @@ class Calculator {
         }
         if ($currentAnnualServicePer < 1) {
             $errors[] = 'Current Annual Service Per must be greater than 0.';
+        }
+        if ($reprocessingCalcMethod !== 'low' && $reprocessingCalcMethod !== 'average' && $reprocessingCalcMethod !== 'high') {
+            $errors[] = 'Reprocessing Calculation Method must be "low", "average", or "high".';
         }
 
         if (count($errors)) {
