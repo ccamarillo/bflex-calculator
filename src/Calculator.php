@@ -3,7 +3,6 @@
 class Calculator {
 
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
-    // private const CURRENT_ANNUAL_SERVICE_PER = 2200; // maps to C15
     private const CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR = 53; // maps to factor in C16
     private const REPROCESSING_CALC_METHOD = 'low'; // maps to C19
     private const CROSS_CONTAMINATION_FACTOR_A = .034; // maps to first factor in C28
