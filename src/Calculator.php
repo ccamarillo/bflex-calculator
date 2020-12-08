@@ -46,6 +46,7 @@ class Calculator {
     private $currentReusableQuantity; // maps to C14
     private $currentAnnualServicePer; // maps to C15
     private $reprocessingCalcMethod; // maps to C19
+    private $currentInfections; // maps to C29
 
     /**
      * Bootstraps the calculator with client input
@@ -54,7 +55,8 @@ class Calculator {
      * @param int $bflexBroncoscopePrice
      * @param int $currentReusableQuantity
      * @param int $currentAnnualServicePer,
-     * @param string $reprocessingCalcMethod
+     * @param string $reprocessingCalcMethod,
+     * @param int $currentInfections
      */
     public function __construct(
         $totalProcedures, 
@@ -62,7 +64,8 @@ class Calculator {
         $bflexBroncoscopePrice,
         $currentReusableQuantity,
         $currentAnnualServicePer,
-        $reprocessingCalcMethod
+        $reprocessingCalcMethod,
+        $currentInfections
     ) {
         $this->validateInputs(
             $totalProcedures, 
@@ -70,7 +73,8 @@ class Calculator {
             $bflexBroncoscopePrice,
             $currentReusableQuantity,
             $currentAnnualServicePer,
-            $reprocessingCalcMethod
+            $reprocessingCalcMethod,
+            $currentInfections
         );
 
         $this->totalProcedures = $totalProcedures; 
@@ -80,6 +84,7 @@ class Calculator {
         $this->currentReusableQuantity = $currentReusableQuantity;
         $this->currentAnnualServicePer = $currentAnnualServicePer;
         $this->reprocessingCalcMethod = $reprocessingCalcMethod;
+        $this->currentInfections = $currentInfections;
     }
 
     /**
@@ -100,8 +105,8 @@ class Calculator {
     private function getReducingCosts() {
         $totalBFlexCost = $this->singleUseProcedures * $this->bflexBroncoscopePrice;
         $repairMaintenance = $this->getReducingRepairMaintenance();
-        $reprocessing = $this->getMaintainingReprocessing();
-        $treatingInfections = $this->getMaintainingTreatingInfections();
+        $reprocessing = $this->getReducingReprocessing();
+        $treatingInfections = $this->getReducingTreatingInfections();
         $totalCosts = 
             $totalBFlexCost +
             $repairMaintenance['total_annual_maint_repair'] +
@@ -120,7 +125,7 @@ class Calculator {
      * Gets "reducing" column repair and maintenance costs
      */
     private function getReducingRepairMaintenance() {
-        $oopRepairAll = $this->getMaintainingAnnualOopRepairAll();
+        $oopRepairAll = $this->getAnnualOopRepairAll() * ($this->proceduresRequiringReusable / $this->totalProcedures);
         return [
             'annual_oop_repair_all' => $oopRepairAll, // maps to F16
             'total_annual_maint_repair' => ($this->currentAnnualServicePer * self::REDUCING_REUSABLE_SCOPES) + $oopRepairAll, // maps to F17
@@ -128,39 +133,29 @@ class Calculator {
     }
 
     /**
-     * Gets costs for treating infections under "maintaining" column
+     * Gets costs for treating infections under "reducing" column
      * @return array
      */
-    private function getMaintainingTreatingInfections() {
-        // $patientInfections = $this->getCurrentTreatingInfections() * ($this->proceduresRequiringReusable / $this->totalProcedures);
-        $factor = $this->proceduresRequiringReusable / $this->totalProcedures;
-        $patientInfections = $this->getCurrentPatientInfections() * $factor;
-        $annualCosts = round($patientInfections * self::COST_PER_INFECTION);
+    private function getReducingTreatingInfections() {
+        $patientInfections = $this->currentInfections * ($this->proceduresRequiringReusable / $this->totalProcedures);
+        $annualCosts = $patientInfections * self::COST_PER_INFECTION;
 
         return [
-            'patient_infections' => round($patientInfections), // maps to E29
-            'annual_costs' => $annualCosts
+            'patient_infections' => $patientInfections, // maps to E29
+            'annual_costs' => round($annualCosts)
         ];
     }
 
     /** 
-     * Get reprocessing costs for "Maintaining" column.
+     * Get reprocessing costs for "Reducing" column.
      * @return array associative array
      */
-    private function getMaintainingReprocessing() {
+    private function getReducingReprocessing() {
         $baseCost = $this->getSumReprocessingCosts();
 
         return [
-            'total_annual_reprocessing_costs' => $baseCost * ($this->totalProcedures - $this->singleUseProcedures) // maps to E27
+            'total_annual_reprocessing_costs' => $baseCost * ($this->totalProcedures - $this->singleUseProcedures) // maps to F27
         ];
-    }
-
-    /**
-     * Get annual OOP for repair in "maintaining" column
-     * @return int
-     */
-    private function getMaintainingAnnualOopRepairAll() {
-        return $this->getAnnualOopRepairAll() * ($this->proceduresRequiringReusable / $this->totalProcedures);
     }
 
     /**
@@ -194,25 +189,17 @@ class Calculator {
     private function getCurrentTotalBFlexCost() {
         return self::CURRENT_SU_BLEX_USAGE * $this->bflexBroncoscopePrice; // maps to C12
     }
-
-    /**
-     * Get patient infections for "current" column
-     * @return int
-     */
-    private function getCurrentPatientInfections() {
-        return ($this->totalProcedures * self::CROSS_CONTAMINATION_FACTOR_A) * self::CROSS_CONTAMINATION_FACTOR_B;
-    }
     
     /**
      * Retrieve an array of current infection costs
      * @return array associative array
      */
     private function getCurrentTreatingInfections() {
-        $patientInfections = $this->getCurrentPatientInfections();
+        $patientInfections = $this->currentInfections;
+        
         $annualCosts = self::COST_PER_INFECTION * $patientInfections;
-
         return [
-            'patient_infections' => (int) round($patientInfections), // maps to C29
+            'patient_infections' => $patientInfections, // maps to C29
             'annual_costs' => (int) round($annualCosts) // maps to C31
         ];
     }
@@ -282,6 +269,7 @@ class Calculator {
      * @param int $currentReusableQuantity
      * @param int $currentAnnualServicePer
      * @param string $reprocessingCalcMethod
+     * @param int $currentInfections
      * @throws Exception if input is invalid.
      */
     private function validateInputs(
@@ -290,7 +278,8 @@ class Calculator {
         $bflexBroncoscopePrice,
         $currentReusableQuantity,
         $currentAnnualServicePer,
-        $reprocessingCalcMethod
+        $reprocessingCalcMethod,
+        $currentInfections
     ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
@@ -325,6 +314,9 @@ class Calculator {
         }
         if ($reprocessingCalcMethod !== 'low' && $reprocessingCalcMethod !== 'average' && $reprocessingCalcMethod !== 'high') {
             $errors[] = 'Reprocessing Calculation Method must be "low", "average", or "high".';
+        }
+        if ($currentInfections < 1) {
+            $errors[] = 'Current Infections Per must be greater than 0.';
         }
 
         if (count($errors)) {
