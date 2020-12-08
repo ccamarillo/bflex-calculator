@@ -3,7 +3,6 @@
 class Calculator {
 
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
-    private const CURRENT_REUSABLE_QUANTITY = 30; // maps to C14
     private const CURRENT_ANNUAL_SERVICE_PER = 2200; // maps to C15
     private const CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR = 53; // maps to factor in C16
     private const REPROCESSING_CALC_METHOD = 'low'; // maps to C19
@@ -46,27 +45,33 @@ class Calculator {
     private $singleUseProcedures; // maps to C5
     private $proceduresRequiringReusable; // maps to C6
     private $bflexBroncoscopePrice; // maps to C7
+    private $currentReusableQuantity; // maps to C14
 
     /**
      * Bootstraps the calculator with client input
      * @param int $totalProcedures
      * @param int $singleUseProcedures
+     * @param int $bflexBroncoscopePrice
+     * @param int $currentReusableQuantity
      */
     public function __construct(
         $totalProcedures, 
         $singleUseProcedures,
-        $bflexBroncoscopePrice
+        $bflexBroncoscopePrice,
+        $currentReusableQuantity
     ) {
         $this->validateInputs(
             $totalProcedures, 
             $singleUseProcedures,
-            $bflexBroncoscopePrice
+            $bflexBroncoscopePrice,
+            $currentReusableQuantity
         );
 
         $this->totalProcedures = $totalProcedures; 
         $this->singleUseProcedures = $singleUseProcedures; 
         $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
         $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
+        $this->currentReusableQuantity = $currentReusableQuantity;
     }
 
     /**
@@ -253,7 +258,7 @@ class Calculator {
      */
     private function getCurrentRepairMaintenance() {
         $annualOopRepairAll = $this->getAnnualOopRepairAll();
-        $totalAnnualMaintRepair = (self::CURRENT_ANNUAL_SERVICE_PER * self::CURRENT_REUSABLE_QUANTITY) + $annualOopRepairAll;
+        $totalAnnualMaintRepair = (self::CURRENT_ANNUAL_SERVICE_PER * $this->currentReusableQuantity) + $annualOopRepairAll;
 
         return [
             'annual_oop_repair_all' => $annualOopRepairAll, // maps to C16
@@ -265,12 +270,15 @@ class Calculator {
      * Validates inputs and throws and exception on failure.
      * @param int $totalProcedures
      * @param int $singleUseProcedures
+     * @param int $bflexBroncoscopePrice
+     * @param int $currentReusableQuantity
      * @throws Exception if input is invalid.
      */
     private function validateInputs(
         $totalProcedures, 
         $singleUseProcedures,
-        $bflexBroncoscopePrice
+        $bflexBroncoscopePrice,
+        $currentReusableQuantity
     ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
@@ -290,6 +298,12 @@ class Calculator {
         }
         if ($bflexBroncoscopePrice < 1) {
             $errors[] = 'Bflex Bronchoscope Price must be greater than 0.';
+        }
+        if (!is_int($currentReusableQuantity)) {
+            $errors[] = 'Current Resusable Quantity must be an integer.';
+        }
+        if ($currentReusableQuantity < 1) {
+            $errors[] = 'Current Resusable Quantity must be greater than 0.';
         }
 
         if (count($errors)) {
