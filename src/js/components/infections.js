@@ -4,18 +4,19 @@ import { bus } from '../main.js'
 const Infections = {
   template: InfectionsTemplate,
   props: {
-    number_per_year: Number
+    total_procedures: Number,
+    total_infects: Number
   },
   created (){
-    bus.$on('change-total-procedures', (value) => {
-        this.number_per_year = total_infects
-        this.updateInfections(value)
+    bus.$on('change-total-procedures', (total_procedures) => {
+        this.total_procedures = total_procedures
+        this.updateInfections()
     })
   },
   methods: {
-    updateInfections(total_procedures) { 
+    updateInfections() { 
         // FIX ME needs actual formula
-        let total_infects = total_procedures * 100
+        this.total_infects = this.total_procedures * 100
     }
   }
 }

@@ -1,6 +1,7 @@
 const InfectionsTemplate = `
 <div>
-    I am the infections template {{ number_per_year }}
+    Total infections: {{ total_infects }}
+    <input type="hidden" name="current_infections" v-bind:value="total_infects" />
 </div>
 `
 

@@ -38,22 +38,9 @@ const app = new Vue({
         'sections': Section,
         'infections': Infections
     },
-    props: { 
-        total_procedures: Number
-    },
+
     // router,
     template: MainTemplate,
-    // created (){
-    //     bus.$on('change-total-procedures', (value) => {
-    //         alert(value)
-    //         this.header = value;
-    //     })
-    // },
-    methods: {
-        // updateInfections(event) {
-        //     alert('yay!')
-        // }
-    },
     data() {
         return {
             sections: [
@@ -106,22 +93,12 @@ const app = new Vue({
                         }
                     ]
                 },
-                // { 
-                //     id: 2, 
-                //     title: "Cleaning Stuff",
-                //     questions: [
-                //         {
-                //             name: "cleaning_1",
-                //             label: "Cleaning Question 1?",
-                //             tooltip: "test tooltip for total procedures"
-                //         },
-                //         {
-                //             name: "cleaning_2",
-                //             label: "Cleaning Question 2?",
-                //             tooltip: "test tooltip single use procedures"
-                //         }
-                //     ]
-                // },
+                { 
+                    id: 2, 
+                    title: "Infections",
+                    details: '<p>I am a paragraph.</p>',
+                },
+                
             ]
         }
     }

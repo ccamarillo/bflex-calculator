@@ -1,5 +1,6 @@
 import { SectionTemplate } from '../templates/section-template.js'
 import { Question } from './question.js'
+import  { Infections } from './infections.js'
 
 const Section = {
   template: SectionTemplate,
@@ -10,7 +11,8 @@ const Section = {
       details: String,
   },
   components: {
-      'questions': Question
+      'questions': Question,
+      'infections': Infections
   }
 //   props: ['modelValue', 'title', 'message'],
 //   emits: ['update:modelValue'],
