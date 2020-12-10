@@ -4,6 +4,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.esm.browser.mi
 import { MainTemplate } from './templates/main-template.js'
 // import { About } from './components/about.js'
 import { Section } from './components/section.js'
+import { Infections } from './components/infections.js'
 
 // const App = {
 //     data() {
@@ -28,13 +29,31 @@ import { Section } from './components/section.js'
 //   }]
 // })
 
+// EVENT BUS
+export const bus = new Vue();
+
 const app = new Vue({
     el: '#app',
     components: {
-        'sections': Section
+        'sections': Section,
+        'infections': Infections
+    },
+    props: { 
+        total_procedures: Number
     },
     // router,
     template: MainTemplate,
+    // created (){
+    //     bus.$on('change-total-procedures', (value) => {
+    //         alert(value)
+    //         this.header = value;
+    //     })
+    // },
+    methods: {
+        // updateInfections(event) {
+        //     alert('yay!')
+        // }
+    },
     data() {
         return {
             sections: [

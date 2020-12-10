@@ -16,7 +16,7 @@ const MainTemplate = `
                         :details="section.details"
                     ></sections>
                     <!-- INFECTIONS -->
-                    <infections @inputChange="alert('woo')"></infections> 
+                    <infections @change-total-procedures="updateInfections()"></infections> 
                     <input type="submit">Calculate!</button>    
                 </form>
             </div>
