@@ -1,0 +1,15 @@
+.background {
+    width: 100%;
+
+    &.blue {
+        background-color: blue;
+        color: white;
+    }
+    &.white {
+        color: black;
+    }
+}
+
+.container-md {
+    max-width: 768px;
+}

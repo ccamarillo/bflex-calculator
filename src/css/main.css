@@ -1,0 +1,16 @@
+.background {
+  width: 100%;
+}
+.background.blue {
+  background-color: blue;
+  color: white;
+}
+.background.white {
+  color: black;
+}
+
+.container-md {
+  max-width: 768px;
+}
+
+/*# sourceMappingURL=main.css.map */
