@@ -7,9 +7,23 @@ import { Infections } from './components/infections.js'
 export const bus = new Vue();
 
 // AXIOS
-axios.get('./prep.php').then(function(response)  {
-    console.log(response);
-})
+// axios.get('./prep.php').then(function(response)  {
+//     console.log(response);
+// })
+
+/**
+ * Removes an item from an array by value, returns the array
+ */
+Array.prototype.remove = function() {
+    var what, a = arguments, L = a.length, ax;
+    while (L && this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+};
 
 // APP
 const app = new Vue({
@@ -18,7 +32,36 @@ const app = new Vue({
         'sections': Section,
         'infections': Infections
     },
+    props: { 
+        submit_enabled: Boolean, // should we show the submit button?
+        errors: Array // an array of names of input fields currently with validation errors
+    },
+    created (){
+        this.submit_enabled = true
 
+        bus.$on('input-error', (name) => {
+            this.manageSubmitButton(name, false)
+        })
+        bus.$on('input-success', (name) => {
+            this.manageSubmitButton(name, true)
+        })
+
+        this.errors = []
+    },
+    methods: {
+        manageSubmitButton(name, success) {
+            if (success) {
+                this.errors.remove(name)
+            } else {
+                this.errors.push(name)
+            }
+            if (this.errors.length) {
+                this.submit_enabled = false
+            } else {
+                this.submit_enabled = true
+            }
+        }
+    },
     template: MainTemplate,
     data() {
         return {
@@ -31,7 +74,6 @@ const app = new Vue({
                         {
                             name: "total_procedures",
                             label: "Total bronch prodedures",
-                            tooltip: "test tooltip for total procedures",
                             field_type: 'slider',
                             value: 1000,
                             min: 0,
@@ -40,7 +82,6 @@ const app = new Vue({
                         {
                             name: "single_use_procedures",
                             label: "Procedures that could be performed by single-use bronchoscopes",
-                            tooltip: "test tooltip for total procedures",
                             field_type: 'slider',
                             value: 1000,
                             min: 0,

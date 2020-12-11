@@ -18,7 +18,9 @@ const Question = {
         totalAnnualRepairMaintenance: Number,
         total_procedures: Number,
         factor: Number,
-        hiddenCostsPerProcedure: Number
+        hiddenCostsPerProcedure: Number,
+        error: String,
+        tooltip_visible: Boolean
     },
     mounted: function () {
         if (this.value > this.max || this.value < this.in) {
@@ -43,7 +45,7 @@ const Question = {
             this.setReprocessingCalcMethod(0)
         }
 
-        
+        this.tooltip_visible = false
     },
     created: function() {
         // Watch events from event bus
@@ -59,7 +61,6 @@ const Question = {
     },
     methods: {
         setTotalAnnualRepairMaintenance(value) {
-            console.log('getting here')
             if (value == 0) { 
                 this.factor = 53;
             } else if (value == 50) {
@@ -101,16 +102,45 @@ const Question = {
         },
 
         updateValue(value) {
-            this.value = value
+            this.validate(value);
 
-            // if (this.name == 'total_procedures') {
-            //     this.setTotalAnnualRepairMaintenance(value)
-            // }
+            this.value = value
 
             if (this.name == 'current_annual_oop_repair_all_factor') {
                 this.setTotalAnnualRepairMaintenance(value)
                 this.setHiddenCostsPerProcedure(value)   
             }
+        },
+        validate(value) {
+            this.error = false
+            
+            if (this.field_type == 'slider') {
+                if (value < this.min || value > this.max) {
+                    this.error = "The value must between " + this.min + " and " + this.max + "."
+                }
+            }
+
+            if (this.field_type == 'number') {
+                if (value < 1) {
+                    this.error = "The value must be 1 or greater."
+                }
+            }
+
+            if (this.name == 'single_use_procedures') {
+                if (value > this.total_procedures) {
+                    this.error = "The value must be less than or equal to the Total bronch procedures."
+                }
+            }
+
+            if (!this.error) {
+                bus.$emit('input-success', this.name)
+            } else {
+                bus.$emit('input-error', this.name)
+            }
+        },
+        toggleTooltip() {
+            console.log(this.tooltip)
+            this.tooltip_visible = !this.tooltip_visible
         }
     }
 }

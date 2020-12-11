@@ -17,4 +17,8 @@ input.slider {
   width: 100%;
 }
 
+.tooltip-icon {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */

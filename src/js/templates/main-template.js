@@ -15,7 +15,8 @@ const MainTemplate = `
                         :questions="section.questions"
                         :details="section.details"
                     ></sections>
-                    <input type="submit">Calculate!</button>    
+                    <input v-if="submit_enabled" type="submit">Calculate!</input>
+                    <input v-if="!submit_enabled" type="submit" disabled>Fix errors above to calculate results.</input>
                 </form>
             </div>
         </div>
