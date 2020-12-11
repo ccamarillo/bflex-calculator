@@ -49,6 +49,9 @@ const Question = {
         // Watch events from event bus
         bus.$on('change-total-procedures', (total_procedures) => {
             this.total_procedures = total_procedures
+            if (this.name == 'current_annual_oop_repair_all_factor') {
+                this.setTotalAnnualRepairMaintenance(this.value)
+            }
         })
         if (this.name == 'reprocessing_calc_method') {
             this.hiddenCostsPerProcedure = 50.14
@@ -56,6 +59,7 @@ const Question = {
     },
     methods: {
         setTotalAnnualRepairMaintenance(value) {
+            console.log('getting here')
             if (value == 0) { 
                 this.factor = 53;
             } else if (value == 50) {
@@ -98,6 +102,10 @@ const Question = {
 
         updateValue(value) {
             this.value = value
+
+            // if (this.name == 'total_procedures') {
+            //     this.setTotalAnnualRepairMaintenance(value)
+            // }
 
             if (this.name == 'current_annual_oop_repair_all_factor') {
                 this.setTotalAnnualRepairMaintenance(value)
