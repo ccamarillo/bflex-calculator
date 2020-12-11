@@ -9,6 +9,15 @@ RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
 
+# UPDATE APT
+RUN apt-get update
+
+# INSTALL GIT
+RUN apt-get install git -y
+
+# INSTALL WKHTMLTOPDF
+RUN apt-get install xvfb libfontconfig wkhtmltopdf -y
+
 # ENABLE REWRITES
 RUN a2enmod rewrite
 RUN service apache2 restart

@@ -2,9 +2,6 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-
-var_dump($_POST);
-
 $calculator = new Calculator();
 $calculated = $calculator->calculate(
   (int) $_POST['total_procedures'], // totalProcedures
@@ -17,6 +14,18 @@ $calculated = $calculator->calculate(
   (int) $_POST['current_annual_oop_repair_all_factor'] //currentAnnualOopRepairAllFactor
 );
 
-echo '<pre>';
-var_dump($calculated);
-echo '</pre>';
+$query = http_build_query($_POST);
+
+?>
+
+<html>
+    <body>
+        <h1>Receipt</h1>
+        
+        <a href="bflex-savings.php?<?php echo $query; ?>">Download PDF</a>
+
+        <pre>
+            <?php var_dump($calculated); ?>
+        </pre>
+    </body>
+</html>

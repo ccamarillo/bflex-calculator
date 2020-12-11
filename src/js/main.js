@@ -8,7 +8,7 @@ export const bus = new Vue();
 
 // AXIOS
 axios.get('./prep.php').then(function(response)  {
-    console.log(response)
+    console.log(response);
 })
 
 // APP
