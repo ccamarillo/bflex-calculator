@@ -15,8 +15,7 @@ const Infections = {
   },
   methods: {
     updateInfections() { 
-        // FIX ME needs actual formula
-        this.total_infects = this.total_procedures * 100
+        this.total_infects = ((this.total_procedures * 0.034) * 0.2125).toFixed(2)
     }
   }
 }

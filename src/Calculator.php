@@ -3,7 +3,6 @@
 class Calculator {
 
     private const CURRENT_SU_BLEX_USAGE = 0;  // maps to C11
-    private const CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR = 53; // maps to factor in C16
     private const CROSS_CONTAMINATION_FACTOR_A = .034; // maps to first factor in C28
     private const CROSS_CONTAMINATION_FACTOR_B = .2125; // maps to second factor in C28
     private const COST_PER_INFECTION = 28383; // maps to C30
@@ -47,9 +46,80 @@ class Calculator {
     private $currentAnnualServicePer; // maps to C15
     private $reprocessingCalcMethod; // maps to C19
     private $currentInfections; // maps to C29
+    private $currentAnnualOopRepairAllFactor; // Maps factor in C16
+
+    /** 
+     * Get the sume of a reprocessing costs array 
+     * @param array
+     * @return float
+     * */
+    private function getSum($array) {
+        $subtotal = 0;
+        foreach ($array as $key => $value) {
+            $subtotal += $value;
+        }
+        return $subtotal;
+    }
+    
+    /**
+     * Get an array of things the frontend needs
+     * @return array
+     */
+    public function getPrep() {
+        return [
+            'reprocessingSums' => [
+                'low' => $this->getSum($this->reprocessingCostsLow),
+                'average' => $this->getSum($this->reprocessingCostsAverage),
+                'high' => $this->getSum($this->reprocessingCostsHigh)
+            ]
+            ];
+    }
+
+    // /**
+    //  * Bootstraps the calculator with client input
+    //  * @param int $totalProcedures
+    //  * @param int $singleUseProcedures
+    //  * @param int $bflexBroncoscopePrice
+    //  * @param int $currentReusableQuantity
+    //  * @param int $currentAnnualServicePer,
+    //  * @param string $reprocessingCalcMethod,
+    //  * @param int $currentInfections
+    //  * @param int $currentAnnualOopRepairAllFactor
+    //  */
+    // public function __construct(
+    //     $totalProcedures, 
+    //     $singleUseProcedures,
+    //     $bflexBroncoscopePrice,
+    //     $currentReusableQuantity,
+    //     $currentAnnualServicePer,
+    //     $reprocessingCalcMethod,
+    //     $currentInfections,
+    //     $currentAnnualOopRepairAllFactor
+    // ) {
+    //     $this->validateInputs(
+    //         $totalProcedures, 
+    //         $singleUseProcedures,
+    //         $bflexBroncoscopePrice,
+    //         $currentReusableQuantity,
+    //         $currentAnnualServicePer,
+    //         $reprocessingCalcMethod,
+    //         $currentInfections,
+    //         $currentAnnualOopRepairAllFactor
+    //     );
+
+    //     $this->totalProcedures = $totalProcedures; 
+    //     $this->singleUseProcedures = $singleUseProcedures; 
+    //     $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
+    //     $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
+    //     $this->currentReusableQuantity = $currentReusableQuantity;
+    //     $this->currentAnnualServicePer = $currentAnnualServicePer;
+    //     $this->reprocessingCalcMethod = $reprocessingCalcMethod;
+    //     $this->currentInfections = $currentInfections;
+    //     $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
+    // }
 
     /**
-     * Bootstraps the calculator with client input
+     * Returns an array of calculated values
      * @param int $totalProcedures
      * @param int $singleUseProcedures
      * @param int $bflexBroncoscopePrice
@@ -57,16 +127,20 @@ class Calculator {
      * @param int $currentAnnualServicePer,
      * @param string $reprocessingCalcMethod,
      * @param int $currentInfections
+     * @param int $currentAnnualOopRepairAllFactor
+     * @return array An associative array with calculated values
      */
-    public function __construct(
+    public function calculate(
         $totalProcedures, 
         $singleUseProcedures,
         $bflexBroncoscopePrice,
         $currentReusableQuantity,
         $currentAnnualServicePer,
         $reprocessingCalcMethod,
-        $currentInfections
+        $currentInfections,
+        $currentAnnualOopRepairAllFactor
     ) {
+
         $this->validateInputs(
             $totalProcedures, 
             $singleUseProcedures,
@@ -74,7 +148,8 @@ class Calculator {
             $currentReusableQuantity,
             $currentAnnualServicePer,
             $reprocessingCalcMethod,
-            $currentInfections
+            $currentInfections,
+            $currentAnnualOopRepairAllFactor
         );
 
         $this->totalProcedures = $totalProcedures; 
@@ -85,13 +160,8 @@ class Calculator {
         $this->currentAnnualServicePer = $currentAnnualServicePer;
         $this->reprocessingCalcMethod = $reprocessingCalcMethod;
         $this->currentInfections = $currentInfections;
-    }
+        $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
 
-    /**
-     * Returns an array of calculated values
-     * @return array An associative array with calculated values
-     */
-    public function calculate() {
         return [
             'current_costs' => $this->getCurrentCosts(),
             'reducing_costs' => $this->getReducingCosts(),
@@ -244,7 +314,7 @@ class Calculator {
      * @return int
      */
     private function getAnnualOopRepairAll() {
-        return self::CURRENT_ANNUAL_OOP_REPAIR_ALL_FACTOR * $this->totalProcedures;
+        return $this->currentAnnualOopRepairAllFactor * $this->totalProcedures;
     }
     
     /**
@@ -270,6 +340,7 @@ class Calculator {
      * @param int $currentAnnualServicePer
      * @param string $reprocessingCalcMethod
      * @param int $currentInfections
+     * @param string $currentAnnualOopRepairAllFactor
      * @throws Exception if input is invalid.
      */
     private function validateInputs(
@@ -279,7 +350,8 @@ class Calculator {
         $currentReusableQuantity,
         $currentAnnualServicePer,
         $reprocessingCalcMethod,
-        $currentInfections
+        $currentInfections,
+        $currentAnnualOopRepairAllFactor
     ) {
         $errors = [];
         if (!is_int($totalProcedures)) {
@@ -317,6 +389,9 @@ class Calculator {
         }
         if ($currentInfections < 1) {
             $errors[] = 'Current Infections Per must be greater than 0.';
+        }
+        if (!is_int($currentAnnualOopRepairAllFactor)) {
+            $errors[] = 'Current Annual OOP Repair All Factor must be an integer';
         }
 
         if (count($errors)) {
