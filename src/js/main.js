@@ -1,4 +1,3 @@
-import 'https://cdnjs.cloudflare.com/ajax/libs/core-js/3.8.1/minified.js'
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.esm.browser.min.js'
 import { MainTemplate } from './templates/main-template.js'
 import { Section } from './components/section.js'
@@ -6,11 +5,6 @@ import { Infections } from './components/infections.js'
 
 // EVENT BUS
 export const bus = new Vue();
-
-// AXIOS
-// axios.get('./prep.php').then(function(response)  {
-//     console.log(response);
-// })
 
 /**
  * Removes an item from an array by value, returns the array
