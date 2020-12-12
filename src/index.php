@@ -86,11 +86,10 @@
         <!-- APP CONTAINTER -->
         <div id="app"></div>
 
-        <!-- AXIOS -->
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- CORE-JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.8.1/minified.js" integrity="sha512-k5o5jeMkK/j2+TC3eBQjYbHKh/n0Si5SB05O5DK1h1G+HrCpEL8GJrl1nwkrxLy1XfJpwHEhqoJEvp8NW/8EOA==" crossorigin="anonymous"></script>
 
         <!-- VUE -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.js"></script>
         <script type="module" src="js/main.js"></script>
 
         <!-- BOOTSTRAP -->
