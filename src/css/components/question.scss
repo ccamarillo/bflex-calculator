@@ -1,0 +1,150 @@
+.question {
+    margin-bottom: 24px;
+    max-width: 342px;
+
+    label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    input[type=number] {
+
+        &.full-width {
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        width: 53px;
+        padding: 5px;
+        background-color: $light-grey;
+        color: $blue;
+        font-size: 14px;
+        border: 0px;
+        text-align: center;
+        -moz-appearance: textfield;
+
+        &:focus {
+            border: 0px;
+            background-color: $cyan;
+            color: $white;
+            outline: 0px;
+
+            &::selection {
+                background-color: white;
+                color: $blue;
+            }
+        }
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input.number::-webkit-outer-spin-button,
+    input.number::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 2px;
+        border-radius: 5px;
+        background: $cyan;
+        color: $black;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 21px;
+        border: 0;
+        background: url('../img/slider-handle.png');
+        cursor: pointer;
+    }
+      
+    .slider::-moz-range-thumb {
+        width: 20px;
+        height: 21px;
+        border: 0;
+        background: url('contrasticon.png');
+        cursor: pointer;
+    }
+
+    /** FF*/
+    .slider::-moz-range-progress {
+        background-color: $cyan; 
+    }
+    .slider::-moz-range-track {  
+        background-color: $grey;
+    }
+    /* IE*/
+    .slider::-ms-fill-lower {
+        background-color: $cyan; 
+    }
+    .slider::-ms-fill-upper {  
+        background-color: $grey;
+    }
+
+    
+
+    .slider-ticks {
+        font-size: 10px;
+        color: $grey;
+
+        .container-fluid {
+            padding: 0px;
+        }
+    }
+
+    .error {
+        background-color: $red;
+        font-size: 14px;
+        padding: 18px;
+        color: $white;
+        margin-bottom: 8px;
+    }  
+    
+    .tooltip-wrapper {
+        position: relative;
+        top: -6px;
+
+        .tip {
+            background-color: $blue;
+            color: $white;
+            padding: 18px;
+        }
+    
+        .tip-arrow {
+            height: 8px;
+            text-align: right;
+    
+            img { 
+                display: block;  
+                float: right;
+                margin-right: 18px;
+            }
+        }
+    }
+
+    .output {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 28px;
+        color: $dark-grey;
+        text-align: center;
+
+        span {
+            color: $cyan;
+        }
+    }
+
+    
+}

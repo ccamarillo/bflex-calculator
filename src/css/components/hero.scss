@@ -1,0 +1,64 @@
+
+
+#hero {
+    padding-top: 67px;
+    
+    h1 {
+        font-weight: bold;
+        font-size: 32px;
+        color: $white;
+        margin: 0 0 32px 0;
+        max-width: 516pxl
+    }
+
+    p.eyebrow {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0 0 16px 0;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 59px;
+        line-height: 20px;
+        max-width: 516px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 39px;
+    }
+
+    .cost {
+        margin-bottom: 44px;
+
+        img {
+            margin-bottom: 21px;
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 0px;
+            line-height: 16px;
+            max-width: 516px;
+        }
+    }
+
+    nav.scroll {
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 28px;
+
+        img {
+            margin-right: 15px;
+        }
+    }
+}

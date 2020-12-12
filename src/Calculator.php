@@ -75,49 +75,6 @@ class Calculator {
             ];
     }
 
-    // /**
-    //  * Bootstraps the calculator with client input
-    //  * @param int $totalProcedures
-    //  * @param int $singleUseProcedures
-    //  * @param int $bflexBroncoscopePrice
-    //  * @param int $currentReusableQuantity
-    //  * @param int $currentAnnualServicePer,
-    //  * @param string $reprocessingCalcMethod,
-    //  * @param int $currentInfections
-    //  * @param int $currentAnnualOopRepairAllFactor
-    //  */
-    // public function __construct(
-    //     $totalProcedures, 
-    //     $singleUseProcedures,
-    //     $bflexBroncoscopePrice,
-    //     $currentReusableQuantity,
-    //     $currentAnnualServicePer,
-    //     $reprocessingCalcMethod,
-    //     $currentInfections,
-    //     $currentAnnualOopRepairAllFactor
-    // ) {
-    //     $this->validateInputs(
-    //         $totalProcedures, 
-    //         $singleUseProcedures,
-    //         $bflexBroncoscopePrice,
-    //         $currentReusableQuantity,
-    //         $currentAnnualServicePer,
-    //         $reprocessingCalcMethod,
-    //         $currentInfections,
-    //         $currentAnnualOopRepairAllFactor
-    //     );
-
-    //     $this->totalProcedures = $totalProcedures; 
-    //     $this->singleUseProcedures = $singleUseProcedures; 
-    //     $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
-    //     $this->bflexBroncoscopePrice = $bflexBroncoscopePrice;
-    //     $this->currentReusableQuantity = $currentReusableQuantity;
-    //     $this->currentAnnualServicePer = $currentAnnualServicePer;
-    //     $this->reprocessingCalcMethod = $reprocessingCalcMethod;
-    //     $this->currentInfections = $currentInfections;
-    //     $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
-    // }
-
     /**
      * Returns an array of calculated values
      * @param int $totalProcedures

@@ -14,19 +14,6 @@ const Section = {
       'questions': Question,
       'infections': Infections
   }
-//   props: ['modelValue', 'title', 'message'],
-//   emits: ['update:modelValue'],
-//   computed: {
-//     value: {
-//       get() {
-//         return this.modelValue
-//       },
-//       set(value) {
-//         alert(value)
-//         this.$emit('update:modelValue', value)
-//       }
-//     }
-//   }
 }
 
 export { Section }

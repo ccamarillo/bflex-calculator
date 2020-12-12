@@ -16,11 +16,11 @@ const Question = {
         max: Number,
         step: Number,
         totalAnnualRepairMaintenance: Number,
-        total_procedures: Number,
         factor: Number,
         hiddenCostsPerProcedure: Number,
         error: String,
-        tooltip_visible: Boolean
+        tooltip_visible: Boolean,
+        slider_col_classes: String
     },
     mounted: function () {
         if (this.value > this.max || this.value < this.in) {
@@ -46,7 +46,21 @@ const Question = {
         }
 
         this.tooltip_visible = false
-    },
+
+        if (this.field_type == 'slider') {
+            if (this.tooltip) {
+                this.slider_col_classes = 'col-8'
+            } else {
+                this.slider_col_classes = 'col-9'
+            }
+        } else if (this.field_type == 'text') {
+            if (this.tooltip) {
+                this.slider_col_classes = 'col-10'
+            } else {
+                this.slider_col_classes = 'col-12'
+            }
+        }
+    },  
     created: function() {
         // Watch events from event bus
         bus.$on('change-total-procedures', (total_procedures) => {
@@ -54,7 +68,12 @@ const Question = {
             if (this.name == 'current_annual_oop_repair_all_factor') {
                 this.setTotalAnnualRepairMaintenance(this.value)
             }
+
+            if (this.name == 'single_use_procedures') {
+                this.validate(this.value)
+            }
         })
+
         if (this.name == 'reprocessing_calc_method') {
             this.hiddenCostsPerProcedure = 50.14
         }
@@ -68,7 +87,11 @@ const Question = {
             } else {
                this.factor = 63
             }
-            this.totalAnnualRepairMaintenance = this.factor * parseInt(this.total_procedures)
+            this.totalAnnualRepairMaintenance = this.numberWithCommas(this.factor * parseInt(this.total_procedures))
+        },
+
+        numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
 
         emitChange(event) {
@@ -113,33 +136,45 @@ const Question = {
         },
         validate(value) {
             this.error = false
+            let error = '';
             
             if (this.field_type == 'slider') {
-                if (value < this.min || value > this.max) {
-                    this.error = "The value must between " + this.min + " and " + this.max + "."
+                
+                if (Number.parseInt(value) < this.min || value > this.max) {
+                    error += "The value must between " + this.min + " and " + this.max + ".  "
+                }
+                if (!Number.isInteger(parseFloat(value))) {
+                    error += "The value must be an integer.  "
+                }
+
+                if (this.name == 'single_use_procedures') {
+                    if (Number.parseInt(value) > Number.parseInt(this.total_procedures)) {
+                        console.log('showing')
+                        error += "The value must be less than or equal to the Total bronch procedures.  "
+                    }
                 }
             }
 
             if (this.field_type == 'number') {
                 if (value < 1) {
-                    this.error = "The value must be 1 or greater."
+                    error += "The value must be 1 or greater.  "
+                }
+                if (!Number.isInteger(parseFloat(value))) {
+                    error += "The value must be an integer.  "
                 }
             }
 
-            if (this.name == 'single_use_procedures') {
-                if (value > this.total_procedures) {
-                    this.error = "The value must be less than or equal to the Total bronch procedures."
-                }
-            }
+            
 
-            if (!this.error) {
+            if (error == '') {
+                this.error = false
                 bus.$emit('input-success', this.name)
             } else {
+                this.error = error
                 bus.$emit('input-error', this.name)
             }
         },
         toggleTooltip() {
-            console.log(this.tooltip)
             this.tooltip_visible = !this.tooltip_visible
         }
     }

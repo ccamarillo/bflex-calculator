@@ -1,0 +1,18 @@
+.infections {
+    figcaption {
+        font-size: 16px;
+        line-height: 18px;
+        color: $dark-grey;
+        margin-bottom: 18px;
+    }
+
+    figure {
+        color: $cyan;
+        font-size: 32px;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
