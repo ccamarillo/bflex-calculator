@@ -1,0 +1,59 @@
+.receipt-header {
+
+    -webkit-box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.1); 
+    box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.1);
+    padding: 28px 0 28px 0;
+
+    h2 {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $grey;
+        line-height: 18px;
+        margin-bottom: 0px;
+    }
+}
+
+.results {
+    .row {
+        &.result-section {
+            > div:nth-child(2) {
+                background-color: $light-cyan;
+            }
+        }
+        
+        &.result {
+            > div:nth-child(2) {
+                background-color: $light-cyan;
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 24px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
+    }
+    
+    p {
+        color: $grey;
+        font-size: 14px;
+        line-height: 18px;
+        
+        &.value {
+            text-align: right;
+        }
+    }
+
+    .with {
+        p {
+            margin-left: 20px;
+        }
+    }
+    
+}

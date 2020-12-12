@@ -19,6 +19,9 @@
   line-height: 20px;
   max-width: 516px;
 }
+#hero p.normal {
+  margin-bottom: 32px;
+}
 #hero h2 {
   text-transform: uppercase;
   font-size: 14px;
@@ -49,6 +52,23 @@
 }
 #hero nav.scroll img {
   margin-right: 15px;
+}
+#hero a.button {
+  background-color: #00BFB2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  border: 0px;
+  outline: 0px;
+  padding: 13px 20px 13px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 64px;
+}
+#hero a.button:hover {
+  background-color: #D8D8D8;
+  color: #000;
 }
 
 .section {
@@ -230,7 +250,7 @@
 .get-results button {
   background-color: #003C71;
   color: #fff;
-  font-size: 15;
+  font-size: 15px;
   font-weight: bold;
   width: 100%;
   text-align: center;
@@ -270,6 +290,47 @@
 .footer p span {
   margin-right: 16px;
   display: inline-block;
+}
+
+.receipt-header {
+  -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+  padding: 28px 0 28px 0;
+}
+.receipt-header h2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.receipt-header p {
+  font-size: 14px;
+  color: #7c7c7c;
+  line-height: 18px;
+  margin-bottom: 0px;
+}
+
+.results .row.result-section > div:nth-child(2) {
+  background-color: rgba(0, 191, 178, 0.2);
+}
+.results .row.result > div:nth-child(2) {
+  background-color: rgba(0, 191, 178, 0.2);
+}
+.results h3 {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+.results p {
+  color: #7c7c7c;
+  font-size: 14px;
+  line-height: 18px;
+}
+.results p.value {
+  text-align: right;
+}
+.results .with p {
+  margin-left: 20px;
 }
 
 html {
