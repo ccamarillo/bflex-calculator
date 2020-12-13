@@ -71,7 +71,7 @@ class Calculator {
                 'average' => $this->getSum($this->reprocessingCostsAverage),
                 'high' => $this->getSum($this->reprocessingCostsHigh)
             ]
-            ];
+        ];
     }
 
     /**
@@ -115,6 +115,7 @@ class Calculator {
         $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
 
         return [
+            'cost_per_infection' => self::COST_PER_INFECTION,
             'reprocessing_costs' => $this->getReprocessingCosts(),
             'current_costs' => $this->getCurrentCosts(),
             'reducing_costs' => $this->getReducingCosts(),

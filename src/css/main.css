@@ -309,17 +309,50 @@
   margin-bottom: 0px;
 }
 
+.results hr {
+  margin-top: 0px;
+}
 .results .row.result-section > div:nth-child(2) {
   background-color: rgba(0, 191, 178, 0.2);
 }
 .results .row.result > div:nth-child(2) {
   background-color: rgba(0, 191, 178, 0.2);
 }
+.results .row.result.reprocessing p {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.results .row.result.reprocessing hr {
+  display: none;
+}
+.results .row.result.reprocessing hr.show {
+  display: block !important;
+}
+.results .row.result.reprocessing-costs .value {
+  font-weight: bold;
+}
+.results .row.result.reprocessing-costs hr {
+  display: none;
+}
+.results .row div.total.grand p {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.results .row div.total p {
+  font-weight: bold;
+  color: #003C71;
+  margin-bottom: 40px;
+}
+.results .row div.total.with p {
+  color: #00BFB2;
+}
 .results h3 {
   margin-top: 24px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 .results p {
   color: #7c7c7c;
@@ -328,9 +361,32 @@
 }
 .results p.value {
   text-align: right;
+  font-size: 16px;
 }
-.results .with p {
-  margin-left: 20px;
+
+.download-footer h2 {
+  margin-top: 33px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.download-footer a.button {
+  background-color: #00BFB2;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  border: 0px;
+  outline: 0px;
+  padding: 13px 20px 13px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  float: right;
+}
+.download-footer a.button:hover {
+  background-color: #D8D8D8;
+  color: #000;
 }
 
 html {

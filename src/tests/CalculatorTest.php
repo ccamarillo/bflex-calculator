@@ -22,6 +22,7 @@ class CalculatorTest extends TestCase {
         $calculator = new Calculator();
         $results = $calculator->calculate(1000, 750, 265, 30, 2200, 'low', 53);;
         $this->assertEquals($results, [
+            'cost_per_infection' => 28383,
             'reprocessing_costs' => [
                 'method' => 'low',
                 'details' => [
