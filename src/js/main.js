@@ -78,7 +78,7 @@ const app = new Vue({
                             name: "single_use_procedures",
                             label: "Procedures that could be performed by single-use bronchoscopes",
                             field_type: 'slider',
-                            value: 1000,
+                            value: 750,
                             min: 0,
                             max: 5000,
                         },
@@ -87,7 +87,7 @@ const app = new Vue({
                             label: "Your BFlex™ bronchoscope price",
                             tooltip: "test tooltip single use procedures",
                             field_type: 'number',
-                            value: 256,
+                            value: 265,
                         }
                     ]
                 },
@@ -135,7 +135,7 @@ const app = new Vue({
                             label: "Reprocessing Costs ",
                             tooltip: "test tooltip single use procedures",
                             field_type: 'text',
-                            value: 0,
+                            value: 50,
                             min: 0,
                             max: 100
                         },

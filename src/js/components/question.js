@@ -75,7 +75,7 @@ const Question = {
         })
 
         if (this.name == 'reprocessing_calc_method') {
-            this.hiddenCostsPerProcedure = 50.14
+            this.setHiddenCostsPerProcedure(this.value)
         }
     },
     methods: {
