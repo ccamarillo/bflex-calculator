@@ -41,6 +41,10 @@ body {
 .container-md {
     max-width: 768px;
     padding: 0 30px 0 30px;
+
+    .pdf & {
+        max-width: none;
+    }
 }
 
 input.slider {
