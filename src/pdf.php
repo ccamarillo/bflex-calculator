@@ -21,6 +21,7 @@ $calculated = $calculator->calculate(
   <body>
     <h1>PDF</h1>
     <pre>
-    <?php echo var_dump($calculated); ?>
-  </pre>
-</body>
+     <?php echo var_dump($calculated); ?>
+    </pre>
+  </body>
+</html>
