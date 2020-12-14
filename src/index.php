@@ -8,18 +8,16 @@
         <link href="css/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container-md">
-            <nav>
-                <a class="hidden-text" href="https://www.verathon.com/glidescope-bflex/">GlideScope BFlex</a>
-            </nav>
-        </div>
+
+        <?php require('nav.php'); ?>
+        
         <div id="hero" class="background blue">
             <div class="container-md">
                 <div class="row">
                     <div class="col-md-9 col-sm-12">
-                        <h1>Single-Use. Safer Investment</h1>
+                        <h1>Single-Use. Safer Investment.</h1>
                         <p class="eyebrow">See How Costs Compare: Single-Use vs. Reusable Bronchoscopes</p>
-                        <p>Hidden costs, procedure delays, and cross-contamination are all linked to reusable bronchoscopes. Calculate the ROI of reducing reusables and adopting more single-use scopes for your hospital in four easy steps.</p>
+                        <p>There’s a misconception that single-use bronchoscopes are too expensive, yet hidden costs, procedure delays, and increased rates of infection are linked to reusables. Use this calculator to see where and how much your hospital might save by adopting more single-use bronchoscopes.</p>
                         <h2>Cost for reusables at a glance</h2>
                     </div>
                 </div>
@@ -31,7 +29,7 @@
                                 Reprocessing
                             </h3>
                             <p>
-                                Getting reusables patient-ready is extensive and time-consuming. Excluding repairs, staff and technician time, the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L. et al). 
+                                One endoscope can cost $50.14 to $152.66 on reprocessing alone, not including repairs or disposal of damaged parts. 
                             </p>
                         </div>
                     </div>
@@ -42,7 +40,7 @@
                                 Repairs and service
                             </h3>
                             <p>
-                                Damage to reusable bronchoscopes is common during procedures and repair costs can be expensive. One study cites $148 for repairs per use (Sohrt, Anne, et al). 
+                                Preventable damage can cost over $2k per scope annually in out-of-pocket repairs, and scopes sent for repair affect availability. 
                             </p>
                         </div>
                     </div>
@@ -85,6 +83,8 @@
 
         <!-- APP CONTAINTER -->
         <div id="app"></div>
+
+        <?php require('footer.php'); ?>
 
         <!-- VUE -->
         <script type="module" src="js/main.js"></script>

@@ -8,6 +8,9 @@
         "phpunit/phpunit": "^9"
     },
     "require": {
-        "mikehaertl/phpwkhtmltopdf": "^2.4"
+        "mikehaertl/phpwkhtmltopdf": "^2.4",
+        "dompdf/dompdf": "^0.8.6",
+        "cloudconvert/cloudconvert-php": "^3.2",
+        "php-http/guzzle7-adapter": "^0.1.1"
     }
 }
