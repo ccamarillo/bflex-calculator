@@ -388,6 +388,10 @@
   color: #000;
 }
 
+body.pdf h1, body.pdf h2 p {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 html {
   font-size: 16;
 }
