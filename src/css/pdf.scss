@@ -1,0 +1,19 @@
+@import 'colors';
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#content {
+    width: 8.5in;
+    height: 11in;
+    padding: .25in;
+    
+    .hero {
+        width: 100%;
+        background-color: $blue;
+        color: $white;
+        padding: .25in;
+    }
+}

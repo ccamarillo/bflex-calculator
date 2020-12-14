@@ -1,0 +1,18 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#content {
+  width: 8.5in;
+  height: 11in;
+  padding: 0.25in;
+}
+#content .hero {
+  width: 100%;
+  background-color: #003C71;
+  color: #fff;
+  padding: 0.25in;
+}
+
+/*# sourceMappingURL=pdf.css.map */
