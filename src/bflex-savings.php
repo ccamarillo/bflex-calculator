@@ -2,6 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+header('Content-Type: application/pdf');
+
 use \CloudConvert\CloudConvert;
 use \CloudConvert\Models\Job;
 use \CloudConvert\Models\Task;
@@ -50,48 +52,37 @@ DOC;
     </body>
 </html>
 DOC;
-echo '<pre>';
-echo 'http://cmd-dev.frb.io/bflex-calculator/src/pdf.php?' . $query;
-echo '</pre>';
-echo '<Br />';
 
 $job = (new Job())
     ->setTag('bflex-calculator-results')
     ->addTask(
-        (new Task('import/url', 'import-html'))
-            // ->set('url', 'http://localhost/receipt.php?' . $query)
-            // ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/')
+        (new Task('capture-website', 'import-html'))
             ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf.php?' . $query)
             ->set('filename', 'pdf.pdf')
-    )
-    ->addTask(
-        (new Task('convert', 'convert-pdf'))
-            ->set('input', 'import-html')
-            ->set('input_format', 'html')
             ->set('output_format', 'pdf')
-            ->set('engine', 'wkhtml')
     )
     ->addTask(
         (new Task('export/url', 'export-pdf'))
-            ->set('input', 'convert-pdf')
+            ->set('input', 'import-html')
     );
 
 $cloudconvert->jobs()->create($job);
 $cloudconvert->jobs()->wait($job); // Wait for job completion
 
-if ($job->getStatus() != 'finished') {
-    // if 
-    echo '<pre>';
-    echo var_dump($job->getTasks());
-    echo '</pre>';
-}
+// if ($job->getStatus() != 'finished') {
+//     // if 
+//     echo '<pre>';
+//     echo var_dump($job->getTasks());
+//     echo '</pre>';
+// }
 
 foreach ($job->getExportUrls() as $file) {
-    echo 'here';
-    $source = $cloudconvert->getHttpTransport()->download($file->url)->detach();
+    // $source = $cloudconvert->getHttpTransport()->download($file->url)->detach();
+    $source = $cloudconvert->getHttpTransport()->download($file->url);
+    // var_dump($source);
     echo $source;
-    $dest = fopen('output/' . $file->filename, 'w');
-    stream_copy_to_stream($source, $dest);
+    // $dest = fopen('output/' . $file->filename, 'w');
+    // stream_copy_to_stream($source, $dest);
 }
 
 
