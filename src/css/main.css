@@ -395,6 +395,9 @@ html {
 body {
   font-family: "Helvetica", "Arial", "Verdana", sans-serif;
 }
+body.pdf {
+  font-family: "Open Sans", "Arial", "Verdana", sans-serif;
+}
 
 .background {
   width: 100%;
