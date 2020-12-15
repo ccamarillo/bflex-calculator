@@ -37,8 +37,62 @@ body {
 }
 #content .hero p {
   font-size: 9.6pt;
-  width: 328px;
+  width: 328pt;
   line-height: 13.4pt;
+}
+#content table {
+  width: 100%;
+}
+#content table td {
+  width: 50%;
+  border-left: 1px solid #C2C1C1;
+  border-bottom: 1px solid #C2C1C1;
+  padding: 22pt 21pt 22pt 35.6pt;
+  vertical-align: top;
+}
+#content table td.with {
+  background-color: rgba(0, 191, 178, 0.2);
+  border-right: 1px solid #C2C1C1;
+  border-left: 0px;
+  padding: 22pt 21pt 22pt 35.6pt;
+}
+#content table td.with h3 {
+  color: #00BFB2;
+}
+#content table td h3 {
+  color: #003C71;
+  font-weight: bold;
+  margin-bottom: 12pt;
+  font-size: 15.4pt;
+}
+#content table td h4 {
+  font-size: 11.5pt;
+  color: #000;
+  margin-bottom: 10.8pt;
+  font-weight: bold;
+}
+#content table td table td {
+  border: 0px;
+  padding: 0px;
+  vertical-align: top;
+  font-size: 7.7pt;
+  color: #62605E;
+}
+#content table td table td:last-child {
+  text-align: right;
+  font-size: 10pt;
+  font-weight: bold;
+}
+#content table td table.sum h4 {
+  color: #003C71;
+}
+#content table td table.sum td:last-child {
+  font-size: 11.5pt;
+  color: #003C71;
+  font-weight: bold;
+}
+#content table td hr {
+  margin-top: 5.4pt;
 }
 
 /*# sourceMappingURL=pdf.css.map */

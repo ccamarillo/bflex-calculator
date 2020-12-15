@@ -38,6 +38,45 @@ $calculated = $calculator->calculate(
                     Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you’re helping to reduce preventable infections from cross-contamination and save time on repairs and reprocessing*.
                 </p>
             </div>
+            <table>
+                <tr>
+                    <td>
+                        <h3>Current Costs</h3>
+                        <h4>Current Bronchoscope Usage</h4>
+                        <table>
+                            <tr>
+                                <td>
+                                    Single use BFlex scopes
+                                </td>
+                                <td>
+                                    $<?php echo $calculated['current_costs']['equipment_costs']['single_use_scopes']; ?>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr />
+                        <table class="sum">
+                            <tr>
+                                <td>
+                                    <h4>Annual Costs</h4>
+                                </td>
+                                <td>
+                                    $<?php echo number_format($calculated['reducing_costs']['equipment_costs']['total_su_bflex_cost']) ?>
+                                </td>
+                            </tr>
+                        </table>
+
+
+                    </td>
+                    <td class="with">
+                        <h3>
+                            With BFlex™
+                        </h3>
+                        <h4>
+                            Current Bronchoscope Usage
+                        </h4>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <?php // include('results.php'); ?>
