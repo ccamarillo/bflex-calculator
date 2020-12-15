@@ -4,8 +4,7 @@ body {
 }
 
 #content {
-  width: 8.5in;
-  height: 11in;
+  width: 100%;
   padding: 0.25in;
 }
 #content .hero {
@@ -13,6 +12,7 @@ body {
   background-color: #003C71;
   color: #fff;
   padding: 0.25in;
+  margin: 0px;
 }
 
 /*# sourceMappingURL=pdf.css.map */
