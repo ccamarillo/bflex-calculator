@@ -105,7 +105,7 @@ const QuestionTemplate = `
 
         <!-- OUTPUT -->
         <div v-if="name == 'current_annual_oop_repair_all_factor'" class="output container">
-            <span>\${{ totalAnnualRepairMaintenance }}</span> annual OOP repair cost
+            <span>\${{ totalAnnualRepairMaintenance }}</span> annual out-of-pocket repair costs
         </div>
         <div v-if="name == 'reprocessing_calc_method'" class="output container">
             <span>\${{ hiddenCostsPerProcedure }}</span> per procedure with reusable scopes
