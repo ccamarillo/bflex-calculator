@@ -1,8 +1,10 @@
 @import 'colors';
+@import 'fonts';
 
 body {
     margin: 0px;
     padding: 0px;
+    font-family: $font-family-pdf;
 }
 
 #content {
