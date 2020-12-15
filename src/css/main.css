@@ -95,7 +95,24 @@
   line-height: 22px;
   color: #424142;
   max-width: 342px;
-  margin-bottom: 30px;
+  margin-bottom: 17px;
+}
+.section p.smaller {
+  font-size: 12px;
+  line-height: 18px;
+}
+.section p.footnote {
+  font-size: 10px;
+  color: #003C71;
+  line-height: 12px;
+  margin-bottom: 13px;
+}
+.section p.footnote:last-child {
+  margin-bottom: 0px;
+}
+.section ul li {
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .question {
@@ -301,6 +318,9 @@
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 16px;
+}
+.receipt-header h2.cyan {
+  color: #00BFB2;
 }
 .receipt-header p {
   font-size: 14px;

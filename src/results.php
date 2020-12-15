@@ -98,7 +98,7 @@
                         <p>Using Re-Usable bronchoscopes only</p>
                     </div>
                     <div class="col-6">
-                        <h2>With BFlex</h2>
+                        <h2 class="cyan">With BFlex</h2>
                         <p>Combined with existing reusable bronchoscopy inventory</p>
                     </div>
                 </div>
@@ -259,10 +259,10 @@
             <div class="container-md">
                 <div class="row">
                     <div class="col-6">
-                        <h2>Single-Use. Safer Investment. </h2>
+                        <h2>Single-Use. Safer Investment.</h2>
                     </div>
                     <div class="col-6">
-                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>">Download custom brochure</a>
+                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>">Download Results</a>
                     </div>
                 </div>
             </div>

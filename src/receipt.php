@@ -35,9 +35,9 @@
             <div class="container-md">
                 <div class="row">
                     <div class="col-md-9 col-sm-12">
-                        <h1>Headline about results</h1>
-                        <p class="normal">Hidden costs, procedure delays, and cross-contamination are all linked to reusable bronchoscopes. Calculate the ROI of reducing reusables and adopting more single-use scopes for your hospital in four easy steps.</p>
-                        <a class="button" href="bflex-savings.php?<?php echo $query; ?>">Download custom brochure</a>
+                        <h1>Your Cost Comparison Results</h1>
+                        <p class="normal">Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you’re helping to reduce preventable infections from cross-contamination and save time on repairs and reprocessing.</p>
+                        <a class="button" href="bflex-savings.php?<?php echo $query; ?>">Download Results</a>
                     </div>
                 </div>
             </div>

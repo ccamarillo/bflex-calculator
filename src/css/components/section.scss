@@ -25,6 +25,29 @@
         line-height: 22px;
         color: $dark-grey;
         max-width: 342px;
-        margin-bottom: 30px;
+        margin-bottom: 17px;
+
+        &.smaller {
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        &.footnote {
+            font-size: 10px;
+            color: $blue;
+            line-height: 12px;
+            margin-bottom: 13px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    ul {
+        li {
+            font-size: 12px;
+            line-height: 18px;
+        }
     }
 }

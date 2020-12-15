@@ -16,9 +16,9 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-12">
                         <h1>Single-Use. Safer Investment.</h1>
-                        <p class="eyebrow">See How Costs Compare: Single-Use vs. Reusable Bronchoscopes</p>
-                        <p>There’s a misconception that single-use bronchoscopes are too expensive, yet hidden costs, procedure delays, and increased rates of infection are linked to reusables. Use this calculator to see where and how much your hospital might save by adopting more single-use bronchoscopes.</p>
-                        <h2>Cost for reusables at a glance</h2>
+                        <p class="eyebrow">Bronchoscope Cost Comparison Calculator</p>
+                        <p>Use this tool to compare the costs of single-use bronchoscopes to reusable bronchoscopes in four easy steps. Results are estimated based on annual procedure volume, quantity of reusable bronchoscopes, and common costs associated with reprocessing, repair and maintenance, and preventable infections. </p>
+                        <h2>The Reality of Reusables</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -26,10 +26,10 @@
                         <div class="cost">
                             <img src="img/reprocessing-icon.png" srcset="img/reprocessing-icon.png 1x, img/reprocessing-icon@2x.png 2x" />
                             <h3>
-                                Reprocessing
+                                Reprocessing costs
                             </h3>
                             <p>
-                                One endoscope can cost $50.14 to $152.66 on reprocessing alone, not including repairs or disposal of damaged parts. 
+                                Getting reusables patient-ready is extensive and time-consuming. Excluding repairs, staff, and technician time, the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L. et al). 
                             </p>
                         </div>
                     </div>
@@ -37,10 +37,10 @@
                         <div class="cost">
                             <img src="img/repairs-icon.png" srcset="img/repairs-icon.png 1x, img/repairs-icon@2x.png 2x" />
                             <h3>
-                                Repairs and service
+                                Expensive repairs
                             </h3>
                             <p>
-                                Preventable damage can cost over $2k per scope annually in out-of-pocket repairs, and scopes sent for repair affect availability. 
+                                Damage to reusable bronchoscopes is common during procedures and repairs can be expensive. One study cites $148 for repairs per use (Sohrt, Anne, et al). 
                             </p>
                         </div>
                     </div>
@@ -50,10 +50,10 @@
                         <div class="cost">
                             <img src="img/service-icon.png" srcset="img/service-icon.png 1x, img/service-icon@2x.png 2x" />
                             <h3>
-                                Service contracts
+                                Spotty service contracts
                             </h3>
                             <p>
-                                Cost $2200 annually per reusable yet they often exclude preventable damage, which can cost an additional $2000 per reusable annually in out-of-pocket repairs and limit availability during off-site servicing.
+                                Annual contract fees per bronchoscope add up and often exclude preventable damage, which can cost nearly the same in additional fees for out-of-pocket repairs and limit availability during off-site servicing. 
                             </p>
                         </div>
                     </div>
@@ -61,12 +61,10 @@
                         <div class="cost">
                             <img src="img/contamination-icon.png" srcset="img/contamination-icon.png 1x, img/contamination-icon@2x.png 2x" />
                             <h3>
-                                Cross-contamination
+                                Greater risk of cross-contamination 
                             </h3>
                             <p>
-                                Even when reprocessing exceeds national guidelines, pathogens are found. The average cost of treating infection due to cross-contamination and subsequent infection is $28,383 per case. 
-                                <br />
-                                (Ofstead, C.L et al; Terjesen, C.L. et al) 
+                                Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross-contamination and subsequent infection is $28,383 (Ofstead, C.L et al; Terjesen, C.L. et al). 
                             </p>
                         </div>
                     </div>

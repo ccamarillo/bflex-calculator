@@ -15,7 +15,7 @@ const MainTemplate = `
                             <h3>See the Bflex™ Advantage</h3>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <button v-if="submit_enabled" type="submit">Get results</button>
+                            <button v-if="submit_enabled" type="submit">Get Results</button>
                             <button v-if="!submit_enabled" type="submit" disabled class="disabled">Fix form errors in <em>red</em> to calculate.</button>
                         </div>
                     </div>

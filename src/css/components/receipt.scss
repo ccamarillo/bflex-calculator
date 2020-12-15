@@ -8,6 +8,10 @@
         font-weight: bold;
         font-size: 24px;
         margin-bottom: 16px;
+
+        &.cyan {
+            color: $cyan;
+        }
     }
 
     p {
