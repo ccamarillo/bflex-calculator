@@ -34,6 +34,9 @@ $calculated = $calculator->calculate(
         <div id="content">
             <div class="hero">
                 <h2>Your Cost Comparison Results</h2>
+                <p>
+                    Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you’re helping to reduce preventable infections from cross-contamination and save time on repairs and reprocessing*.
+                </p>
             </div>
         </div>
 

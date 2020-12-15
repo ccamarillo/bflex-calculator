@@ -9,17 +9,28 @@ body {
 
 #content {
     width: 100%;
-    padding: .25in;
+    padding: 18.7pt;
     
     .hero {
         width: 100%;
         background-color: $blue;
         color: $white;
-        padding: .25in;
+        padding: 22.5pt 35.6pt 22.5pt 35.6pt;
         margin: 0px;
+
+        h2 {
+            font-size: 17.3pt;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 9.6pt;
+            width: 328px;
+            line-height: 13.4pt;
+        }
     }
+
+    
+
 }
 
-h2 {
-    font-size: 17.3pt;
-}
