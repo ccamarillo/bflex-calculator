@@ -13,7 +13,7 @@ const SectionTemplate = `
                     <h2>{{ title }}</h2>
                     <div v-html=details></div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12 mt-xs-4 mt-sm-4 mt-md-0 mt-lg-0">
                     <questions 
                         v-if="id !== 4" 
                         v-for="question in questions" 
