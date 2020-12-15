@@ -4,7 +4,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    font-family: $font-family-pdf;
+    font-family: $font-family;
 }
 
 #content {
@@ -18,4 +18,8 @@ body {
         padding: .25in;
         margin: 0px;
     }
+}
+
+h2 {
+    font-size: 17.3pt;
 }

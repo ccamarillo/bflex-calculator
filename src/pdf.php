@@ -4,6 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $calculator = new Calculator();
 $calculated = $calculator->calculate(
+  (string) $_GET['facility_name'], // facilityName
   (int) $_GET['total_procedures'], // totalProcedures
   (int) $_GET['single_use_procedures'], // singleUseProcedures
   (int) $_GET['bflex_broncoscope_price'], // bflexBroncoscopePrice
@@ -32,7 +33,7 @@ $calculated = $calculator->calculate(
 
         <div id="content">
             <div class="hero">
-                <h2>I am the hero.</h2>
+                <h2>Your Cost Comparison Results</h2>
             </div>
         </div>
 

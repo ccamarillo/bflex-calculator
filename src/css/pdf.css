@@ -1,17 +1,39 @@
-/* Error: Undefined variable.
- *   ,
- * 7 |     font-family: $font-family-pdf;
- *   |                  ^^^^^^^^^^^^^^^^
- *   '
- *   pdf.scss 7:18  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 7 \2502      font-family: $font-family-pdf;\a   \2502                   ^^^^^^^^^^^^^^^^\a   \2575 \a   pdf.scss 7:18  root stylesheet";
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3cd86c");
+@font-face {
+  font-family: "Helvetica";
+  font-style: italic;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff") format("woff");
 }
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-weight: bold;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff") format("woff");
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Helvetica", "Arial", "Verdana", sans-serif;
+}
+
+#content {
+  width: 100%;
+  padding: 0.25in;
+}
+#content .hero {
+  width: 100%;
+  background-color: #003C71;
+  color: #fff;
+  padding: 0.25in;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 17.3pt;
+}
+
+/*# sourceMappingURL=pdf.css.map */
