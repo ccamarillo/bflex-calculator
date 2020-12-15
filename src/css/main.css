@@ -1,3 +1,19 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3cd86c");
+@font-face {
+  font-family: "Helvetica";
+  font-style: italic;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-weight: bold;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff") format("woff");
+}
 #hero {
   padding-top: 67px;
 }
@@ -417,10 +433,7 @@ html {
 }
 
 body {
-  font-family: "Arial", "Verdana", sans-serif;
-}
-body.pdf {
-  font-family: "Open Sans", "Arial", "Verdana";
+  font-family: "Helvetica", "Arial", "Verdana", sans-serif;
 }
 
 .background {

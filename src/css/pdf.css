@@ -1,19 +1,17 @@
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Open Sans", "Arial", "Verdana";
-}
+/* Error: Undefined variable.
+ *   ,
+ * 7 |     font-family: $font-family-pdf;
+ *   |                  ^^^^^^^^^^^^^^^^
+ *   '
+ *   pdf.scss 7:18  root stylesheet */
 
-#content {
-  width: 100%;
-  padding: 0.25in;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 7 \2502      font-family: $font-family-pdf;\a   \2502                   ^^^^^^^^^^^^^^^^\a   \2575 \a   pdf.scss 7:18  root stylesheet";
 }
-#content .hero {
-  width: 100%;
-  background-color: #003C71;
-  color: #fff;
-  padding: 0.25in;
-  margin: 0px;
-}
-
-/*# sourceMappingURL=pdf.css.map */
