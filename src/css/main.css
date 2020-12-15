@@ -126,7 +126,7 @@
   font-size: 14px;
   margin-bottom: 5px;
 }
-.question input[type=number] {
+.question input[type=number], .question input[type=text] {
   width: 53px;
   padding: 5px;
   background-color: #D8D8D8;
@@ -136,17 +136,17 @@
   text-align: center;
   -moz-appearance: textfield;
 }
-.question input[type=number].full-width {
+.question input[type=number].full-width, .question input[type=text].full-width {
   width: 100%;
   margin-bottom: 6px;
 }
-.question input[type=number]:focus {
+.question input[type=number]:focus, .question input[type=text]:focus {
   border: 0px;
   background-color: #00BFB2;
   color: #fff;
   outline: 0px;
 }
-.question input[type=number]:focus::selection {
+.question input[type=number]:focus::selection, .question input[type=text]:focus::selection {
   background-color: white;
   color: #003C71;
 }

@@ -8,6 +8,14 @@ const QuestionTemplate = `
         <div v-if="error" class="error">
             {{ error }}
         </div>
+
+        <!-- SIMPLE TEXT -->
+        <div v-if="field_type == 'simple-text'" class="row">
+            <div class="col-12">
+                <input v-on:change="updateValue($event.target.value)" type="text" class="full-width" v-bind:name="name" v-bind:data-question="name" v-bind:value="value" />
+            </div>
+        </div>
+
         <!-- SIMPLE NUMBER INPUT -->
         <div v-if="field_type == 'number'" class="row">
             <div class="col-10">
@@ -17,6 +25,8 @@ const QuestionTemplate = `
                 <a v-if="tooltip" class="tooltip-icon" v-on:click="toggleTooltip()"><img src="./img/tooltip.png" alt="More information" /></a>
             </div>
         </div>
+
+        <!-- SLIDER or TEXT SLIDER -->
         <div v-if="field_type == 'slider' || field_type == 'text'" class="row">
             <div v-bind:class="slider_col_classes">
                 

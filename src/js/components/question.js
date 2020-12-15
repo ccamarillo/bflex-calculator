@@ -164,6 +164,12 @@ const Question = {
                 }
             }
 
+            if (this.field_type == 'simple-text') {
+                if (value === '') {
+                    error += "The value is required.  "
+                }
+            }
+
             
 
             if (error == '') {

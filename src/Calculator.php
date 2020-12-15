@@ -76,6 +76,7 @@ class Calculator {
 
     /**
      * Returns an array of calculated values
+     * @param string $facilityName
      * @param int $totalProcedures
      * @param int $singleUseProcedures
      * @param int $bflexBroncoscopePrice
@@ -86,6 +87,7 @@ class Calculator {
      * @return array An associative array with calculated values
      */
     public function calculate(
+        $facilityName,
         $totalProcedures, 
         $singleUseProcedures,
         $bflexBroncoscopePrice,
@@ -105,6 +107,7 @@ class Calculator {
             $currentAnnualOopRepairAllFactor
         );
 
+        $this->facilityName = $facilityName;
         $this->totalProcedures = $totalProcedures; 
         $this->singleUseProcedures = $singleUseProcedures; 
         $this->proceduresRequiringReusable = $totalProcedures - $singleUseProcedures;
@@ -115,6 +118,7 @@ class Calculator {
         $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
 
         return [
+            'facility_name' => $this->facilityName,
             'cost_per_infection' => self::COST_PER_INFECTION,
             'reprocessing_costs' => $this->getReprocessingCosts(),
             'current_costs' => $this->getCurrentCosts(),

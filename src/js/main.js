@@ -67,6 +67,12 @@ const app = new Vue({
                     details: '<p>Indicate your hospital’s volume of annual bronchoscopy procedures and current costs. We’ll use these data as the basis for your results. </p>',
                     questions: [
                         {
+                            name: "facility_name",
+                            label: "Facility Name",
+                            field_type: 'simple-text',
+                            value: "Your Facility Name"
+                        },
+                        {
                             name: "total_procedures",
                             label: "Total Annual Bronchoscopy Procedures",
                             field_type: 'slider',
