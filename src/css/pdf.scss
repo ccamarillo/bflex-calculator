@@ -64,8 +64,7 @@ body {
             vertical-align: top;
 
             figure {
-                font-weight: 300;
-                font-style: oblique;
+                font-family: $font-family-light-oblique;
                 color: $cyan;
                 font-size: 15.4pt * $factor;
                 line-height: 19.2pt * $factor;
@@ -329,7 +328,7 @@ body {
         p {
             font-size: 5.8pt * 1.2;
             color: $grey;
-            font-style: oblique;
+            font-family: $font-family-light-oblique;
             margin-bottom: 5pt;
         }
     }

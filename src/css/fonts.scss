@@ -1,4 +1,5 @@
 $font-family: 'Helvetica', 'Arial', 'Verdana', sans-serif;
+$font-family-light-oblique: 'Helvetica-Light-Oblique', 'Arial', 'Verdana', 'sans-serif';
 
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/3cd86c");
@@ -24,9 +25,9 @@ $font-family: 'Helvetica', 'Arial', 'Verdana', sans-serif;
 }
 
 @font-face {
-  font-family: 'Helvetica';
-  font-weight: 300;
-  font-style: oblique;
+  font-family: 'Helvetica-Light-Oblique';
+  // font-weight: 300;
+  // font-style: oblique;
   src: url('../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff2') format('woff2'), url('../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff') format('woff');
 }
 

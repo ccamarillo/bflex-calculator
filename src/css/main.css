@@ -20,9 +20,7 @@
   src: url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff") format("woff");
 }
 @font-face {
-  font-family: "Helvetica";
-  font-weight: 300;
-  font-style: oblique;
+  font-family: "Helvetica-Light-Oblique";
   src: url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff") format("woff");
 }
 #hero {
@@ -435,10 +433,6 @@
 .download-footer a.button:hover {
   background-color: #D8D8D8;
   color: #000;
-}
-
-body.pdf h1, body.pdf h2 p {
-  font-family: "Open Sans", sans-serif !important;
 }
 
 html {

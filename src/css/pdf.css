@@ -20,9 +20,7 @@
   src: url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff") format("woff");
 }
 @font-face {
-  font-family: "Helvetica";
-  font-weight: 300;
-  font-style: oblique;
+  font-family: "Helvetica-Light-Oblique";
   src: url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff") format("woff");
 }
 body {
@@ -77,8 +75,7 @@ body {
   vertical-align: top;
 }
 #content-pg-2 table.two-col td.right figure {
-  font-weight: 300;
-  font-style: oblique;
+  font-family: "Helvetica-Light-Oblique", "Arial", "Verdana", "sans-serif";
   color: #00BFB2;
   font-size: 20.02pt;
   line-height: 24.96pt;
@@ -291,7 +288,7 @@ body {
 #content-pg-3 .footnotes p {
   font-size: 6.96pt;
   color: #7c7c7c;
-  font-style: oblique;
+  font-family: "Helvetica-Light-Oblique", "Arial", "Verdana", "sans-serif";
   margin-bottom: 5pt;
 }
 
