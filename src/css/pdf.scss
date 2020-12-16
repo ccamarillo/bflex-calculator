@@ -7,7 +7,43 @@ body {
     font-family: $font-family;
 }
 
-#content {
+#content-pg-1 {
+    padding: 48pt 53pt;
+
+    .bflex-logo {
+        width: 241pt;
+        margin-bottom: 201pt;
+    }
+
+    .verathon-logo {
+        width: 110pt;
+    }
+
+    h1 {
+        color: $blue;
+        font-weight: 300;
+        font-size: 38.4pt;
+        line-height: 46.1pt;
+        margin-bottom: 40px;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+
+    h2 {
+        font-size: 17.3pt;
+        color: $black;
+        font-weight: 300;
+        margin-bottom: 294px;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+}
+
+#content-pg-3 {
     width: 100%;
     padding: 18.7pt;
     

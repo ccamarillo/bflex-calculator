@@ -14,101 +14,136 @@
   font-weight: bold;
   src: url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff") format("woff");
 }
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 300;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff") format("woff");
+}
 body {
   margin: 0px;
   padding: 0px;
   font-family: "Helvetica", "Arial", "Verdana", sans-serif;
 }
 
-#content {
+#content-pg-1 {
+  padding: 48pt 53pt;
+}
+#content-pg-1 .bflex-logo {
+  width: 241pt;
+  margin-bottom: 201pt;
+}
+#content-pg-1 .verathon-logo {
+  width: 110pt;
+}
+#content-pg-1 h1 {
+  color: #003C71;
+  font-weight: 300;
+  font-size: 38.4pt;
+  line-height: 46.1pt;
+  margin-bottom: 40px;
+}
+#content-pg-1 h1 strong {
+  font-weight: bold;
+}
+#content-pg-1 h2 {
+  font-size: 17.3pt;
+  color: #000;
+  font-weight: 300;
+  margin-bottom: 294px;
+}
+#content-pg-1 h2 strong {
+  font-weight: bold;
+}
+
+#content-pg-3 {
   width: 100%;
   padding: 18.7pt;
 }
-#content .hero {
+#content-pg-3 .hero {
   width: 100%;
   background-color: #003C71;
   color: #fff;
   padding: 35.5pt 35.6pt 22.5pt 35.6pt;
   margin: 0px;
 }
-#content .hero h2 {
+#content-pg-3 .hero h2 {
   font-size: 20.76pt;
   font-weight: bold;
 }
-#content .hero p {
+#content-pg-3 .hero p {
   font-size: 9.6pt;
   width: 328pt;
   line-height: 13.4pt;
 }
-#content table {
+#content-pg-3 table {
   width: 100%;
   outline: none;
 }
-#content table:before {
+#content-pg-3 table:before {
   outline: none;
 }
-#content table td {
+#content-pg-3 table td {
   width: 50%;
   border-left: 1px solid #C2C1C1;
   border-bottom: 1px solid #C2C1C1;
   padding: 22pt 21pt 22pt 35.6pt;
   vertical-align: top;
 }
-#content table td.with {
+#content-pg-3 table td.with {
   background-color: rgba(0, 191, 178, 0.2);
   border-right: 1px solid #C2C1C1;
   border-left: 0px;
   padding: 22pt 35.6pt 22pt 21pt;
 }
-#content table td.with h3 {
+#content-pg-3 table td.with h3 {
   color: #00BFB2;
 }
-#content table td h3 {
+#content-pg-3 table td h3 {
   color: #003C71;
   font-weight: bold;
   margin-bottom: 15pt;
   font-size: 18.48pt;
 }
-#content table td h4 {
+#content-pg-3 table td h4 {
   font-size: 11.5pt;
   color: #000;
   margin-bottom: 2pt;
   font-weight: bold;
 }
-#content table td h4 sup {
+#content-pg-3 table td h4 sup {
   font-weight: normal;
 }
-#content table td table {
+#content-pg-3 table td table {
   margin-bottom: 9.6pt;
   border: 0px;
   outline: none;
 }
-#content table td table:before {
+#content-pg-3 table td table:before {
   outline: none;
 }
-#content table td table.section {
+#content-pg-3 table td table.section {
   margin-bottom: 4pt;
 }
-#content table td table.result {
+#content-pg-3 table td table.result {
   margin-bottom: 3pt;
 }
-#content table td table.reprocessing td {
+#content-pg-3 table td table.reprocessing td {
   padding-bottom: 3pt;
 }
-#content table td table.reprocessing td:last-child {
+#content-pg-3 table td table.reprocessing td:last-child {
   font-size: 7.7pt;
 }
-#content table td table.grand-total td {
+#content-pg-3 table td table.grand-total td {
   font-size: 13.4pt;
   font-weight: bold;
   color: #000;
   width: 80%;
 }
-#content table td table.grand-total td:last-child {
+#content-pg-3 table td table.grand-total td:last-child {
   font-size: 13.4pt;
   width: 20%;
 }
-#content table td table td {
+#content-pg-3 table td table td {
   border: 0px;
   padding: 0px;
   vertical-align: top;
@@ -117,33 +152,33 @@ body {
   width: 70%;
   padding-bottom: 3pt;
 }
-#content table td table td:last-child {
+#content-pg-3 table td table td:last-child {
   text-align: right;
   font-size: 10pt;
   font-weight: bold;
 }
-#content table td table td p.section-value {
+#content-pg-3 table td table td p.section-value {
   font-size: 11.5pt;
   margin-bottom: 0px;
 }
-#content table td table.sum {
+#content-pg-3 table td table.sum {
   margin-bottom: 16pt;
 }
-#content table td table.sum h4 {
+#content-pg-3 table td table.sum h4 {
   color: #003C71;
 }
-#content table td table.sum td:last-child {
+#content-pg-3 table td table.sum td:last-child {
   font-size: 11.5pt;
   color: #003C71;
   font-weight: bold;
 }
-#content table td hr {
+#content-pg-3 table td hr {
   margin-top: 5.4pt;
 }
-#content .footnotes {
+#content-pg-3 .footnotes {
   margin-top: 9.6pt;
 }
-#content .footnotes p {
+#content-pg-3 .footnotes p {
   font-size: 6.96pt;
   color: #7c7c7c;
   font-style: oblique;

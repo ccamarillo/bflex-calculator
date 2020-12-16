@@ -20,7 +20,7 @@ $job = (new Job())
     ->setTag('bflex-calculator-results')
     ->addTask(
         (new Task('capture-website', 'import-html'))
-            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf.php?' . $query)
+            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-1.php?' . $query)
             ->set('filename', 'pdf.pdf')
             ->set('output_format', 'pdf')
             ->set('engine', 'wkhtml')

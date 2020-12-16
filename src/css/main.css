@@ -14,6 +14,11 @@
   font-weight: bold;
   src: url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff") format("woff");
 }
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 300;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff") format("woff");
+}
 #hero {
   padding-top: 67px;
 }
