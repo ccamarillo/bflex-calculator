@@ -26,33 +26,33 @@ body {
 }
 
 #content-pg-1 {
-  padding: 48pt 53pt;
+  padding: 62.4pt 68.9pt;
 }
 #content-pg-1 .bflex-logo {
-  width: 241pt;
-  margin-bottom: 201pt;
-}
-#content-pg-1 .verathon-logo {
-  width: 110pt;
+  width: 313.3pt;
+  margin-bottom: 160pt;
 }
 #content-pg-1 h1 {
   color: #003C71;
   font-weight: 300;
-  font-size: 38.4pt;
-  line-height: 46.1pt;
-  margin-bottom: 40px;
+  font-size: 49.92pt;
+  line-height: 59.93pt;
+  margin-bottom: 52px;
 }
 #content-pg-1 h1 strong {
   font-weight: bold;
 }
 #content-pg-1 h2 {
-  font-size: 17.3pt;
+  font-size: 22.49pt;
   color: #000;
   font-weight: 300;
-  margin-bottom: 294px;
+  margin-bottom: 382.2px;
 }
 #content-pg-1 h2 strong {
   font-weight: bold;
+}
+#content-pg-1 .verathon-logo {
+  width: 143pt;
 }
 
 #content-pg-3 {
