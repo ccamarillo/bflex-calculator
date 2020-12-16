@@ -133,7 +133,8 @@ body {
 #content-pg-2 table.points td p {
   color: #7c7c7c;
   font-weight: 300;
-  margin-bottom: 26pt;
+  margin-bottom: 19.5pt;
+  line-height: 1.4;
 }
 #content-pg-2 table.points td.left {
   width: 78pt;

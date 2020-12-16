@@ -137,7 +137,8 @@ body {
             p {
                 color: $grey;
                 font-weight: 300;
-                margin-bottom: 20pt * $factor;
+                margin-bottom: 15pt * $factor;
+                line-height: 1.4;
             }
         }
         td.left {
