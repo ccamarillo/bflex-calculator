@@ -49,7 +49,7 @@ body {
 #content-pg-2 {
     $factor: 1.3; // The PDF generator scales things down, not sure why.
 
-    padding: (67pt * $factor) (53pt * $factor);
+    padding: (57pt * $factor) (53pt * $factor);
 
     table.two-col {
         td.left {
@@ -79,7 +79,7 @@ body {
             }
 
             img.scope {
-                width: 95pt * $factor;
+                width: 90pt * $factor;
                 margin-left: 43pt * $factor;
             }
         }
@@ -137,7 +137,7 @@ body {
             p {
                 color: $grey;
                 font-weight: 300;
-                margin-bottom: 25pt * $factor;
+                margin-bottom: 20pt * $factor;
             }
         }
         td.left {
