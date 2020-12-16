@@ -47,12 +47,113 @@ body {
   color: #000;
   font-weight: 300;
   margin-bottom: 382.2px;
+  width: 539.5pt;
 }
 #content-pg-1 h2 strong {
   font-weight: bold;
 }
 #content-pg-1 .verathon-logo {
   width: 143pt;
+}
+
+#content-pg-2 {
+  padding: 87.1pt 68.9pt;
+}
+#content-pg-2 table.two-col td.left {
+  width: 443.3pt;
+  vertical-align: top;
+}
+#content-pg-2 table.two-col td.right {
+  width: 210.6pt;
+  vertical-align: top;
+}
+#content-pg-2 table.two-col td.right figure {
+  font-weight: 300;
+  font-style: italic;
+  color: #00BFB2;
+  font-size: 20.02pt;
+  line-height: 24.96pt;
+  margin-bottom: 13pt;
+}
+#content-pg-2 table.two-col td.right figcaption {
+  font-size: 8.71pt;
+  font-weight: 300;
+  line-height: 12.48pt;
+  margin-bottom: 23.4pt;
+}
+#content-pg-2 table.two-col td.right img.scope {
+  width: 123.5pt;
+  margin-left: 55.9pt;
+}
+#content-pg-2 h1 {
+  font-size: 36.4pt;
+  color: #003C71;
+  font-weight: bold;
+  margin-bottom: 22.1pt;
+}
+#content-pg-2 h2 {
+  color: #000;
+  font-weight: bold;
+  font-size: 14.95pt;
+  line-height: 17.42pt;
+  width: 405.6pt;
+  margin-bottom: 22.62pt;
+}
+#content-pg-2 p.intro, #content-pg-2 p.intro-2 {
+  font-size: 12.48pt;
+  line-height: 17.42pt;
+  font-weight: 300;
+  color: #000;
+  width: 405.6pt;
+}
+#content-pg-2 p.intro.intro, #content-pg-2 p.intro-2.intro {
+  margin-bottom: 22.62pt;
+}
+#content-pg-2 p.intro.intro-2, #content-pg-2 p.intro-2.intro-2 {
+  margin-bottom: 26pt;
+}
+#content-pg-2 h3 {
+  font-weight: bold;
+  font-size: 22.49pt;
+  margin-bottom: 28.6pt;
+}
+#content-pg-2 table.points td {
+  vertical-align: top;
+}
+#content-pg-2 table.points td h4 {
+  font-size: 14.95pt;
+  font-weight: bold;
+}
+#content-pg-2 table.points td p {
+  color: #7c7c7c;
+  font-weight: 300;
+  margin-bottom: 32.5pt;
+}
+#content-pg-2 table.points td.left {
+  width: 78pt;
+  text-align: left;
+}
+#content-pg-2 table.points td.left img.reprocessing-icon {
+  width: 46.8pt;
+}
+#content-pg-2 table.points td.left img.maintenance-icon {
+  width: 61.1pt;
+}
+#content-pg-2 table.points td.left img.infections-icon {
+  width: 49.4pt;
+}
+#content-pg-2 table.points td.left img.contracts-icon {
+  width: 45.5pt;
+}
+#content-pg-2 table.points td.right {
+  width: 341.9pt;
+}
+#content-pg-2 .footnotes p {
+  font-size: 7.54pt;
+  line-height: 7.54pt;
+  color: #000;
+  font-style: oblique;
+  margin-bottom: 7.8pt;
 }
 
 #content-pg-3 {
