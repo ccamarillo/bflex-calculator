@@ -73,7 +73,7 @@ body {
 }
 #content table td table {
   margin-bottom: 9.6pt;
-  border: 0px;
+  border: 0px !important;
 }
 #content table td table.section {
   margin-bottom: 4pt;
