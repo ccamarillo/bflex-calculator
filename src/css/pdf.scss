@@ -125,7 +125,7 @@ body {
     }
 
     table.points {
-        border-width: 0;
+        border-color: $white; // helps remove borders in Chrome PDF viewer
 
         td {
             vertical-align: top;
@@ -203,11 +203,7 @@ body {
 
     table {
         width: 100%;
-        outline: none;
-
-        &:before {
-            outline: none;
-        }
+        border-color: $white;
         
         td {
             width: 50%;
@@ -248,8 +244,7 @@ body {
 
             table {
                 margin-bottom: 9.6pt;
-                border: 0px;
-                outline: none;
+                border-color: transparent;
 
                 &:before {
                     outline: none;

@@ -127,7 +127,7 @@ body {
   margin-bottom: 28.6pt;
 }
 #content-pg-2 table.points {
-  border-width: 0;
+  border-color: #fff;
 }
 #content-pg-2 table.points td {
   vertical-align: top;
@@ -191,10 +191,7 @@ body {
 }
 #content-pg-3 table {
   width: 100%;
-  outline: none;
-}
-#content-pg-3 table:before {
-  outline: none;
+  border-color: #fff;
 }
 #content-pg-3 table td {
   width: 50%;
@@ -229,8 +226,7 @@ body {
 }
 #content-pg-3 table td table {
   margin-bottom: 9.6pt;
-  border: 0px;
-  outline: none;
+  border-color: transparent;
 }
 #content-pg-3 table td table:before {
   outline: none;
