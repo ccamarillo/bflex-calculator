@@ -32,7 +32,11 @@ body {
 
     table {
         width: 100%;
-        outline: 0;
+        outline: none;
+
+        &:before {
+            outline: none;
+        }
         
         td {
             width: 50%;
@@ -72,7 +76,11 @@ body {
             table {
                 margin-bottom: 9.6pt;
                 border: 0px;
-                outline: 0px;
+                outline: none;
+
+                &:before {
+                    outline: none;
+                }
 
                 &.section {
                     margin-bottom: 4pt;
