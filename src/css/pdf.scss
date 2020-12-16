@@ -15,11 +15,11 @@ body {
         width: 100%;
         background-color: $blue;
         color: $white;
-        padding: 22.5pt 35.6pt 22.5pt 35.6pt;
+        padding: 35.5pt 35.6pt 22.5pt 35.6pt;
         margin: 0px;
 
         h2 {
-            font-size: 17.3pt;
+            font-size: 17.3pt * 1.2;
             font-weight: bold;
         }
 
@@ -62,7 +62,7 @@ body {
                 color: $blue;
                 font-weight: bold;
                 margin-bottom: 15pt;
-                font-size: 15.4pt;
+                font-size: 15.4pt * 1.2;
             }
 
             h4 {
@@ -161,7 +161,7 @@ body {
     .footnotes {
         margin-top: 9.6pt;
         p {
-            font-size: 5.8pt;
+            font-size: 5.8pt * 1.2;
             color: $grey;
             font-style: italic;
             margin-bottom: 5pt;

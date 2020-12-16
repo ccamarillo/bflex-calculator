@@ -28,11 +28,11 @@ body {
   width: 100%;
   background-color: #003C71;
   color: #fff;
-  padding: 22.5pt 35.6pt 22.5pt 35.6pt;
+  padding: 35.5pt 35.6pt 22.5pt 35.6pt;
   margin: 0px;
 }
 #content .hero h2 {
-  font-size: 17.3pt;
+  font-size: 20.76pt;
   font-weight: bold;
 }
 #content .hero p {
@@ -67,7 +67,7 @@ body {
   color: #003C71;
   font-weight: bold;
   margin-bottom: 15pt;
-  font-size: 15.4pt;
+  font-size: 18.48pt;
 }
 #content table td h4 {
   font-size: 11.5pt;
@@ -142,7 +142,7 @@ body {
   margin-top: 9.6pt;
 }
 #content .footnotes p {
-  font-size: 5.8pt;
+  font-size: 6.96pt;
   color: #7c7c7c;
   font-style: italic;
   margin-bottom: 5pt;
