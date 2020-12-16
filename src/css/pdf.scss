@@ -14,7 +14,7 @@ body {
 
     .bflex-logo {
         width: 241pt * $factor;
-        margin-bottom: 160pt;
+        margin-bottom: 160pt * $factor;
     }
 
     h1 {
