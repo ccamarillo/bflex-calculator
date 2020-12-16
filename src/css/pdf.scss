@@ -10,7 +10,7 @@ body {
 #content-pg-1 {
     $factor: 1.3; // The PDF generator scales things down, not sure why.
 
-    padding: (48pt * $factor) (53pt * $factor);
+    padding: (40pt * $factor) (53pt * $factor);
 
     .bflex-logo {
         width: 241pt * $factor;
