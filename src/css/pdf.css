@@ -2,7 +2,7 @@
 @import url("//hello.myfonts.net/count/3cd86c");
 @font-face {
   font-family: "Helvetica";
-  font-style: italic;
+  font-style: oblique;
   src: url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff") format("woff");
 }
 @font-face {
@@ -112,8 +112,10 @@ body {
   border: 0px;
   padding: 0px;
   vertical-align: top;
-  font-size: 7.7pt;
+  font-size: 9.24pt;
   color: #62605E;
+  width: 70%;
+  padding-bottom: 3pt;
 }
 #content table td table td:last-child {
   text-align: right;
@@ -144,7 +146,7 @@ body {
 #content .footnotes p {
   font-size: 6.96pt;
   color: #7c7c7c;
-  font-style: italic;
+  font-style: oblique;
   margin-bottom: 5pt;
 }
 

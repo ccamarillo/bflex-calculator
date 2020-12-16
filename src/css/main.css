@@ -2,7 +2,7 @@
 @import url("//hello.myfonts.net/count/3cd86c");
 @font-face {
   font-family: "Helvetica";
-  font-style: italic;
+  font-style: oblique;
   src: url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff") format("woff");
 }
 @font-face {

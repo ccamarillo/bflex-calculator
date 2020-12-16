@@ -45,8 +45,6 @@ body {
             padding: 22pt 21pt 22pt 35.6pt;
             vertical-align: top;
 
-            
-
             &.with {
                 background-color: $light-cyan;
                 border-right: 1px solid $very-light-grey;
@@ -121,8 +119,10 @@ body {
                     border: 0px;
                     padding: 0px;
                     vertical-align: top;
-                    font-size: 7.7pt;
+                    font-size: 7.7pt * 1.2;
                     color: #62605E;
+                    width: 70%;
+                    padding-bottom: 3pt;
 
                     &:last-child {
                         text-align: right;
@@ -163,7 +163,7 @@ body {
         p {
             font-size: 5.8pt * 1.2;
             color: $grey;
-            font-style: italic;
+            font-style: oblique;
             margin-bottom: 5pt;
         }
     }
