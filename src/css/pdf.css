@@ -75,6 +75,9 @@ body {
   margin-bottom: 2pt;
   font-weight: bold;
 }
+#content table td h4 sup {
+  font-weight: normal;
+}
 #content table td table {
   margin-bottom: 9.6pt;
   border: 0px;
@@ -99,9 +102,11 @@ body {
   font-size: 13.4pt;
   font-weight: bold;
   color: #000;
+  width: 80%;
 }
 #content table td table.grand-total td:last-child {
   font-size: 13.4pt;
+  width: 20%;
 }
 #content table td table td {
   border: 0px;
@@ -132,6 +137,15 @@ body {
 }
 #content table td hr {
   margin-top: 5.4pt;
+}
+#content .footnotes {
+  margin-top: 9.6pt;
+}
+#content .footnotes p {
+  font-size: 5.8pt;
+  color: #7c7c7c;
+  font-style: italic;
+  margin-bottom: 5pt;
 }
 
 /*# sourceMappingURL=pdf.css.map */

@@ -64,7 +64,14 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                     <table class="section">
                                         <tr>
                                             <td style="width: 80%;">
-                                                <h4><?php echo $row['title']; ?></h4>
+                                                <h4>
+                                                    <?php echo $row['title']; ?>
+                                                    <?php if ($column == 'current') { ?>
+                                                        <?php if ($row['title'] == 'Repair and Maintenance Costs') { ?><sup>1</sup><?php } ?>
+                                                        <?php if ($row['title'] == 'Reprocessing Costs') { ?><sup>2</sup><?php } ?>
+                                                        <?php if ($row['title'] == 'Treating infections') { ?><sup>3</sup><?php } ?>
+                                                    <?php } ?>
+                                                </h4>
                                             </td>
                                             <td>
                                                 <?php if (array_key_exists('value_current', $row)) { ?>
@@ -135,6 +142,18 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                     <?php } ?>
                 </tr>
             </table>
+
+            <div class="footnotes">
+                <p>
+                    <sup>1</sup>Pre-populated repair costs based on published cost analyses: Gupta, D. et al. Cost-effectiveness analysis of flexible optical scopes for tracheal intubation: a descriptive comparative study of reusable and single-use scopes. J of Clin Anesthesia. 2011; 23(8): 632-635. AND Liu, S. et al. Cost Identification Analysis of Anesthesia Fiberscope Use for Tracheal Intubation. J Anesth Clin Res 2012, 3:5.
+                </p>
+                <p>
+                    <sup>2</sup>Ofstead, C.L. et al. A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project. www.iahcsmm.org. 2017
+                </p>
+                <p>
+                    <sup>3</sup>Per Terjesen, C.L. et al. Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes. PharmacoEconomics Open (2017). 1:133-141. Cost of treatment per infection is $28,383. Rate of cross-contamination is 3.34% of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25% of cross-contaminated bronchoscopy procedures annually.
+                </p>
+            </div>
         </div>
 
         <?php // include('results.php'); ?>
