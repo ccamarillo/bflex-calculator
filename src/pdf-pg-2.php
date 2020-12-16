@@ -20,7 +20,7 @@ $facility_name = (string) $_GET['facility_name'];
         <div id="content-pg-2">
             <h1>Single-Use. Safer Investment.</h1>
             <h2>Using only reusable bronchoscopes can be an unnecessary drain on hospital budgets.</h2>
-            <table class="two-col">
+            <table class="two-col" border="0">
                 <tr>
                     <td class="left">
                         <p class="intro">On top of reprocessing costs, repairs, annual service contracts, and procedure delays when scopes aren’t available, costly infections still occur. $28,383 per treatment per case.<sup>1</sup></p>
