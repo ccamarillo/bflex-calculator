@@ -70,7 +70,7 @@ const app = new Vue({
                             name: "facility_name",
                             label: "Facility Name",
                             field_type: 'simple-text',
-                            value: "Your Facility Name"
+                            value: "Enter Facility Name Here"
                         },
                         {
                             name: "total_procedures",

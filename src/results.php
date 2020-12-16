@@ -173,7 +173,7 @@
                         <h2>Single-Use. Safer Investment.</h2>
                     </div>
                     <div class="col-6">
-                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>">Download Results</a>
+                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>" target="new">Generate Custom Brochure</a>
                     </div>
                 </div>
             </div>

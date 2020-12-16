@@ -141,7 +141,7 @@ const Question = {
             if (this.field_type == 'slider') {
                 
                 if (Number.parseInt(value) < this.min || value > this.max) {
-                    error += "The value must between " + this.min + " and " + this.max + ".  "
+                    error += "The value must be between " + this.min + " and " + this.max + ".  "
                 }
                 if (!Number.isInteger(parseFloat(value))) {
                     error += "The value must be an integer.  "
@@ -150,7 +150,7 @@ const Question = {
                 if (this.name == 'single_use_procedures') {
                     if (Number.parseInt(value) > Number.parseInt(this.total_procedures)) {
                         console.log('showing')
-                        error += "The value must be less than or equal to the Total bronch procedures.  "
+                        error += "This value must be less than or equal to the Total Annual Bronchoscopy Procedures"
                     }
                 }
             }
@@ -166,7 +166,11 @@ const Question = {
 
             if (this.field_type == 'simple-text') {
                 if (value === '') {
-                    error += "The value is required.  "
+                    if (this.name == 'facility_name') {
+                        error += 'Please enter the name of your facility.'
+                    } else {
+                        error += "The value is required.  "
+                    }
                 }
             }
 
