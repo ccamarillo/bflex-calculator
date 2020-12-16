@@ -29,17 +29,21 @@ body {
         }
     }
 
-    h2 {
-        font-size: 17.3pt * $factor;
-        color: $black;
-        font-weight: 300;
-        margin-bottom: 294px * $factor;
-        width: 415pt * $factor;
-
-        strong {
-            font-weight: bold;
+    .variable-text-container {
+        height: 294pt * $factor;
+        
+        h2 {
+            font-size: 17.3pt * $factor;
+            color: $black;
+            font-weight: 300;
+            width: 415pt * $factor;
+    
+            strong {
+                font-weight: bold;
+            }
         }
     }
+    
 
     .verathon-logo {
         width: 110pt * $factor;

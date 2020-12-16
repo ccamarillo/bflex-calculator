@@ -46,14 +46,16 @@ body {
 #content-pg-1 h1 strong {
   font-weight: bold;
 }
-#content-pg-1 h2 {
+#content-pg-1 .variable-text-container {
+  height: 382.2pt;
+}
+#content-pg-1 .variable-text-container h2 {
   font-size: 22.49pt;
   color: #000;
   font-weight: 300;
-  margin-bottom: 382.2px;
   width: 539.5pt;
 }
-#content-pg-1 h2 strong {
+#content-pg-1 .variable-text-container h2 strong {
   font-weight: bold;
 }
 #content-pg-1 .verathon-logo {
