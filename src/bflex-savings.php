@@ -19,9 +19,9 @@ $query = http_build_query($_GET);
 $job = (new Job())
     ->setTag('bflex-calculator-results')
     ->addTask(
-        (new Task('capture-website', 'import-html'))
-            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-2.php?' . $query)
-            ->set('filename', 'pdf.pdf')
+        (new Task('capture-website', 'import-pdf-1'))
+            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-1.php?' . $query)
+            ->set('filename', 'pdf1.pdf')
             ->set('output_format', 'pdf')
             ->set('engine', 'wkhtml')
             ->set('page_width', 21.59)
@@ -32,22 +32,47 @@ $job = (new Job())
             ->set('margin_left', 0)
     )
     ->addTask(
+        (new Task('capture-website', 'import-pdf-2'))
+            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-2.php?' . $query)
+            ->set('filename', 'pdf2.pdf')
+            ->set('output_format', 'pdf')
+            ->set('engine', 'wkhtml')
+            ->set('page_width', 21.59)
+            ->set('page_height', 27.94)
+            ->set('margin_top', 0)
+            ->set('margin_right', 0)
+            ->set('margin_bottom', 0)
+            ->set('margin_left', 0)
+    )
+    ->addTask(
+        (new Task('capture-website', 'import-pdf-3'))
+            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-3.php?' . $query)
+            ->set('filename', 'pdf3.pdf')
+            ->set('output_format', 'pdf')
+            ->set('engine', 'wkhtml')
+            ->set('page_width', 21.59)
+            ->set('page_height', 27.94)
+            ->set('margin_top', 0)
+            ->set('margin_right', 0)
+            ->set('margin_bottom', 0)
+            ->set('margin_left', 0)
+    )
+    ->addTask(
+        (new Task('merge', 'merge-pdf'))
+            ->set('input', ['import-pdf-1', 'import-pdf-2', 'import-pdf-3'])
+            ->set('output_format', 'pdf')
+    )
+    ->addTask(
         (new Task('export/url', 'export-pdf'))
-            ->set('input', 'import-html')
+            ->set('input', 'merge-pdf')
     );
 
 $cloudconvert->jobs()->create($job);
 $cloudconvert->jobs()->wait($job); // Wait for job completion
 
-
-
 foreach ($job->getExportUrls() as $file) {
-    // $source = $cloudconvert->getHttpTransport()->download($file->url)->detach();
     $source = $cloudconvert->getHttpTransport()->download($file->url);
-    // var_dump($source);
     echo $source;
-    // $dest = fopen('output/' . $file->filename, 'w');
-    // stream_copy_to_stream($source, $dest);
 }
 
 

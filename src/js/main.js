@@ -126,7 +126,7 @@ const app = new Vue({
                         {
                             name: "current_annual_oop_repair_all_factor",
                             label: "Annual out-of-pocket repair costs for all bronchoscopes ",
-                            tooltip: "Cost of repairs per use range from $53 (low) to $63 (high). Annual out-of-pocket repair costs equals the cost of repairs per use multiplied by total annual procedures.",
+                            tooltip: "Cost of repairs per use range from $53 (low) to $63 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures.",
                             field_type: 'text',
                             value: 0,
                             min: 0,

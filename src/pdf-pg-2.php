@@ -24,7 +24,7 @@ $facility_name = (string) $_GET['facility_name'];
                 <tr>
                     <td class="left">
                         <p class="intro">On top of reprocessing costs, repairs, annual service contracts, and procedure delays when scopes aren’t available, costly infections still occur. $28,383 per treatment per case.<sup>1</sup></p>
-                        <p class="intro-2">The misconception that single-use is too expensive only clouds the solution. Sterile single-use bronchoscopes like the Glidescope® BFlex™ can help facilities eliminate these extra costs and delays. </p>
+                        <p class="intro-2">The misconception that single-use is too expensive only clouds the solution. Sterile single-use bronchoscopes like the Glidescope<sup>®</sup> BFlex™ can help facilities eliminate these extra costs and delays. </p>
                         <h3>
                             Single-Use Bronchoscopes Mean
                             <br />
