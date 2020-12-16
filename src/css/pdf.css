@@ -126,6 +126,9 @@ body {
   font-size: 22.49pt;
   margin-bottom: 28.6pt;
 }
+#content-pg-2 table.points {
+  border-width: 0;
+}
 #content-pg-2 table.points td {
   vertical-align: top;
 }

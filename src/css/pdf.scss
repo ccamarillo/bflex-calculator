@@ -52,14 +52,7 @@ body {
     padding: (35pt * $factor) (53pt * $factor);
 
     table.two-col {
-        // border: 0 !important;
-        // outline: 0 !important;
-        border-color: $white;
-
-        // &:before {
-            // border: 0 !important;
-            // outline: 0 !important;
-        // }
+        border-color: $white; // invisible border makes border disappear in Chrome PDF viewer.
 
         td.left {
             width: 341pt * $factor;
@@ -132,7 +125,7 @@ body {
     }
 
     table.points {
-        // width: 327pt * $factor;
+        border-width: 0;
 
         td {
             vertical-align: top;
