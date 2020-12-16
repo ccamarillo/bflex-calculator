@@ -84,6 +84,8 @@
 
         <?php require('footer.php'); ?>
 
+        <script src="js/polyfill.js"></script>
+
         <!-- VUE -->
         <script type="module" src="js/main.js"></script>
 
