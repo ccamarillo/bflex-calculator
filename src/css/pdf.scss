@@ -32,7 +32,6 @@ body {
 
     table {
         width: 100%;
-        border: 0px;
         
         td {
             width: 50%;
@@ -71,6 +70,7 @@ body {
 
             table {
                 margin-bottom: 9.6pt;
+                border: 0px;
 
                 &.section {
                     margin-bottom: 4pt;

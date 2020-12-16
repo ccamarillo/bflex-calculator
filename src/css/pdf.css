@@ -42,7 +42,6 @@ body {
 }
 #content table {
   width: 100%;
-  border: 0px;
 }
 #content table td {
   width: 50%;
@@ -74,6 +73,7 @@ body {
 }
 #content table td table {
   margin-bottom: 9.6pt;
+  border: 0px;
 }
 #content table td table.section {
   margin-bottom: 4pt;
