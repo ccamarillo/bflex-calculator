@@ -37,10 +37,10 @@
                         <div class="cost">
                             <img src="img/repairs-icon.png" srcset="img/repairs-icon.png 1x, img/repairs-icon@2x.png 2x" />
                             <h3>
-                                Minimize the risk of cross-contamination 
+                                No expensive repairs 
                             </h3>
                             <p>
-                                Single-use bronchoscopes can protect against infection. Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross-contamination and subsequent infection is $28,383 (Ofstead, C.L et al; Terjesen, C.L. et al). 
+                                Damage to reusable bronchoscopes is possible during procedures and repairs can be expensive. One study cites $148 for repairs per use (Sohrt, Anne, et al). 
                             </p>
                         </div>
                     </div>
@@ -50,10 +50,10 @@
                         <div class="cost">
                             <img src="img/service-icon.png" srcset="img/service-icon.png 1x, img/service-icon@2x.png 2x" />
                             <h3>
-                                Spotty service contracts
+                                Avoid service contracts
                             </h3>
                             <p>
-                                Annual contract fees per bronchoscope add up and often exclude preventable damage, which can cost nearly the same in additional fees for out-of-pocket repairs and limit availability during off-site servicing. 
+                                Annual contract fees per reusable bronchoscope add up and often exclude preventable damage, which can cost nearly the same in additional fees for out-of-pocket repairs and limit availability during off-site servicing. 
                             </p>
                         </div>
                     </div>
@@ -61,10 +61,10 @@
                         <div class="cost">
                             <img src="img/contamination-icon.png" srcset="img/contamination-icon.png 1x, img/contamination-icon@2x.png 2x" />
                             <h3>
-                                Greater risk of cross-contamination 
+                                Minimize the risk of cross-contamination
                             </h3>
                             <p>
-                                Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross-contamination and subsequent infection is $28,383 (Ofstead, C.L et al; Terjesen, C.L. et al). 
+                                Single-use bronchoscopes can protect against infection. Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross-contamination and subsequent infection is $28,383 (Ofstead, C.L et al; Terjesen, C.L. et al). 
                             </p>
                         </div>
                     </div>

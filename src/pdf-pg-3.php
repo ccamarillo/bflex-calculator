@@ -52,7 +52,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                 <?php if ($olumn == 'with') { ?>
                                     With BFlex™
                                 <?php } else { ?>
-                                    Current Costs
+                                    Current Operating Costs
                                 <?php } ?>
                             </h3>
 
