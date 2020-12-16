@@ -1,93 +1,4 @@
-        <?php 
-            $rows = [
-                [
-                    'type' => 'section',
-                    'title' => 'Equipment Costs'
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Single use BFlex scopes',
-                    'value_current' => $calculated['current_costs']['equipment_costs']['single_use_scopes'],
-                    'value_with' => $calculated['reducing_costs']['equipment_costs']['single_use_scopes']
-                ],
-                [
-                    'type' => 'total',
-                    'value_current' => '$' . $calculated['current_costs']['equipment_costs']['total_su_bflex_cost'],
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['equipment_costs']['total_su_bflex_cost'])
-                ],
-                [
-                    'type' => 'section',
-                    'title' => 'Repair / Maintenance'
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Reusable Bronchoscopes (QTY)',
-                    'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['reusable_scopes_quantity']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['reusable_scopes_quantity'])
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Annual cost of service agreement per bronchoscope',
-                    'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['service_agreement_per_bronchoscope']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['service_agreement_per_bronchoscope'])
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Annual out-of-pocket repair costs for all bronchoscopes',
-                    'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['annual_oop_repair_all']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['annual_oop_repair_all'])
-                ],
-                [
-                    'type' => 'total',
-                    'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['total_annual_maint_repair']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['total_annual_maint_repair'])
-                ],
-                [
-                    'type' => 'section',
-                    'title' => 'Reprocessing'
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Reprocessing costs',
-                    'value_current' => ucwords($calculated['reprocessing_costs']['method']),
-                    'value_with' => ucwords($calculated['reprocessing_costs']['method'])
-                ],
-                [
-                    'type' => 'reprocessing'
-                ],
-                [
-                    'type' => 'total',
-                    'value_current' => '$' . number_format($calculated['current_costs']['reprocessing']['total_annual_reprocessing_costs']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['reprocessing']['total_annual_reprocessing_costs'])
-                ],
-                [
-                    'type' => 'section',
-                    'title' => 'Treating infections'
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Patient infections due to cross contamination',
-                    'value_current' => $calculated['current_costs']['treating_infections']['patient_infections'],
-                    'value_with' => $calculated['reducing_costs']['treating_infections']['patient_infections']
-                ],
-                [
-                    'type' => 'result',
-                    'title' => 'Cost per infection',
-                    'value_current' => '$' . number_format($calculated['cost_per_infection']),
-                    'value_with' => '$' . number_format($calculated['cost_per_infection'])
-                ],
-                [
-                    'type' => 'total',
-                    'value_current' => '$' . number_format($calculated['current_costs']['treating_infections']['annual_costs']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['treating_infections']['annual_costs'])
-                ],
-                [
-                    'type' => 'grand-total',
-                    'value_current' => '$' . number_format($calculated['current_costs']['total_costs']),
-                    'value_with' => '$' . number_format($calculated['reducing_costs']['total_costs'])
-                ]
-            ]
-        ?>
+        <?php  require_once('./includes/calculator-results-language.php'); // brings in $rows ?>
 
         <!-- RESULTS HEADER -->
         <div class="background white receipt-header sticky-top">
@@ -193,7 +104,7 @@
                             <div class="col-6 current">
                                 <div class="row">
                                     <div class="col-7">
-                                        <p><?php echo $label; ?></p>
+                                        <p><?php echo getReprocessingTextFromName($label); ?></p>
                                     </div>
                                     <div class="col-5">
                                         <p class="value "><?php echo $value; ?></p>
@@ -209,7 +120,7 @@
                             <div class="col-6 ">
                                 <div class="row">
                                     <div class="col-7">
-                                        <p><?php echo $label ?></p>
+                                        <p><?php echo getReprocessingTextFromName($label) ?></p>
                                     </div>
                                     <div class="col-5">
                                         <p class="value "><?php echo $value; ?></p>
@@ -232,7 +143,7 @@
                         <div class="col-6 current total grand">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Total Cost</p>
+                                    <p>Estimated<br />Total Cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_current'] ?></p>
@@ -242,7 +153,7 @@
                         <div class="col-6 with total grand">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Total Cost</p>
+                                    <p>Estimated<br />Total Cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_with'] ?></p>

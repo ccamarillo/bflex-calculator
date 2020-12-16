@@ -46,7 +46,7 @@ body {
                 background-color: $light-cyan;
                 border-right: 1px solid $very-light-grey;
                 border-left: 0px;
-                padding: 22pt 21pt 22pt 35.6pt;
+                padding: 22pt 35.6pt 22pt 21pt;
 
                 h3 {
                     color: $cyan;
@@ -56,19 +56,50 @@ body {
             h3 {
                 color: $blue;
                 font-weight: bold;
-                margin-bottom: 12pt;
+                margin-bottom: 15pt;
                 font-size: 15.4pt;
             }
 
             h4 {
                 font-size: 11.5pt;
                 color: $black;
-                margin-bottom: 10.8pt;
+                margin-bottom: 2pt;
                 font-weight: bold;
 
             }
 
             table {
+                margin-bottom: 9.6pt;
+
+                &.section {
+                    margin-bottom: 4pt;
+                }
+
+                &.result {
+                    margin-bottom: 3pt;
+                }
+
+                &.reprocessing {
+                    td {
+                        padding-bottom: 3pt;
+                    }
+                    td:last-child {
+                        font-size: 7.7pt;
+                    }
+                }
+
+                &.grand-total {
+                    td {
+                        font-size: 13.4pt;
+                        font-weight: bold;
+                        color: $black;
+
+                        &:last-child {
+                            font-size: 13.4pt;
+                        }
+                    }
+                }
+
                 td {
                     border: 0px;
                     padding: 0px;
@@ -82,10 +113,15 @@ body {
                         font-weight: bold;
                     }
 
-                    
+                    p.section-value {
+                        font-size: 11.5pt;
+                        margin-bottom: 0px;
+                    }
                 }
 
                 &.sum {
+
+                    margin-bottom: 16pt;
 
                     h4 {
                         color: $blue;

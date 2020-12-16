@@ -118,6 +118,7 @@ class Calculator {
         $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
 
         return [
+            'current_annual_oop_repair_all_factor' => $this->currentAnnualOopRepairAllFactor,
             'facility_name' => $this->facilityName,
             'cost_per_infection' => self::COST_PER_INFECTION,
             'reprocessing_costs' => $this->getReprocessingCosts(),

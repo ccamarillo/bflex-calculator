@@ -15,8 +15,13 @@ $calculated = $calculator->calculate(
   (int) $_GET['current_annual_oop_repair_all_factor'] //currentAnnualOopRepairAllFactor
 );
 
-?>
+$columns = [
+    'current', 'with'
+];
 
+require_once('./includes/calculator-results-language.php'); // brings in $rows
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -40,41 +45,94 @@ $calculated = $calculator->calculate(
             </div>
             <table>
                 <tr>
-                    <td>
-                        <h3>Current Costs</h3>
-                        <h4>Current Bronchoscope Usage</h4>
-                        <table>
-                            <tr>
-                                <td>
-                                    Single use BFlex scopes
-                                </td>
-                                <td>
-                                    $<?php echo $calculated['current_costs']['equipment_costs']['single_use_scopes']; ?>
-                                </td>
-                            </tr>
-                        </table>
-                        <hr />
-                        <table class="sum">
-                            <tr>
-                                <td>
-                                    <h4>Annual Costs</h4>
-                                </td>
-                                <td>
-                                    $<?php echo number_format($calculated['reducing_costs']['equipment_costs']['total_su_bflex_cost']) ?>
-                                </td>
-                            </tr>
-                        </table>
 
+                    <?php foreach ($columns as $column) { ?>
+                    
+                        <td <?php if ($column == 'with') { ?>class="with"<?php } ?>>
+                            
+                            <h3>
+                                <?php if ($olumn == 'with') { ?>
+                                    With BFlex™
+                                <?php } else { ?>
+                                    Current Costs
+                                <?php } ?>
+                            </h3>
 
-                    </td>
-                    <td class="with">
-                        <h3>
-                            With BFlex™
-                        </h3>
-                        <h4>
-                            Current Bronchoscope Usage
-                        </h4>
-                    </td>
+                            <?php foreach ($rows as $row) { ?>
+                                
+                                <?php if ($row['type'] == 'section') { ?>
+                                    <table class="section">
+                                        <tr>
+                                            <td style="width: 80%;">
+                                                <h4><?php echo $row['title']; ?></h4>
+                                            </td>
+                                            <td>
+                                                <?php if (array_key_exists('value_current', $row)) { ?>
+                                                    <p class="section-value">
+                                                        <?php echo $row['value_' . $column]; ?>
+                                                    </p>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                <?php } ?>
+
+                                <?php if ($row['type'] == 'result' && $row['title'] != 'Reprocessing costs') { ?>
+                                    <table class="result">
+                                        <tr>
+                                            <td>
+                                                <?php echo $row['title']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['value_' . $column] ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                <?php } ?>
+                                
+                                <?php if ($row['type'] == 'total') { ?>
+                                    <hr />
+                                    <table class="sum">
+                                        <tr>
+                                            <td>
+                                                <h4>Annual Costs</h4>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['value_' . $column]; ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                <?php } ?>
+
+                                <?php if ($row['type'] == 'reprocessing') { ?>
+                                    <table class="reprocessing">
+                                        <?php foreach ($calculated['reprocessing_costs']['details'] as $label => $value) { ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo getReprocessingTextFromName($label) ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $value; ?>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </table>
+                                <?php } ?>
+                            <?php } ?>
+
+                            <?php if ($row['type'] == 'grand-total') { ?>
+                                <table class="grand-total">
+                                    <tr>
+                                        <td>Estimated Total Costs</td>
+                                        <td><?php echo $row['value_' . $column] ?></td>
+                                    </tr>
+                                </table>
+                            <?php } ?>
+                            
+                        </td>
+
+                    <?php } ?>
                 </tr>
             </table>
         </div>
