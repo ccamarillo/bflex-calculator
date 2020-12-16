@@ -66,7 +66,7 @@ body {
   padding: 45.5pt 68.9pt;
 }
 #content-pg-2 table.two-col {
-  border-color: #fff;
+  border-color: transparent;
 }
 #content-pg-2 table.two-col td.left {
   width: 443.3pt;
@@ -127,7 +127,7 @@ body {
   margin-bottom: 28.6pt;
 }
 #content-pg-2 table.points {
-  border-color: #fff;
+  border-color: transparent;
 }
 #content-pg-2 table.points td {
   vertical-align: top;
@@ -191,7 +191,7 @@ body {
 }
 #content-pg-3 table {
   width: 100%;
-  border-color: #fff;
+  border-color: transparent;
 }
 #content-pg-3 table td {
   width: 50%;

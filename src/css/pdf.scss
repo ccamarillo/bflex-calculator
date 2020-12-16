@@ -52,7 +52,7 @@ body {
     padding: (35pt * $factor) (53pt * $factor);
 
     table.two-col {
-        border-color: $white; // invisible border makes border disappear in Chrome PDF viewer.
+        border-color: transparent; // invisible border makes border disappear in Chrome PDF viewer.
 
         td.left {
             width: 341pt * $factor;
@@ -125,7 +125,7 @@ body {
     }
 
     table.points {
-        border-color: $white; // helps remove borders in Chrome PDF viewer
+        border-color: transparent; // helps remove borders in Chrome PDF viewer
 
         td {
             vertical-align: top;
@@ -203,7 +203,7 @@ body {
 
     table {
         width: 100%;
-        border-color: $white;
+        border-color: transparent;
         
         td {
             width: 50%;
