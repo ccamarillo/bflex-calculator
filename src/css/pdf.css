@@ -66,12 +66,7 @@ body {
   padding: 45.5pt 68.9pt;
 }
 #content-pg-2 table.two-col {
-  border: 0 !important;
-  outline: 0 !important;
-}
-#content-pg-2 table.two-col:before {
-  border: 0 !important;
-  outline: 0 !important;
+  border-color: #fff;
 }
 #content-pg-2 table.two-col td.left {
   width: 443.3pt;
