@@ -211,8 +211,13 @@ body {
 #content-pg-3 table td h3 {
   color: #003C71;
   font-weight: bold;
-  margin-bottom: 15pt;
+  margin-bottom: 5pt;
   font-size: 18.48pt;
+}
+#content-pg-3 table td p.eyebrow {
+  font-size: 9.24pt;
+  margin-bottom: 30pt;
+  color: #62605E;
 }
 #content-pg-3 table td h4 {
   font-size: 11.5pt;

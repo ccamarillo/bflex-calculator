@@ -36,9 +36,9 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
 
         <div id="content-pg-3">
             <div class="hero">
-                <h2>Your Cost Comparison Results</h2>
+                <h2>Your Cost-Comparison Results</h2>
                 <p>
-                    Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you’re helping to reduce preventable infections from cross-contamination and save time on repairs and reprocessing*.
+                    Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross contamination and save time on repairs and reprocessing. <strong>This comparison is conservative. It omits the capital acquisition costs and operational budgets associated with reusable bronchoscopes.</strong>
                 </p>
             </div>
             <table>
@@ -49,12 +49,20 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                         <td <?php if ($column == 'with') { ?>class="with"<?php } ?>>
                             
                             <h3>
-                                <?php if ($olumn == 'with') { ?>
-                                    With BFlex™
+                                <?php if ($column == 'with') { ?>
+                                    With BFlex
                                 <?php } else { ?>
-                                    Current Operating Costs
+                                    Current operating costs
                                 <?php } ?>
                             </h3>
+
+                            <p class="eyebrow">
+                                <?php if ($column == 'with') { ?>
+                                    Combined with existing reusable bronchoscope inventory
+                                <?php } else { ?>
+                                    Using reusable bronchoscopes only
+                                <?php } ?>
+                                </p>
 
                             <?php foreach ($rows as $row) { ?>
                                 
@@ -65,9 +73,9 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                                 <h4>
                                                     <?php echo $row['title']; ?>
                                                     <?php if ($column == 'current') { ?>
-                                                        <?php if ($row['title'] == 'Repair and Maintenance Costs') { ?><sup>1</sup><?php } ?>
-                                                        <?php if ($row['title'] == 'Reprocessing Costs') { ?><sup>2</sup><?php } ?>
-                                                        <?php if ($row['title'] == 'Treating infections') { ?><sup>3</sup><?php } ?>
+                                                        <?php if ($row['title'] == 'Repair and maintenance costs') { ?><sup>1</sup><?php } ?>
+                                                        <?php if ($row['title'] == 'Reprocessing costs') { ?><sup>2</sup><?php } ?>
+                                                        <?php if ($row['title'] == 'Preventable infections') { ?><sup>3</sup><?php } ?>
                                                     <?php } ?>
                                                 </h4>
                                             </td>
@@ -101,7 +109,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                     <table class="sum">
                                         <tr>
                                             <td>
-                                                <h4>Annual Costs</h4>
+                                                <h4>Annual cost</h4>
                                             </td>
                                             <td>
                                                 <?php echo $row['value_' . $column]; ?>
@@ -129,7 +137,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                             <?php if ($row['type'] == 'grand-total') { ?>
                                 <table class="grand-total">
                                     <tr>
-                                        <td>Estimated Total Costs</td>
+                                        <td>Estimated costs</td>
                                         <td><?php echo $row['value_' . $column] ?></td>
                                     </tr>
                                 </table>
@@ -143,13 +151,13 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
 
             <div class="footnotes">
                 <p>
-                    <sup>1</sup>Pre-populated repair costs based on published cost analyses: Gupta, D. et al. Cost-effectiveness analysis of flexible optical scopes for tracheal intubation: a descriptive comparative study of reusable and single-use scopes. J of Clin Anesthesia. 2011; 23(8): 632-635. AND Liu, S. et al. Cost Identification Analysis of Anesthesia Fiberscope Use for Tracheal Intubation. J Anesth Clin Res 2012, 3:5.
+                    <sup>1</sup>Prepopulated repair costs based on published cost analyses: Gupta, D., et al. “Cost-effectiveness analysis of flexible optical scopes for tracheal intubation: a descriptive comparative study of reusable and single-use scopes.” J Clin Anesth. 2011; 23(8): 632-635. Liu, S., et al. “Cost Identification Analysis of Anesthesia Fiberscope Use for Tracheal Intubation.” J Anesth Clin Res 2012, 3:5.
                 </p>
                 <p>
-                    <sup>2</sup>Ofstead, C.L. et al. A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project. www.iahcsmm.org. 2017
+                    <sup>2</sup>Ofstead, C.L., et al. “A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project.” www.iahcsmm.org. 2017.
                 </p>
                 <p>
-                    <sup>3</sup>Per Terjesen, C.L. et al. Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes. PharmacoEconomics Open (2017). 1:133-141. Cost of treatment per infection is $28,383. Rate of cross-contamination is 3.34% of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25% of cross-contaminated bronchoscopy procedures annually.
+                    <sup>3</sup>Terjesen, C.L., et al. “Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes.” PharmacoEconomics Open (2017). 1:133-141. Cost of treatment per infection is $28,383. Rate of cross contamination is 3.34 percent of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25 percent of cross-contaminated bronchoscopy procedures annually.
                 </p>
             </div>
         </div>
