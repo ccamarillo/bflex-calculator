@@ -81,8 +81,8 @@ $facility_name = (string) $_GET['facility_name'];
                 </tr>
             </table>
             <div class="footnotes">
-                <p><sup>1</sup>Terjesen, C.L., et al. “Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes.” PharmacoEconomics Open (2017). 1:133-141. Cost of treatment per infection is $28,383. Rate of cross contamination is 3.34 percent of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25 percent of cross-contaminated bronchoscopy procedures annually.1:133-14</p>
-                <p><sup>2</sup> Ofstead, C.L., et al. “A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project.” www.iahcsmm.org. 2017.</p>
+                <p><sup>1</sup> Terjesen, C.L. et al. Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes. PharmacoEconomics Open (2017). 1:133-14</p>
+                <p><sup>2</sup> Ofstead, C.L. et al. A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project. www.iahcsmm.org. 2017</p>
                 <p><sup>3</sup> Sohrt, Anne, et al. “Cost Comparison of Single-Use Versus Reusable Bronchoscopes Used for Percutaneous Dilatational Tracheostomy.” PharmacoEconomics-open (2018): 1-7.</p>
                 <p><sup>4</sup> Terjesen, C.L. et al. Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes. PharmacoEconomics Open (2017). 1:133-14</p>
             </div>
