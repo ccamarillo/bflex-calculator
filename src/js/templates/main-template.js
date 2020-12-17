@@ -12,7 +12,7 @@ const MainTemplate = `
                 <div class="container-md">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <h3>See the Bflex™ Advantage</h3>
+                            <h3>See the BFlex™ Advantage</h3>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <button v-if="submit_enabled" type="submit"  v-on:click="handleSubmit">Get Results</button>
