@@ -22,13 +22,13 @@ function getRepairMaintenanceValueText($calculated) {
  */
 function getReprocessingTextFromName($name) {
     $reprocessingMap = [
-        'ppe_personal' => 'PPE for personel',
-        'bedside_preclean' => 'Bedside pre-cleaning',
-        'leak_testing' => 'Leak Testing', // maps to C22,
-        'manual_cleaning' => 'Manual cleaning', // maps to C23
-        'visual_inspection' => 'Visual Inspection', // maps to C24
-        'hld_in_aer' => 'HLD in an AER', // maps to C25
-        'drying_storage' => 'Drying and Storage' // maps to C26
+        'ppe_personal' => 'PPE for personnel',
+        'bedside_preclean' => 'Bedside precleaning',
+        'leak_testing' => 'Leak testing',
+        'manual_cleaning' => 'Manual cleaning',
+        'visual_inspection' => 'Visual inspection',
+        'hld_in_aer' => 'HLD in an AER',
+        'drying_storage' => 'Drying and storage'
     ];
     return $reprocessingMap[$name];
 }
@@ -36,11 +36,11 @@ function getReprocessingTextFromName($name) {
 $rows = [
     [
         'type' => 'section',
-        'title' => 'Current Bronchoscope Usage'
+        'title' => 'Current bronchoscope usage'
     ],
     [
         'type' => 'result',
-        'title' => 'Single use BFlex scopes',
+        'title' => 'Single-use BFlex scopes',
         'value_current' => $calculated['current_costs']['equipment_costs']['single_use_scopes'],
         'value_with' => $calculated['reducing_costs']['equipment_costs']['single_use_scopes']
     ],
@@ -51,12 +51,12 @@ $rows = [
     ],
     [
         'type' => 'section',
-        'title' => 'Repair and Maintenance Costs',
+        'title' => 'Repair and maintenance costs',
         'value_current' => getRepairMaintenanceValueText($calculated)
     ],
     [
         'type' => 'result',
-        'title' => 'Reusable Bronchoscopes (QTY)',
+        'title' => 'Reusable bronchoscopes (QTY)',
         'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['reusable_scopes_quantity']),
         'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['reusable_scopes_quantity'])
     ],
@@ -79,7 +79,7 @@ $rows = [
     ],
     [
         'type' => 'section',
-        'title' => 'Reprocessing Costs',
+        'title' => 'Reprocessing costs',
         'value_current' => ucwords($calculated['reprocessing_costs']['method'])
     ],
     [
@@ -98,7 +98,7 @@ $rows = [
     ],
     [
         'type' => 'section',
-        'title' => 'Treating infections'
+        'title' => 'Preventable infections'
     ],
     [
         'type' => 'result',

@@ -5,12 +5,12 @@
             <div class="container-md">
                 <div class="row">
                     <div class="col-6">
-                        <h2>Current Costs</h2>
-                        <p>Using Re-Usable bronchoscopes only</p>
+                        <h2>Current operating costs</h2>
+                        <p>Using reusable bronchoscopes only</p>
                     </div>
                     <div class="col-6">
                         <h2 class="cyan">With BFlex</h2>
-                        <p>Combined with existing reusable bronchoscopy inventory</p>
+                        <p>Combined with existing reusable bronchoscope inventory</p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         <div class="col-6 current total">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Annual Cost</p>
+                                    <p>Annual cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_current'] ?></p>
@@ -84,7 +84,7 @@
                         <div class="col-6 with total">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Annual Cost</p>
+                                    <p>Annual cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_with'] ?></p>
@@ -143,7 +143,7 @@
                         <div class="col-6 current total grand">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Estimated<br />Total Cost</p>
+                                    <p>Estimated Cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_current'] ?></p>
@@ -153,7 +153,7 @@
                         <div class="col-6 with total grand">
                             <div class="row">
                                 <div class="col-7">
-                                    <p>Estimated<br />Total Cost</p>
+                                    <p>Estimated Cost</p>
                                 </div>
                                 <div class="col-5">
                                     <p class="value"><?php echo $row['value_with'] ?></p>
@@ -173,7 +173,7 @@
                         <h2>Single-Use. Safer Investment.</h2>
                     </div>
                     <div class="col-6">
-                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>" target="new">Generate Custom Brochure</a>
+                    <a class="button" href="bflex-savings.php?<?php echo $query; ?>" target="new">Download Results</a>
                     </div>
                 </div>
             </div>

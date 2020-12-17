@@ -16,9 +16,11 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-12">
                         <h1>Single-Use. Safer Investment.</h1>
-                        <p class="eyebrow">Bronchoscope Cost Comparison Calculator</p>
-                        <p>Use this tool to compare the costs of single-use bronchoscopes to reusable bronchoscopes in four easy steps. Results are estimated based on annual procedure volume, quantity of reusable bronchoscopes, and common costs associated with reprocessing, repair and maintenance, and preventable infections. </p>
-                        <h2>Advantages of Single-Use</h2>
+                        <p class="eyebrow">Bronchoscope cost-comparison calculator</p>
+                        <p>
+                            Use this tool to compare the costs of single-use bronchoscopes to reusable bronchoscopes in four easy steps. Results are estimated based on annual procedure volume, quantity of reusable bronchoscopes, and common costs associated with reprocessing, repair and maintenance, and preventable infections. 
+                        </p>
+                        <h2>Advantages of single-use</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -29,7 +31,7 @@
                                 Eliminate reprocessing costs
                             </h3>
                             <p>
-                                Single-use bronchoscopes don’t need reprocessing. Getting reusables patient-ready is extensive and time-consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L. et al). 
+                                Single-use bronchoscopes don’t need reprocessing. Getting reusables patient ready is extensive and time consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L., et al.).
                             </p>
                         </div>
                     </div>
@@ -40,7 +42,7 @@
                                 No expensive repairs 
                             </h3>
                             <p>
-                                Damage to reusable bronchoscopes is possible during procedures and repairs can be expensive. One study cites $148 for repairs per use (Sohrt, Anne, et al). 
+                                Damage to reusable bronchoscopes is possible during procedures, and repairs can be expensive. One study cites $148 for repairs per use (Sohrt, Anne, et al.). 
                             </p>
                         </div>
                     </div>
@@ -61,10 +63,10 @@
                         <div class="cost">
                             <img src="img/contamination-icon.png" srcset="img/contamination-icon.png 1x, img/contamination-icon@2x.png 2x" />
                             <h3>
-                                Minimize the risk of cross-contamination
+                                Minimize the risk of cross contamination 
                             </h3>
                             <p>
-                                Single-use bronchoscopes can protect against infection. Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross-contamination and subsequent infection is $28,383 (Ofstead, C.L et al; Terjesen, C.L. et al). 
+                                Single-use bronchoscopes can protect against infection. Multiple studies show that costly infections occur even when reprocessing exceeds national guidelines. The cost of treatment for each infection due to cross contamination and subsequent infection is $28,383 (Ofstead, C.L., et al.; Terjesen, C.L., et al.). 
                             </p>
                         </div>
                     </div>

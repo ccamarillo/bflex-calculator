@@ -68,8 +68,8 @@ const app = new Vue({
             sections: [
                 { 
                     id: 1, 
-                    title: "Current Bronchoscope Usage",
-                    details: '<p>Indicate your hospital’s volume of annual bronchoscopy procedures and current costs. We’ll use these data as the basis for your results. </p>',
+                    title: "Current bronchoscope usage",
+                    details: '<p>Indicate your hospital’s volume of annual bronchoscopy procedures and current costs. We’ll use this data as the basis for your results.</p>',
                     questions: [
                         {
                             name: "facility_name",
@@ -80,7 +80,7 @@ const app = new Vue({
                         },
                         {
                             name: "total_procedures",
-                            label: "Total Annual Bronchoscopy Procedures",
+                            label: "Total annual bronchoscopy procedures",
                             field_type: 'slider',
                             value: 1000,
                             min: 0,
@@ -88,7 +88,7 @@ const app = new Vue({
                         },
                         {
                             name: "single_use_procedures",
-                            label: "Number of procedures that could be performed with single-use bronchoscopes ",
+                            label: "Number of procedures that could be performed with single-use bronchoscopes",
                             field_type: 'slider',
                             value: 750,
                             min: 0,
@@ -97,7 +97,7 @@ const app = new Vue({
                         {
                             name: "bflex_broncoscope_price",
                             label: "Your BFlex™ bronchoscope price",
-                            tooltip: "List price is $295 for the BFlex 5.0. Actual costs may vary. Contact sales for an estimate. ",
+                            tooltip: "List price is $295 for the BFlex 5.0. Actual costs may vary. Contact sales for an estimate.",
                             field_type: 'number',
                             value: 256,
                         }
@@ -105,12 +105,12 @@ const app = new Vue({
                 },
                 {
                     id: 2, 
-                    title: "Repair and Maintenance",
+                    title: "Repair and maintenance",
                     details: `
-                        <p>Indicate how many reusable bronchoscopes your hospital currently uses, plus costs for repairs and annual service agreements.  </p>
-                        <p>If annual out-of-pocket repair costs aren’t readily available, that’s ok. We’ve included a range based on published cost analyses. </p>
-                        <p class="footnote">Gupta, D. et al. Cost-effectiveness analysis of flexible optical scopes for tracheal intubation: a descriptive comparative study of reusable and single-use scopes. J of Clin Anesthesia. 2011; 23(8): 632-635. </p>
-                        <p class="footnote">Liu, S. et al. Cost Identification Analysis of Anesthesia Fiberscope Use for Tracheal Intubation. J Anesth Clin Res 2012, 3:5. </p>
+                        <p>Indicate how many reusable bronchoscopes your hospital currently uses, plus costs for repairs and annual service agreements. </p>
+                        <p>If annual out-of-pocket repair costs aren’t readily available, that’s OK. We’ve included a range based on published cost analyses.</p>
+                        <p class="footnote">Gupta, D., et al. “Cost-effectiveness analysis of flexible optical scopes for tracheal intubation: a descriptive comparative study of reusable and single-use scopes.” J Clin Anesth. 2011; 23(8): 632-635</p>
+                        <p class="footnote">Liu, S., et al. “Cost Identification Analysis of Anesthesia Fiberscope Use for Tracheal Intubation.” J Anesth Clin Res 2012, 3:5.</p>
                     `,
                     questions: [
                         {
@@ -119,7 +119,7 @@ const app = new Vue({
                             field_type: 'slider',
                             value: 30,
                             min: 0,
-                            max: 1000,
+                            max: 100,
                         },
                         {
                             name: "current_annual_service_per",
@@ -142,15 +142,15 @@ const app = new Vue({
                 },
                 {
                     id: 3, 
-                    title: "Hidden Reprocessing Costs",
+                    title: "Hidden reprocessing costs",
                     details: `
                         <p>Based on the total number of reusable bronchoscopes, your annual reprocessing cost is low, average, or high.</p>
-                        <p>This is a conservative estimate that includes common reprocessing costs but not all* </p>
+                        <p>This is a conservative estimate that includes common reprocessing costs but not all.*</p>
                         <div class="row">
                             <div class="col-6">
                                 <ul>
                                     <li>PPE for personnel</li>
-                                    <li>Bedside pre-cleaning </li>
+                                    <li>Bedside precleaning </li>
                                     <li>HLD (high-level disinfection) in an AER (automated endoscope reprocessor)</li>
                                 </ul>
                             </div>
@@ -164,7 +164,7 @@ const app = new Vue({
                             </div>
                         </div>
                         <p class="smaller">*Does not include costs associated with repairs by reprocessing technicians, reprocessing due to exceeding hangtime, or the cost of disposing of materials used during reprocessing.</p>
-                        <p class="footnote">Ofstead, C.L. et al. A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project. www.iahcsmm.org. 2017 </p>
+                        <p class="footnote">Ofstead, C.L., et al. “A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project.” www.iahcsmm.org. 2017.</p>
                     `,
                     questions: [
                         {
@@ -179,10 +179,10 @@ const app = new Vue({
                 },
                 { 
                     id: 4, 
-                    title: "Preventable Infections",
+                    title: "Preventable infections",
                     details: `
-                        <p>The risk of infection is greater with reusable bronchoscopes. With cross-contamination and subsequent infection rates considered, this is the estimated number of infections to occur and the estimated annual cost of treatment*</p>
-                        <p class="smaller">*Per Terjesen, C.L. et al. Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes. PharmacoEconomics Open (2017). 1:133-141.  Cost of treatment per infection is $28,383. Rate of cross-contamination is 3.34% of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25% of cross-contaminated bronchoscopy procedures annually.</p>
+                        <p>The risk of infection is greater with reusable bronchoscopes. With cross contamination and subsequent infection rates considered, this is the estimated number of infections and the estimated annual cost of treatment.* </p>
+                        <p class="smaller">*Per Terjesen, C.L., et al. “Early Assessment of the Likely Cost Effectiveness of Single-Use Flexible Video Bronchoscopes.” PharmacoEconomics Open (2017). 1:133-141.  Cost of treatment per infection is $28,383. Rate of cross contamination is 3.34 percent of total bronchoscopy procedures annually. Rate of subsequent infection is 21.25 percent of cross-contaminated bronchoscopy procedures annually.</p>
                     `,
                 },
             ]

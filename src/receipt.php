@@ -21,7 +21,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>The Hidden ROI of Single-Use Bronchoscopes</title>
+        <title>Your Cost-Comparison Results</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -36,9 +36,9 @@
             <div class="container-md">
                 <div class="row">
                     <div class="col-md-9 col-sm-12">
-                        <h1>Your Cost Comparison Results</h1>
+                        <h1>Your Cost-Comparison Results</h1>
                         <p class="normal">
-                            Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross-contamination and save time on repairs and reprocessing. <strong>This comparison is conversative. It omits the capital acquisition costs and operating expenses associated with reusable bronchoscopes.</strong>
+                        Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross contamination and save time on repairs and reprocessing. <strong>This comparison is conservative. It omits the capital acquisition costs and operational budgets associated with reusable bronchoscopes.</strong>
                         </p>
                         <a class="button" href="bflex-savings.php?<?php echo $query; ?>" target="new">Generate Custom Brochure</a>
                     </div>
