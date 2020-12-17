@@ -2,6 +2,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.esm.browser.mi
 import { MainTemplate } from './templates/main-template.js'
 import { Section } from './components/section.js'
 import { Infections } from './components/infections.js'
+// import ref from 'Vue'
 
 // EVENT BUS
 export const bus = new Vue();
@@ -55,6 +56,10 @@ const app = new Vue({
             } else {
                 this.submit_enabled = true
             }
+        },
+        handleSubmit(event) {
+            bus.$emit('get-results', this.value)
+            // event.preventDefault()
         }
     },
     template: MainTemplate,
@@ -70,7 +75,8 @@ const app = new Vue({
                             name: "facility_name",
                             label: "Facility Name",
                             field_type: 'simple-text',
-                            value: "Enter Facility Name Here"
+                            value: '',
+                            placeholder: "Enter Facility Name Here"
                         },
                         {
                             name: "total_procedures",

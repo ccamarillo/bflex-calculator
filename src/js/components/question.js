@@ -20,7 +20,8 @@ const Question = {
         hiddenCostsPerProcedure: Number,
         error: String,
         tooltip_visible: Boolean,
-        slider_col_classes: String
+        slider_col_classes: String,
+        placeholder: String,
     },
     mounted: function () {
         if (this.value > this.max || this.value < this.in) {
@@ -70,6 +71,12 @@ const Question = {
             }
 
             if (this.name == 'single_use_procedures') {
+                this.validate(this.value)
+            }
+        })
+
+        bus.$on('get-results', () => {
+            if (this.name == 'facility_name') {
                 this.validate(this.value)
             }
         })
@@ -149,8 +156,7 @@ const Question = {
 
                 if (this.name == 'single_use_procedures') {
                     if (Number.parseInt(value) > Number.parseInt(this.total_procedures)) {
-                        console.log('showing')
-                        error += "This value must be less than or equal to the Total Annual Bronchoscopy Procedures"
+                        error += "This value must be less than or equal to the Total Annual Bronchoscopy Procedures."
                     }
                 }
             }
@@ -165,16 +171,13 @@ const Question = {
             }
 
             if (this.field_type == 'simple-text') {
-                if (value === '') {
-                    if (this.name == 'facility_name') {
+                if (this.name == 'facility_name') {
+                    // alert(value)
+                    if (value == '') {
                         error += 'Please enter the name of your facility.'
-                    } else {
-                        error += "The value is required.  "
                     }
                 }
             }
-
-            
 
             if (error == '') {
                 this.error = false

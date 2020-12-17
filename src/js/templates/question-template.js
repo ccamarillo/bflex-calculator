@@ -12,7 +12,16 @@ const QuestionTemplate = `
         <!-- SIMPLE TEXT -->
         <div v-if="field_type == 'simple-text'" class="row">
             <div class="col-12">
-                <input v-on:change="updateValue($event.target.value)" type="text" class="full-width" v-bind:name="name" v-bind:data-question="name" v-bind:value="value" />
+                <input 
+                    v-on:change="updateValue($event.target.value)" 
+                    type="text" 
+                    class="full-width" 
+                    v-bind:name="name" 
+                    v-bind:data-question="name" 
+                    v-bind:placeholder="placeholder" 
+                    required 
+                    v-bind:value="value"
+                />
             </div>
         </div>
 
