@@ -163,7 +163,7 @@
   -moz-appearance: textfield;
 }
 .question input[type=number].full-width, .question input[type=text].full-width {
-  width: 100%;
+  width: 95%;
   margin-bottom: 6px;
 }
 .question input[type=number]:focus, .question input[type=text]:focus {

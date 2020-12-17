@@ -73,7 +73,7 @@ const app = new Vue({
                     questions: [
                         {
                             name: "facility_name",
-                            label: "Facility Name",
+                            label: "Facility name",
                             field_type: 'simple-text',
                             value: '',
                             placeholder: "Enter Facility Name Here"
