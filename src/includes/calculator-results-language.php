@@ -57,8 +57,8 @@ $rows = [
     [
         'type' => 'result',
         'title' => 'Reusable bronchoscopes (QTY)',
-        'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['reusable_scopes_quantity']),
-        'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['reusable_scopes_quantity'])
+        'value_current' => number_format($calculated['current_costs']['repair_maintenance']['reusable_scopes_quantity']),
+        'value_with' => number_format($calculated['reducing_costs']['repair_maintenance']['reusable_scopes_quantity'])
     ],
     [
         'type' => 'result',
