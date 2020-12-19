@@ -169,6 +169,10 @@ const Question = {
                 if (!Number.isInteger(parseFloat(value))) {
                     error += "The value must be an integer.  "
                 }
+
+                if (value > this.max) {
+                    error += "The max value is " + this.max + "."
+                }
             }
 
             if (this.field_type == 'simple-text') {

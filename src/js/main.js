@@ -101,6 +101,7 @@ const app = new Vue({
                             tooltip: "List price is $295 for the BFlex 5.0. Actual costs may vary. Contact sales for an estimate.",
                             field_type: 'number',
                             value: 256,
+                            max: 1000,
                         }
                     ]
                 },
