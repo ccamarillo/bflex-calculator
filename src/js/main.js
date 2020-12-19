@@ -76,7 +76,8 @@ const app = new Vue({
                             label: "Facility name",
                             field_type: 'simple-text',
                             value: '',
-                            placeholder: "Enter Facility Name Here"
+                            placeholder: "Enter Facility Name Here",
+                            max_chars: 200
                         },
                         {
                             name: "total_procedures",

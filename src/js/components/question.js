@@ -22,6 +22,7 @@ const Question = {
         tooltip_visible: Boolean,
         slider_col_classes: String,
         placeholder: String,
+        max_chars: String
     },
     mounted: function () {
         if (this.value > this.max || this.value < this.in) {

@@ -21,6 +21,7 @@ const QuestionTemplate = `
                     v-bind:placeholder="placeholder" 
                     required 
                     v-bind:value="value"
+                    v-bind:maxlength="max_chars"
                 />
             </div>
         </div>
@@ -28,7 +29,15 @@ const QuestionTemplate = `
         <!-- SIMPLE NUMBER INPUT -->
         <div v-if="field_type == 'number'" class="row">
             <div class="col-10">
-                $ <input v-on:change="emitChange($event); updateValue($event.target.value)" type="number" class="full-width" required v-bind:name="name" v-bind:value="value" v-bind:data-question="name" />
+                $ <input 
+                    v-on:change="emitChange($event); updateValue($event.target.value)" 
+                    type="number" 
+                    class="full-width" 
+                    required 
+                    v-bind:name="name" 
+                    v-bind:value="value" 
+                    v-bind:data-question="name" 
+                />
             </div>
             <div v-if="tooltip" class="col-2">
                 <a v-if="tooltip" class="tooltip-icon" v-on:click="toggleTooltip()"><img src="./img/tooltip.png" alt="More information" /></a>
