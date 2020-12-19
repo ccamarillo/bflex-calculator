@@ -460,6 +460,9 @@ body {
 .background.lightest-grey {
   background-color: #F6F6F6;
 }
+.background.red {
+  background-color: #D11E39;
+}
 
 .container-md {
   max-width: 768px;
@@ -491,6 +494,18 @@ nav a {
 
 .hidden-text {
   text-indent: -9999px;
+}
+
+.browser-alert {
+  color: white;
+  padding: 20px 0px;
+}
+.browser-alert a {
+  font-weight: bold;
+  color: #fff;
+}
+.browser-alert a:hover {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */

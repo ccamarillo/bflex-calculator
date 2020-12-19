@@ -6,10 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link href="css/main.css" rel="stylesheet" />
+        <!-- OPT IN TO IE behaviors for conditional comments -->
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     </head>
     <body>
 
         <?php require('nav.php'); ?>
+
+        <!-- BROWSER ALERT FOR IE USERS -->
+        <!--[if IE]>
+            <div class="background red browser-alert">
+                <div class="container-md">
+                    This calculator tool is incompatible with Internet Explorer. <a href="https://www.microsoft.com/en-us/edge" target="browser">Follow this link</a> to update your browser and unlock the full experience.
+                </div>
+            </div>
+        <![endif]-->
         
         <div id="hero" class="background blue">
             <div class="container-md">
