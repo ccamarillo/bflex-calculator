@@ -365,9 +365,6 @@ class Calculator {
         if ($totalProcedures < 1) {
             $errors[] = 'Single-Use Procedures must be greater than 0.';
         }
-        if (!is_int($bflexBroncoscopePrice)) {
-            $errors[] = 'Bflex Bronchoscope Price must be an integer.';
-        }
         if ($bflexBroncoscopePrice < 1) {
             $errors[] = 'Bflex Bronchoscope Price must be greater than 0.';
         }

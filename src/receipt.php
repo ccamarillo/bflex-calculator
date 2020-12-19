@@ -7,7 +7,7 @@
     (string) strip_tags($_POST['facility_name']), // facilityName
     (int) $_POST['total_procedures'], // totalProcedures
     (int) $_POST['single_use_procedures'], // singleUseProcedures
-    (int) $_POST['bflex_broncoscope_price'], // bflexBroncoscopePrice
+    $_POST['bflex_broncoscope_price'], // bflexBroncoscopePrice
     (int) $_POST['current_reusable_quantity'], // currentReusableQuantity
     (int) $_POST['current_annual_service_per'], // currentAnnualServicePer
     (string) strip_tags($_POST['reprocessing_calc_method']), // reprocessingCalcMethod

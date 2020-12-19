@@ -2,18 +2,6 @@
 
     require __DIR__ . '/vendor/autoload.php';
 
-    // $calculator = new Calculator();
-    // $calculated = $calculator->calculate(
-    // (string) strip_tags($_GET['facility_name']), // facilityName
-    // (int) $_GET['total_procedures'], // totalProcedures
-    // (int) $_GET['single_use_procedures'], // singleUseProcedures
-    // (int) $_GET['bflex_broncoscope_price'], // bflexBroncoscopePrice
-    // (int) $_GET['current_reusable_quantity'], // currentReusableQuantity
-    // (int) $_GET['current_annual_service_per'], // currentAnnualServicePer
-    // (string) strip_tags($_GET['reprocessing_calc_method']), // reprocessingCalcMethod
-    // (int) $_GET['current_annual_oop_repair_all_factor'] //currentAnnualOopRepairAllFactor
-    // );
-
     $query = http_build_query($_GET);
 
 ?>

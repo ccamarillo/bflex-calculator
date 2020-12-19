@@ -166,8 +166,11 @@ const Question = {
                 if (value < 1) {
                     error += "The value must be 1 or greater.  "
                 }
-                if (!Number.isInteger(parseFloat(value))) {
-                    error += "The value must be an integer.  "
+
+                if (this.name != 'bflex_broncoscope_price') {
+                    if (!Number.isInteger(parseFloat(value))) {
+                        error += "The value must be an integer.  "
+                    }
                 }
 
                 if (value > this.max) {

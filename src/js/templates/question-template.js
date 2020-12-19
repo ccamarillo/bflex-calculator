@@ -13,7 +13,7 @@ const QuestionTemplate = `
         <div v-if="field_type == 'simple-text'" class="row">
             <div class="col-12">
                 <input 
-                    v-on:change="updateValue($event.target.value)" 
+                    v-on:input="updateValue($event.target.value)"
                     type="text" 
                     class="full-width" 
                     v-bind:name="name" 
@@ -30,13 +30,14 @@ const QuestionTemplate = `
         <div v-if="field_type == 'number'" class="row">
             <div class="col-10">
                 $ <input 
-                    v-on:change="emitChange($event); updateValue($event.target.value)" 
+                    v-on:input="updateValue($event.target.value); emitChange($event)"
                     type="number" 
                     class="full-width" 
                     required 
                     v-bind:name="name" 
                     v-bind:value="value" 
                     v-bind:data-question="name" 
+                    step="any"
                 />
             </div>
             <div v-if="tooltip" class="col-2">

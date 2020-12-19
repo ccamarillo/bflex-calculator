@@ -9,7 +9,6 @@
                 <p>
                     <span>Fax: +1-425-883-2896</span>
                     <span><a href="http://verathon.com" target="new">Verathon Inc.</a></span>
-                    <span>20001 North Creek Parkway Bothell, WA 98011</span>
                 </p>
             </div>
         </div>
