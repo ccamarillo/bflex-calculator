@@ -59,7 +59,6 @@ const app = new Vue({
         },
         handleSubmit(event) {
             bus.$emit('get-results', this.value)
-            // event.preventDefault()
         }
     },
     template: MainTemplate,
@@ -86,6 +85,7 @@ const app = new Vue({
                             value: 1000,
                             min: 0,
                             max: 1000,
+                            tooltip: "Include billable bronchoscopies, as well as  other procedures that utilize a bronchoscope (bronchoscopy-assisted intubations, double-lumen tube placements, etc.)"
                         },
                         {
                             name: "single_use_procedures",
@@ -98,10 +98,10 @@ const app = new Vue({
                         {
                             name: "bflex_broncoscope_price",
                             label: "Your BFlex™ bronchoscope price",
-                            tooltip: "List price is $295 for the BFlex 5.0. Actual costs may vary. Contact sales for an estimate.",
+                            tooltip: "Contact sales for pricing.",
                             field_type: 'number',
-                            value: 256,
                             max: 1000,
+                            placeholder: "Enter Your BfFex Scope Price"
                         }
                     ]
                 },
@@ -121,7 +121,7 @@ const app = new Vue({
                             field_type: 'slider',
                             value: 30,
                             min: 0,
-                            max: 100,
+                            max: 100
                         },
                         {
                             name: "current_annual_service_per",
@@ -130,12 +130,12 @@ const app = new Vue({
                             value: 1000,
                             min: 0,
                             max: 1000,
-                            tooltip: "Cost of repairs per use range from $53 (low) to $63 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures."
+                            dollars: true
                         },
                         {
                             name: "current_annual_oop_repair_all_factor",
                             label: "Annual out-of-pocket repair costs for all bronchoscopes ",
-                            tooltip: "Cost of repairs per use range from $53 (low) to $63 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures.",
+                            tooltip: "Cost of repairs per use range from $53 (low) to $148 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures.",
                             field_type: 'text',
                             value: 0,
                             min: 0,

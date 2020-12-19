@@ -22,7 +22,8 @@ const Question = {
         tooltip_visible: Boolean,
         slider_col_classes: String,
         placeholder: String,
-        max_chars: String
+        max_chars: String,
+        dollars: Boolean
     },
     mounted: function () {
         if (this.value > this.max || this.value < this.in) {
@@ -49,7 +50,7 @@ const Question = {
 
         this.tooltip_visible = false
 
-        this.slider_col_classes = "col-9"
+        this.slider_col_classes = "col-8"
     },  
     created: function() {
         // Watch events from event bus
@@ -65,9 +66,7 @@ const Question = {
         })
 
         bus.$on('get-results', () => {
-            if (this.name == 'facility_name') {
-                this.validate(this.value)
-            }
+            this.validate(this.value)
         })
 
         if (this.name == 'reprocessing_calc_method') {
@@ -79,9 +78,9 @@ const Question = {
             if (value == 0) { 
                 this.factor = 53;
             } else if (value == 50) {
-                this.factor = 58
+                this.factor = 100
             } else {
-               this.factor = 63
+               this.factor = 148
             }
             this.totalAnnualRepairMaintenance = this.numberWithCommas(this.factor * parseInt(this.total_procedures))
         },
@@ -133,7 +132,7 @@ const Question = {
         validate(value) {
             this.error = false
             let error = '';
-            
+
             if (this.field_type == 'slider') {
                 
                 if (Number.parseInt(value) < this.min || value > this.max) {
@@ -164,14 +163,19 @@ const Question = {
                 if (value > this.max) {
                     error += "The max value is " + this.max + "."
                 }
+
+                if (!value) {
+                    error += 'This is a required field.'
+                }
             }
 
             if (this.field_type == 'simple-text') {
-                if (this.name == 'facility_name') {
-                    if (value == '') {
+                if (value == '') {
+                    if (this.name == 'facility_name') {
                         error += 'Please enter the name of your facility.'
                     }
                 }
+
             }
 
             if (error == '') {

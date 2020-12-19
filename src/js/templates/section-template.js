@@ -29,6 +29,7 @@ const SectionTemplate = `
                             :max="question.max"
                             :placeholder="question.placeholder"
                             :max_chars="question.max_chars"
+                            :dollars="question.dollars"
                         ></questions>
                         <infections v-if="id == 4"></infections> 
                     </div>

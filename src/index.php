@@ -29,7 +29,7 @@
                         <h1>Single-Use. Safer Investment.</h1>
                         <p class="eyebrow">Bronchoscope cost-comparison calculator</p>
                         <p>
-                            Use this tool to compare the costs of single-use bronchoscopes to reusable bronchoscopes in four easy steps. Results are estimated based on annual procedure volume, quantity of reusable bronchoscopes, and common costs associated with reprocessing, repair and maintenance, and preventable infections. 
+                            Use this tool to compare the operating costs of single-use bronchoscopes to reusable bronchoscopes in four easy steps. Results are estimated based on annual procedure volume, quantity of reusable bronchoscopes, and common costs associated with reprocessing, repair and maintenance, and preventable infections. 
                         </p>
                         <h2>Advantages of single-use</h2>
                     </div>
@@ -42,7 +42,7 @@
                                 Eliminate reprocessing costs
                             </h3>
                             <p>
-                                Single-use bronchoscopes don’t need reprocessing. Getting reusables patient ready is extensive and time consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L., et al.).
+                                Single-use bronchoscopes don’t need reprocessing. Getting reusables patient-ready is extensive and time consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66 (Ofstead, C.L., et al.).
                             </p>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 Avoid service contracts
                             </h3>
                             <p>
-                                Annual contract fees per reusable bronchoscope add up and often exclude preventable damage, which can cost nearly the same in additional fees for out-of-pocket repairs and limit availability during off-site servicing. 
+                                Annual contract fees per reusable bronchoscope add up and often exclude preventable damage. This damage can cost nearly the same in additional fees for out-of-pocket repairs and limit availability of bronchoscopes during off-site servicing. 
                             </p>
                         </div>
                     </div>

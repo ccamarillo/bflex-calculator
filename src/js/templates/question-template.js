@@ -14,6 +14,7 @@ const QuestionTemplate = `
             <div class="col-12">
                 <input 
                     v-on:input="updateValue($event.target.value)"
+                    v-on:blur="updateValue($event.target.value)"
                     type="text" 
                     class="full-width" 
                     v-bind:name="name" 
@@ -31,12 +32,14 @@ const QuestionTemplate = `
             <div class="col-10">
                 $ <input 
                     v-on:input="updateValue($event.target.value); emitChange($event)"
+                    v-on:blur="updateValue($event.target.value)"
                     type="number" 
                     class="full-width" 
                     required 
                     v-bind:name="name" 
                     v-bind:value="value" 
                     v-bind:data-question="name" 
+                    v-bind:placeholder="placeholder"
                     step="any"
                 />
             </div>
@@ -96,12 +99,12 @@ const QuestionTemplate = `
                 </div>
 
             </div>
-            <div class="col-2" v-if="field_type == 'slider'">
+            <div v-bind:class="tooltip ? 'col-2' : 'col-3'" v-if="field_type == 'slider'">
                 <div>
+                    <span v-if="dollars">$ </span>
                     <input class="number" v-on:change="emitChange($event); updateValue($event.target.value)" type="number" required v-bind:name="name" v-bind:value="value" v-bind:data-question="name" />
                 </div>
             </div>
-            <div class="col-1" v-if="field_type == 'text'"></div>
             <div v-if="tooltip" class="col-2">
                 <a v-if="tooltip" class="tooltip-icon" v-on:click="toggleTooltip()"><img src="./img/tooltip.png" alt="More information" /></a>
             </div>
@@ -110,7 +113,7 @@ const QuestionTemplate = `
 
         <div v-if="tooltip_visible" class="row tooltip-wrapper">
             <div class="col-12">
-                <div class="tip-arrow">
+                <div v-bind:class="field_type == 'text' ? 'tip-arrow narrow' : 'tip-arrow'">
                     <img src="./img/tooltip-tip.png" />
                 </div>
                 <div class="tip">
@@ -125,7 +128,7 @@ const QuestionTemplate = `
 
         <!-- OUTPUT -->
         <div v-if="name == 'current_annual_oop_repair_all_factor'" class="output container">
-            <span>\${{ totalAnnualRepairMaintenance }}</span> annual out-of-pocket repair costs
+            <span>\${{ totalAnnualRepairMaintenance }}</span> annual<br />out-of-pocket repair costs
         </div>
         <div v-if="name == 'reprocessing_calc_method'" class="output container">
             <span>\${{ hiddenCostsPerProcedure }}</span> per procedure with reusable scopes

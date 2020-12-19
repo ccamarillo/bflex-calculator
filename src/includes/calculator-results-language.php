@@ -62,7 +62,7 @@ $rows = [
     ],
     [
         'type' => 'result',
-        'title' => 'Annual cost of service agreement per bronchoscope',
+        'title' => 'Annual cost of service agreement per reusable bronchoscope',
         'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['service_agreement_per_bronchoscope']),
         'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['service_agreement_per_bronchoscope'])
     ],

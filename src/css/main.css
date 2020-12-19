@@ -251,6 +251,9 @@
   height: 8px;
   text-align: right;
 }
+.question .tooltip-wrapper .tip-arrow.narrow img {
+  margin-right: 80px;
+}
 .question .tooltip-wrapper .tip-arrow img {
   display: block;
   float: right;

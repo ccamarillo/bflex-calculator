@@ -124,6 +124,12 @@
             height: 8px;
             text-align: right;
     
+            &.narrow {
+                img {
+                    margin-right: 80px;
+                }
+            }
+
             img { 
                 display: block;  
                 float: right;
