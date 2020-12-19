@@ -36,12 +36,6 @@
         }
         
         &.result {
-            &.grand-total {
-                p {
-
-                }
-            }
-
             > div:nth-child(2) {
                 background-color: $light-cyan;
             }
@@ -76,8 +70,7 @@
             &.grand {
                 p {
                     font-size: 24px;
-                    margin-top: 20px;
-                    margin-bottom: 60px;
+                    margin-top: auto;
                     line-height: 30px;
                 }
             }
@@ -85,7 +78,6 @@
             p {
                 font-weight: bold;
                 color: $blue;
-                margin-bottom: 40px;
             }
 
             &.with {
@@ -110,7 +102,6 @@
         line-height: 18px;
         
         &.value {
-            text-align: right;
             font-size: 16px;
         }
     }

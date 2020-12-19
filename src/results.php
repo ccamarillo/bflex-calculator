@@ -36,11 +36,11 @@
                         <!-- CURRENT -->
                         <div class="col-6 current">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
                                     <p><?php echo $row['title']; ?></p>
                                 </div>
-                                <div class="col-5">
-                                    <p class="value "><?php echo $row['value_current']; ?></p>
+                                <div class="col-md-5 col-sm-12 col-xs-12 text-md-end text-sm-start">
+                                    <p class="value"><?php echo $row['value_current']; ?></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -52,10 +52,10 @@
                         <!-- WITH -->
                         <div class="col-6 ">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
                                     <p><?php echo $row['title']; ?></p>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-md-5 col-sm-12 col-xs-12 text-md-end text-sm-start">
                                     <p class="value"><?php echo $row['value_with']; ?></p>
                                 </div>
                             </div>
@@ -71,22 +71,24 @@
                 <?php if ($row['type'] == 'total') { ?>
                     <!-- TOTAL -->
                     <div class="row result">
+                        <!-- CURRENT -->
                         <div class="col-6 current total">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
                                     <p>Annual cost</p>
                                 </div>
-                                <div class="col-5">
-                                    <p class="value"><?php echo $row['value_current'] ?></p>
+                                <div class="col-md-5 col-sm-12 col-xs-12 text-md-end text-sm-start">
+                                    <p class="value mb-md-4 mb-sm-4"><?php echo $row['value_current'] ?></p>
                                 </div>
                             </div>
                         </div>
+                        <!-- WITH -->
                         <div class="col-6 with total">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-md-7 col-sm-12 col-xs-12">
                                     <p>Annual cost</p>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-md-5 col-sm-12 col-xs-12 text-md-end text-sm-start">
                                     <p class="value"><?php echo $row['value_with'] ?></p>
                                 </div>
                             </div>
@@ -106,7 +108,7 @@
                                     <div class="col-7">
                                         <p><?php echo getReprocessingTextFromName($label); ?></p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5 text-end">
                                         <p class="value "><?php echo $value; ?></p>
                                     </div>
                                 </div>
@@ -122,7 +124,7 @@
                                     <div class="col-7">
                                         <p><?php echo getReprocessingTextFromName($label) ?></p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5 text-end">
                                         <p class="value "><?php echo $value; ?></p>
                                     </div>
                                 </div>
@@ -138,25 +140,27 @@
                 <?php } ?>
 
                 <?php if ($row['type'] == 'grand-total') { ?>
-                    <!-- TOTAL -->
+                    <!-- GRAND TOTAL -->
                     <div class="row result">
+                        <!-- CURRENT -->
                         <div class="col-6 current total grand">
                             <div class="row">
-                                <div class="col-7">
-                                    <p>Estimated Cost</p>
+                                <div class="col-sm-12 col-xs-12 col-md-7">
+                                    <p class="mb-sm-1 mb-md-0">Estimated Cost</p>
                                 </div>
-                                <div class="col-5">
-                                    <p class="value"><?php echo $row['value_current'] ?></p>
+                                <div class="col-sm-12 col-md-5 ">
+                                    <p class="value mb-5 text-sm-start text-md-end"><?php echo $row['value_current'] ?></p>
                                 </div>
                             </div>
                         </div>
+                        <!-- WITH -->
                         <div class="col-6 with total grand">
                             <div class="row">
-                                <div class="col-7">
-                                    <p>Estimated Cost</p>
+                                <div class="col-sm-12 col-xs-12 col-md-7">
+                                    <p class="mb-sm-1 mb-md-0">Estimated Cost</p>
                                 </div>
-                                <div class="col-5">
-                                    <p class="value"><?php echo $row['value_with'] ?></p>
+                                <div class="col-sm-12 col-md-5">
+                                    <p class="value mb-5 text-sm-start text-md-end"><?php echo $row['value_with'] ?></p>
                                 </div>
                             </div>
                         </div>
