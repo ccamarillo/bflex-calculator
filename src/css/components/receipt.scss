@@ -125,21 +125,24 @@
     }
 
     a.button {
-        background-color: $cyan;
-        color: $white;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-        border: 0px;
-        outline: 0px;
-        padding: 13px 20px 13px 20px;
-        text-decoration: none;
-        margin-top: 20px;
         float: right;
+    }
+}
 
-        &:hover {
-            background-color: $light-grey;
-            color: $black;
-        }
+a.button {
+    background-color: $cyan;
+    color: $white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border: 0px;
+    outline: 0px;
+    padding: 13px 20px 13px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: $light-grey;
+        color: $black;
     }
 }
