@@ -19,7 +19,7 @@ $facility_name = (string) $_GET['facility_name'];
 
         <div id="content-pg-2">
             <h1>Single-Use. Safer Investment.</h1>
-            <h2>Using only reusable bronchoscopes can be an unnecessary drain on hospital budgets.</h2>
+            <h2>Reusable bronchoscopes can be an unnecessary drain on hospital budgets.</h2>
             <table class="two-col" border="0">
                 <tr>
                     <td class="left">
@@ -37,7 +37,7 @@ $facility_name = (string) $_GET['facility_name'];
                                 </td>
                                 <td class="right">
                                     <h4>Eliminate reprocessing costs</h4>
-                                    <p>Single-use bronchoscopes don’t require reprocessing. Getting reusables patient ready is extensive and time consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66.<sup>2</sup></p>
+                                    <p>Single-use bronchoscopes don’t require reprocessing. Getting reusables is extensive and time consuming: the cost for reprocessing one endoscope ranges from $50.14 to $152.66.<sup>2</sup></p>
                                 </td>
                             </tr>
                             <tr>

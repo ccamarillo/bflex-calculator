@@ -40,7 +40,7 @@ $rows = [
     ],
     [
         'type' => 'result',
-        'title' => 'Single-use BFlex scopes',
+        'title' => 'Single-use BFlex bronchoscopes',
         'value_current' => $calculated['current_costs']['equipment_costs']['single_use_scopes'],
         'value_with' => $calculated['reducing_costs']['equipment_costs']['single_use_scopes']
     ],
@@ -79,7 +79,7 @@ $rows = [
     ],
     [
         'type' => 'section',
-        'title' => 'Reprocessing costs',
+        'title' => 'Reprocessing costs per use',
         'value_current' => ucwords($calculated['reprocessing_costs']['method'])
     ],
     [

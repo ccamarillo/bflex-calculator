@@ -109,7 +109,7 @@
                                         <p><?php echo getReprocessingTextFromName($label); ?></p>
                                     </div>
                                     <div class="col-5 text-end">
-                                        <p class="value "><?php echo $value; ?></p>
+                                        <p class="value ">$<?php echo $value; ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -146,7 +146,7 @@
                         <div class="col-6 current total grand">
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12 col-md-7">
-                                    <p class="mb-sm-1 mb-md-0">Estimated Cost</p>
+                                    <p class="mb-sm-1 mb-md-5">Annual Estimated Operating Costs</p>
                                 </div>
                                 <div class="col-sm-12 col-md-5 ">
                                     <p class="value mb-5 text-sm-start text-md-end"><?php echo $row['value_current'] ?></p>
@@ -157,7 +157,7 @@
                         <div class="col-6 with total grand">
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12 col-md-7">
-                                    <p class="mb-sm-1 mb-md-0">Estimated Cost</p>
+                                    <p class="mb-sm-1 mb-md-5">Annual Estimated Operating Costs</p>
                                 </div>
                                 <div class="col-sm-12 col-md-5">
                                     <p class="value mb-5 text-sm-start text-md-end"><?php echo $row['value_with'] ?></p>

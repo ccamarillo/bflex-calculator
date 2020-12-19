@@ -130,6 +130,7 @@ const app = new Vue({
                             value: 1000,
                             min: 0,
                             max: 1000,
+                            tooltip: "Cost of repairs per use range from $53 (low) to $63 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures."
                         },
                         {
                             name: "current_annual_oop_repair_all_factor",

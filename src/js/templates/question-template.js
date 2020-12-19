@@ -101,6 +101,7 @@ const QuestionTemplate = `
                     <input class="number" v-on:change="emitChange($event); updateValue($event.target.value)" type="number" required v-bind:name="name" v-bind:value="value" v-bind:data-question="name" />
                 </div>
             </div>
+            <div class="col-1" v-if="field_type == 'text'"></div>
             <div v-if="tooltip" class="col-2">
                 <a v-if="tooltip" class="tooltip-icon" v-on:click="toggleTooltip()"><img src="./img/tooltip.png" alt="More information" /></a>
             </div>

@@ -58,7 +58,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
 
                             <p class="eyebrow">
                                 <?php if ($column == 'with') { ?>
-                                    Combined with existing reusable bronchoscope inventory
+                                    Combined with existing single-use bronchoscope inventory
                                 <?php } else { ?>
                                     Using reusable bronchoscopes only
                                 <?php } ?>
@@ -126,7 +126,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                                     <?php echo getReprocessingTextFromName($label) ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $value; ?>
+                                                    $<?php echo $value; ?>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -137,7 +137,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                             <?php if ($row['type'] == 'grand-total') { ?>
                                 <table class="grand-total">
                                     <tr>
-                                        <td>Estimated costs</td>
+                                        <td>Annual Estimated Operating Costs</td>
                                         <td><?php echo $row['value_' . $column] ?></td>
                                     </tr>
                                 </table>
