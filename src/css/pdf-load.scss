@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'fonts';
+
+body, html {
+    height: 100%;
+    display: grid;
+}
+
+.hor-ver-center {
+    margin: auto;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 20px;
+        font-family: $font-family;
+        color: $blue;
+        font-weight: bold;
+    }
+}

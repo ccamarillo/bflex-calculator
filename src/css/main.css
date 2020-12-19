@@ -418,6 +418,10 @@
   margin-bottom: 30px;
 }
 .download-footer a.button {
+  float: right;
+}
+
+a.button {
   background-color: #00BFB2;
   color: #fff;
   font-size: 15px;
@@ -428,9 +432,8 @@
   padding: 13px 20px 13px 20px;
   text-decoration: none;
   margin-top: 20px;
-  float: right;
 }
-.download-footer a.button:hover {
+a.button:hover {
   background-color: #D8D8D8;
   color: #000;
 }

@@ -1,0 +1,42 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3cd86c");
+@font-face {
+  font-family: "Helvetica";
+  font-style: oblique;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Oblique/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Roman/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-weight: bold;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Bold/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-weight: 300;
+  src: url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-Light/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica-Light-Oblique";
+  src: url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff2") format("woff2"), url("../fonts/helvetica/HelveticaLTWXX-LightOblique/font.woff") format("woff");
+}
+body, html {
+  height: 100%;
+  display: grid;
+}
+
+.hor-ver-center {
+  margin: auto;
+  text-align: center;
+}
+.hor-ver-center h1 {
+  margin-bottom: 20px;
+  font-family: "Helvetica", "Arial", "Verdana", sans-serif;
+  color: #003C71;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=pdf-load.css.map */
