@@ -49,19 +49,7 @@ const Question = {
 
         this.tooltip_visible = false
 
-        if (this.field_type == 'slider') {
-            if (this.tooltip) {
-                this.slider_col_classes = 'col-8'
-            } else {
-                this.slider_col_classes = 'col-9'
-            }
-        } else if (this.field_type == 'text') {
-            if (this.tooltip) {
-                this.slider_col_classes = 'col-10'
-            } else {
-                this.slider_col_classes = 'col-12'
-            }
-        }
+        this.slider_col_classes = "col-9"
     },  
     created: function() {
         // Watch events from event bus
