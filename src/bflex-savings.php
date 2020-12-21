@@ -16,11 +16,13 @@ $cloudconvert = new CloudConvert([
 
 $query = http_build_query($_GET);
 
+$urlBase = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']) . '/';
+
 $job = (new Job())
     ->setTag('bflex-calculator-results')
     ->addTask(
         (new Task('capture-website', 'import-pdf-1'))
-            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-1.php?' . $query)
+            ->set('url', $urlBase . 'pdf-pg-1.php?' . $query)
             ->set('filename', 'pdf1.pdf')
             ->set('output_format', 'pdf')
             ->set('engine', 'wkhtml')
@@ -33,7 +35,7 @@ $job = (new Job())
     )
     ->addTask(
         (new Task('capture-website', 'import-pdf-2'))
-            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-2.php?' . $query)
+            ->set('url', $urlBase . 'pdf-pg-2.php?' . $query)
             ->set('filename', 'pdf2.pdf')
             ->set('output_format', 'pdf')
             ->set('engine', 'wkhtml')
@@ -46,7 +48,7 @@ $job = (new Job())
     )
     ->addTask(
         (new Task('capture-website', 'import-pdf-3'))
-            ->set('url', 'http://cmd-dev.frb.io/bflex-calculator/src/pdf-pg-3.php?' . $query)
+            ->set('url', $urlBase . 'pdf-pg-3.php?' . $query)
             ->set('filename', 'pdf3.pdf')
             ->set('output_format', 'pdf')
             ->set('engine', 'wkhtml')
