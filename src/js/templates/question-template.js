@@ -89,10 +89,10 @@ const QuestionTemplate = `
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6">
-                                {{ min }}
+                                <span v-if="dollars">$</span>{{ min }}
                             </div>
                             <div class="col-6" style="text-align: right;">
-                                {{ max }}
+                                <span v-if="dollars">$</span>{{ max }}
                             </div>
                         </div>
                     </div>

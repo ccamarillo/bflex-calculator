@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="cost">
-                            <img src="img/reprocessing-icon.png" srcset="img/reprocessing-icon.png 1x, img/reprocessing-icon@2x.png 2x" />
+                            <img src="img/reprocessing-icon.png" srcset="img/reprocessing-icon.png 1x, img/reprocessing-icon@2x.png 2x" alt="Reprocessing Icon" />
                             <h3>
                                 Eliminate reprocessing costs
                             </h3>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="cost">
-                            <img src="img/repairs-icon.png" srcset="img/repairs-icon.png 1x, img/repairs-icon@2x.png 2x" />
+                            <img src="img/repairs-icon.png" srcset="img/repairs-icon.png 1x, img/repairs-icon@2x.png 2x" alt="Repairs Icon" />
                             <h3>
                                 No expensive repairs 
                             </h3>
@@ -62,7 +62,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="cost">
-                            <img src="img/service-icon.png" srcset="img/service-icon.png 1x, img/service-icon@2x.png 2x" />
+                            <img src="img/service-icon.png" srcset="img/service-icon.png 1x, img/service-icon@2x.png 2x" alt="Service Contracts Icon" />
                             <h3>
                                 Avoid service contracts
                             </h3>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="cost">
-                            <img src="img/contamination-icon.png" srcset="img/contamination-icon.png 1x, img/contamination-icon@2x.png 2x" />
+                            <img src="img/contamination-icon.png" srcset="img/contamination-icon.png 1x, img/contamination-icon@2x.png 2x" alt="Contamination Icon" />
                             <h3>
                                 Minimize the risk of cross contamination 
                             </h3>
@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col-12">
                         <nav class="scroll">
-                            <img src="img/scroll-icon.png" srcset="img/scroll-icon.png 1x, img/scroll-icon@2x.png 2x" /> Scroll to get started
+                            <img src="img/scroll-icon.png" srcset="img/scroll-icon.png 1x, img/scroll-icon@2x.png 2x" alt="down arrow" /> Scroll to get started
                         </nav>
                     </div>
                 </div>
