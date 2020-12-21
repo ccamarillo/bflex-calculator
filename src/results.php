@@ -125,7 +125,7 @@
                                         <p><?php echo getReprocessingTextFromName($label) ?></p>
                                     </div>
                                     <div class="col-5 text-end">
-                                        <p class="value "><?php echo $value; ?></p>
+                                        <p class="value ">$<?php echo $value; ?></p>
                                     </div>
                                 </div>
                                 <div class="row">

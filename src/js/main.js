@@ -82,9 +82,9 @@ const app = new Vue({
                             name: "total_procedures",
                             label: "Total annual bronchoscopy procedures",
                             field_type: 'slider',
-                            value: 1000,
+                            value: 3000,
                             min: 0,
-                            max: 1000,
+                            max: 3000,
                             tooltip: "Include billable bronchoscopies, as well as  other procedures that utilize a bronchoscope (bronchoscopy-assisted intubations, double-lumen tube placements, etc.)"
                         },
                         {
@@ -127,15 +127,15 @@ const app = new Vue({
                             name: "current_annual_service_per",
                             label: "Annual cost of service agreement per bronchoscope",
                             field_type: 'slider',
-                            value: 1000,
+                            value: 5000,
                             min: 0,
-                            max: 1000,
+                            max: 5000,
                             dollars: true
                         },
                         {
                             name: "current_annual_oop_repair_all_factor",
                             label: "Annual out-of-pocket repair costs for all bronchoscopes ",
-                            tooltip: "Cost of repairs per use range from $53 (low) to $148 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures.",
+                            tooltip: "Cost of repairs per use can range from $53 (low) to $148 (high). Annual out-of-pocket repair costs equal the cost of repairs per use multiplied by total annual procedures.",
                             field_type: 'text',
                             value: 0,
                             min: 0,

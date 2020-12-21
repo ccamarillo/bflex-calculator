@@ -68,7 +68,7 @@ $rows = [
     ],
     [
         'type' => 'result',
-        'title' => 'Annual out-of-pocket repair costs for all bronchoscopes',
+        'title' => 'Annual out-of-pocket repair costs for all reusable bronchoscopes',
         'value_current' => '$' . number_format($calculated['current_costs']['repair_maintenance']['annual_oop_repair_all']),
         'value_with' => '$' . number_format($calculated['reducing_costs']['repair_maintenance']['annual_oop_repair_all'])
     ],

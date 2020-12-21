@@ -137,7 +137,11 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                             <?php if ($row['type'] == 'grand-total') { ?>
                                 <table class="grand-total">
                                     <tr>
-                                        <td>Annual Estimated Operating Costs</td>
+                                        <td>
+                                            Annual Estimated
+                                            <br />
+                                            Operating Costs
+                                        </td>
                                         <td><?php echo $row['value_' . $column] ?></td>
                                     </tr>
                                 </table>
