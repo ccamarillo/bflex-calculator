@@ -200,7 +200,7 @@ body {
   border-color: transparent;
 }
 #content-pg-3 table#hero-layout td {
-  padding: 20pt 0px 0 0 !important;
+  padding: 0pt !important;
   border: 0px;
   border-color: transparent;
   vertical-align: bottom;
