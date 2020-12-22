@@ -166,7 +166,7 @@ const app = new Vue({
                                 </ul>
                             </div>
                         </div>
-                        <p class="smaller">*Does not include costs associated with repairs by reprocessing technicians, reprocessing due to exceeding hangtime, or the cost of disposing of materials used during reprocessing.</p>
+                        <p class="smaller">*Does not include costs associated with additional reprocessing due to exceeding hang time, the cost of disposal of reprocessing materials, or transportation and storage of bronchoscopes.</p>
                         <p class="footnote">Ofstead, C.L., et al. “A Glimpse at the True Cost of Reprocessing Endoscopes: Results of a Pilot Project.” www.iahcsmm.org. 2017.</p>
                     `,
                     questions: [

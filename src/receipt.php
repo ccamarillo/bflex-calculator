@@ -41,7 +41,7 @@
                         <p class="normal">
                             Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross contamination and save time on repairs and reprocessing. <strong>This comparison is conservative. It omits the capital acquisition costs and operational budgets associated with reusable bronchoscopes.</strong>
                         </p>
-                        <a class="button" href="pdf.php?<?php echo $query; ?>" target="brochure">Generate Custom Brochure</a>
+                        <a class="button" href="pdf.php?<?php echo $query; ?>" target="brochure">Generate Custom Report</a>
                     </div>
                 </div>
             </div>

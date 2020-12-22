@@ -15,7 +15,7 @@ const MainTemplate = `
                             <h3>See the BFlex™ Advantage</h3>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <button v-if="submit_enabled" type="submit"  v-on:click="handleSubmit">Generate Savings Report</button>
+                            <button v-if="submit_enabled" type="submit"  v-on:click="handleSubmit">See Results</button>
                             <button v-if="!submit_enabled" type="submit" disabled class="disabled"">Fix form errors in <em>red</em> to calculate.</button>
                         </div>
                     </div>

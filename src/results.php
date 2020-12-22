@@ -177,7 +177,7 @@
                         <h2>Single-Use. Safer Investment.</h2>
                     </div>
                     <div class="col-6">
-                        <a class="button" href="pdf.php?<?php echo $query; ?>" target="brochure" >Generate Custom Brochure</a>
+                        <a class="button" href="pdf.php?<?php echo $query; ?>" target="brochure" >Generate Custom Report</a>
                     </div>
                 </div>
             </div>
