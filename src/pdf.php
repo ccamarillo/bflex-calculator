@@ -19,7 +19,7 @@
     <body>
 
         <div class="hor-ver-center">
-            <h1 data-url="bflex-savings.php?<?php echo $query; ?>">Generating Custom Brochure...</h1>
+            <h1 data-url="bflex-savings.php?<?php echo $query; ?>">Generating Custom Report...</h1>
             <img src="img/ajax-loader.gif" />
         </div>
 
