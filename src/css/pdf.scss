@@ -204,7 +204,6 @@ body {
         }
 
         h5 {
-            margin-top: 60pt;
             text-align: right;
         }
 
@@ -219,7 +218,6 @@ body {
             border-color: transparent;
 
             td {
-                // padding: 20pt 0px 0 0 !important;
                 padding: 0pt !important;
                 border: 0px;
                 border-color: transparent;
@@ -302,6 +300,7 @@ body {
                         font-weight: bold;
                         color: $black;
                         width: 80%;
+                        line-height: 15pt;
 
                         &:last-child {
                             font-size: 13.4pt;

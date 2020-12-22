@@ -46,7 +46,7 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                         </td>
                         <td>
                             <h5>
-                                contact your local sales representative or<br />call <strong>800-331-2313</strong> for more information
+                                Contact your local sales representative or<br />call <strong>800-331-2313</strong> for more information.
                             </h5>
                         </td>
                     </tr>
