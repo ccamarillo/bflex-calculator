@@ -36,10 +36,19 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
 
         <div id="content-pg-3">
             <div class="hero">
-                <h2>Your Cost-Comparison Results</h2>
-                <p>
-                    Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross contamination and save time on repairs and reprocessing. <strong>This comparison is conservative. It omits the capital acquisition costs and operational budgets associated with reusable bronchoscopes.</strong>
-                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <h2>Your Cost-Comparison Results</h2>
+                        <p>
+                            Here’s how your current costs for reusables stack up against sterile single-use bronchoscopes. By integrating BFlex™ with your inventory, you can help to reduce preventable infections from cross contamination and save time on repairs and reprocessing. <strong>This comparison is conservative. It omits the capital acquisition costs and operational budgets associated with reusable bronchoscopes.</strong>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <h5>
+                            contact your local sales representative or<br />call <strong>800-331-2313</strong> for more information
+                        </h5>
+                    </div>
+                </div>
             </div>
             <table>
                 <tr>

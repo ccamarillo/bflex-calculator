@@ -188,6 +188,10 @@ body {
   width: 328pt;
   line-height: 13.4pt;
 }
+#content-pg-3 .hero h5 {
+  margin-top: 70pt;
+  text-align: right;
+}
 #content-pg-3 table {
   width: 100%;
   border-color: transparent;
