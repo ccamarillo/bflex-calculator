@@ -196,6 +196,14 @@ body {
   width: 100%;
   border-color: transparent;
 }
+#content-pg-3 table#hero-layout {
+  border-color: transparent;
+}
+#content-pg-3 table#hero-layout td {
+  padding: 0px !important;
+  border: 0px;
+  border-color: transparent;
+}
 #content-pg-3 table td {
   width: 50%;
   border-left: 1px solid #C2C1C1;
