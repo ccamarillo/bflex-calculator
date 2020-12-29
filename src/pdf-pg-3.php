@@ -93,7 +93,9 @@ require_once('./includes/calculator-results-language.php'); // brings in $rows
                                             <td>
                                                 <?php if (array_key_exists('value_current', $row)) { ?>
                                                     <p class="section-value">
-                                                        <?php echo $row['value_' . $column]; ?>
+                                                        <?php if ($column != 'with') { ?>
+                                                            <?php echo $row['value_' . $column]; ?>
+                                                        <?php } ?>
                                                     </p>
                                                 <?php } ?>
                                             </td>
