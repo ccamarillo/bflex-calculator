@@ -101,7 +101,7 @@ const app = new Vue({
                             tooltip: "Contact sales for pricing.",
                             field_type: 'number',
                             max: 1000,
-                            placeholder: "Enter Your BfFex Scope Price"
+                            placeholder: "Enter Your BFlex Scope Price"
                         }
                     ]
                 },

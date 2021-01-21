@@ -11,7 +11,6 @@ $calculated = $calculator->calculate(
   (int) $_GET['current_reusable_quantity'], // currentReusableQuantity
   (int) $_GET['current_annual_service_per'], // currentAnnualServicePer
   (string) $_GET['reprocessing_calc_method'], // reprocessingCalcMethod
-  (int) $_GET['current_infections'], // currentInfections
   (int) $_GET['current_annual_oop_repair_all_factor'] //currentAnnualOopRepairAllFactor
 );
 
