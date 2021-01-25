@@ -8,10 +8,12 @@
 function getRepairMaintenanceValueText($calculated) {
     if ($calculated['current_annual_oop_repair_all_factor'] == 53) {
         return 'Low';
-    } else if ($calculated['current_annual_oop_repair_all_factor'] == 58) {
+    } else if ($calculated['current_annual_oop_repair_all_factor'] == 100) {
         return 'Average';
-    } else {
+    } else if ($calculated[''] == 148) {
         return 'High';
+    } else {
+        throw new \Exception('Invalid calculated repair all factor.');
     }
 }
 
