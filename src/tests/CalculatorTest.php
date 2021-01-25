@@ -6,8 +6,7 @@ class CalculatorTest extends TestCase {
     
     
     public function testInvalidValidateInputsThrowException() {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('An error occured while processing the form. Total Procedures must be an integer. Total Procedures must be greater than 0. Single-Use Procedures must be an integer. Single-Use Procedures must be greater than 0. Bflex Bronchoscope Price must be an integer. Bflex Bronchoscope Price must be greater than 0. Current Resusable Quantity must be an integer. Current Resusable Quantity must be greater than 0. Current Annual Service Per must be an integer. Current Annual Service Per must be greater than 0. Reprocessing Calculation Method must be "low", "average", or "high".');
+        $this->expectExceptionMessage('An error occured while processing the form. Total Procedures must be an integer. Total Procedures must be greater than 0. Single-Use Procedures must be an integer. Single-Use Procedures must be greater than 0. Bflex Bronchoscope Price must be greater than 0. Current Resusable Quantity must be an integer. Current Resusable Quantity must be greater than 0. Current Annual Service Per must be an integer. Current Annual Service Per must be greater than 0. Reprocessing Calculation Method must be "low", "average", or "high". Current Annual OOP Repair All Factor must be an integer.');
         $calculator = new Calculator();
         $calculated = $calculator->calculate('oh', 'test', 'something', 'else', 'entirely', 'bad', 'oh', 'sobad');
     }
@@ -21,7 +20,7 @@ class CalculatorTest extends TestCase {
     public function testCalculateLow() {
         $calculator = new Calculator();
         $results = $calculator->calculate('My Facility', 1000, 750, 265, 30, 2200, 'low', 53);;
-        $this->assertEquals($results, [
+        $this->assertEquals([
             'current_annual_oop_repair_all_factor' => 53,
             'facility_name' => 'My Facility',
             'cost_per_infection' => 28383,
@@ -63,10 +62,10 @@ class CalculatorTest extends TestCase {
                     'total_su_bflex_cost' => 198750
                 ],
                 'repair_maintenance' => [
-                    'reusable_scopes_quantity' => 10,
+                    'reusable_scopes_quantity' => 30,
                     'service_agreement_per_bronchoscope' => 2200,
                     'annual_oop_repair_all' => 13250,
-                    'total_annual_maint_repair' => 35250
+                    'total_annual_maint_repair' => 79250
                 ],
                 'reprocessing' => [
                     'total_annual_reprocessing_costs' => 12535
@@ -75,8 +74,8 @@ class CalculatorTest extends TestCase {
                     'patient_infections' => 1.81,
                     'annual_costs' =>  51267
                 ],
-                'total_costs' =>  297802
+                'total_costs' =>  341802
             ],
-        ]);
+        ], $results);
     }
 }

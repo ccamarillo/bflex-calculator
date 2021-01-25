@@ -22,7 +22,7 @@ const Infections = {
         this.total_infects = this.roundTo(this.infects_complete, 2)
     },
     updateTreatmentCosts() {
-        this.annual_treatment_costs = new Intl.NumberFormat().format(this.roundTo(this.infects_complete * 28383))
+        this.annual_treatment_costs = new Intl.NumberFormat().format(this.roundTo(this.total_infects * 28383))
     },
     roundTo(n, digits) {
       if (digits === undefined) {

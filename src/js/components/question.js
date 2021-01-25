@@ -45,7 +45,7 @@ const Question = {
         }
 
         if (this.name == 'reprocessing_calc_method') {
-            this.setReprocessingCalcMethod(0)
+            this.setReprocessingCalcMethod(this.value)
         }
 
         this.tooltip_visible = false

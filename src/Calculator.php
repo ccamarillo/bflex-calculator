@@ -6,7 +6,6 @@ class Calculator {
     private const CROSS_CONTAMINATION_FACTOR_A = .034; // maps to first factor in C28
     private const CROSS_CONTAMINATION_FACTOR_B = .2125; // maps to second factor in C28
     private const COST_PER_INFECTION = 28383; // maps to C30
-    private const REDUCING_REUSABLE_SCOPES = 10; // maps to F14
 
     private $reprocessingCostsLow = [
         'ppe_personal' => 5.06, // maps to C20
@@ -46,6 +45,7 @@ class Calculator {
     private $currentAnnualServicePer; // maps to C15
     private $reprocessingCalcMethod; // maps to C19
     private $currentAnnualOopRepairAllFactor; // Maps factor in C16
+    private $reducingReusableScopes; // // maps to F14
 
     /** 
      * Get the sume of a reprocessing costs array 
@@ -116,6 +116,9 @@ class Calculator {
         $this->currentAnnualServicePer = $currentAnnualServicePer;
         $this->reprocessingCalcMethod = $reprocessingCalcMethod;
         $this->currentAnnualOopRepairAllFactor = $currentAnnualOopRepairAllFactor;
+        
+        // This is a stop-gap.  In the futute, this quantity will come in as an input.
+        $this->reducingReusableScopes = $this->currentReusableQuantity;
 
         return [
             'current_annual_oop_repair_all_factor' => $this->currentAnnualOopRepairAllFactor,
@@ -157,7 +160,7 @@ class Calculator {
             'repair_maintenance' => $repairMaintenance,
             'reprocessing' => $reprocessing, // same as "maintaining" column
             'treating_infections' => $treatingInfections, // same as "maintaining" column
-            'total_costs' => $totalCosts, // maps to F33
+            'total_costs' => (int) $totalCosts, // maps to F33
         ];
     }
 
@@ -174,10 +177,10 @@ class Calculator {
     private function getReducingRepairMaintenance() {
         $oopRepairAll = $this->getAnnualOopRepairAll() * ($this->proceduresRequiringReusable / $this->totalProcedures);
         return [
-            'reusable_scopes_quantity' => self::REDUCING_REUSABLE_SCOPES,
+            'reusable_scopes_quantity' => $this->reducingReusableScopes,
             'service_agreement_per_bronchoscope' => $this->currentAnnualServicePer,
-            'annual_oop_repair_all' => $oopRepairAll, // maps to F16
-            'total_annual_maint_repair' => ($this->currentAnnualServicePer * self::REDUCING_REUSABLE_SCOPES) + $oopRepairAll, // maps to F17
+            'annual_oop_repair_all' => intval($oopRepairAll), // maps to F16
+            'total_annual_maint_repair' => intval(($this->currentAnnualServicePer * $this->reducingReusableScopes) + $oopRepairAll), // maps to F17
         ];
     }
 
@@ -384,7 +387,7 @@ class Calculator {
             $errors[] = 'Reprocessing Calculation Method must be "low", "average", or "high".';
         }
         if (!is_int($currentAnnualOopRepairAllFactor)) {
-            $errors[] = 'Current Annual OOP Repair All Factor must be an integer';
+            $errors[] = 'Current Annual OOP Repair All Factor must be an integer.';
         }
 
         if (count($errors)) {
