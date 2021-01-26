@@ -2,8 +2,6 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-// header('Content-Type: application/pdf');
-
 use \CloudConvert\CloudConvert;
 use \CloudConvert\Models\Job;
 use \CloudConvert\Models\Task;
@@ -77,5 +75,3 @@ $cloudconvert->jobs()->wait($job); // Wait for job completion
 foreach ($job->getExportUrls() as $file) {
     echo $file->url;
 }
-
-?>
