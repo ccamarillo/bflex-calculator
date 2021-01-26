@@ -19,8 +19,14 @@
     <body>
 
         <div class="hor-ver-center">
-            <h1 data-url="bflex-savings.php?<?php echo $query; ?>">Generating Custom Report...</h1>
+            <h1 data-url="compile-pdf.php?<?php echo $query; ?>">Generating Custom Report...</h1>
             <img src="img/ajax-loader.gif" />
+
+            <!-- HIDDEN FORM TO SEND ALONG PDF BINARY TO PHP and render without Javascript -->
+            <!-- This is to overcome a Chrome issue that prevents download / save of PDFs when displayed as a Javascript Blob. -->
+            <form action="serve-pdf.php" method="post" style="display: none;">
+                <input type="hidden" name="blob" value="" />
+            </form>
         </div>
 
         <!-- BOOTSTRAP -->
