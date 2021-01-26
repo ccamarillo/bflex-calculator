@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-header('Content-Type: application/pdf');
+// header('Content-Type: application/pdf');
 
 use \CloudConvert\CloudConvert;
 use \CloudConvert\Models\Job;
@@ -63,23 +63,19 @@ $job = (new Job())
         (new Task('merge', 'merge-pdf'))
             ->set('input', ['import-pdf-1', 'import-pdf-2', 'import-pdf-3'])
             ->set('output_format', 'pdf')
+            ->set('filename', 'bflex-savings.pdf')
     )
     ->addTask(
         (new Task('export/url', 'export-pdf'))
             ->set('input', 'merge-pdf')
+            ->set('inline', true)
     );
 
 $cloudconvert->jobs()->create($job);
 $cloudconvert->jobs()->wait($job); // Wait for job completion
 
 foreach ($job->getExportUrls() as $file) {
-    $source = $cloudconvert->getHttpTransport()->download($file->url);
-    echo $source;
+    echo $file->url;
 }
-
-
-
-
-
 
 ?>
