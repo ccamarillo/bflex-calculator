@@ -93,7 +93,7 @@ const app = new Vue({
                             field_type: 'slider',
                             value: 750,
                             min: 0,
-                            max: 1000,
+                            max: 3000,
                         },
                         {
                             name: "bflex_broncoscope_price",
