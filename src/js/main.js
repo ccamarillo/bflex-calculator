@@ -91,7 +91,7 @@ const app = new Vue({
                             name: "single_use_procedures",
                             label: "Number of procedures that could be performed with single-use bronchoscopes",
                             field_type: 'slider',
-                            value: 750,
+                            value: 2250,
                             min: 0,
                             max: 3000,
                         },
